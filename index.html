@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080a12" />
+  <title>September — A Little Something</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #f7f3ee;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(143, 113, 160, .16), transparent 32%),
+        radial-gradient(circle at 20% 80%, rgba(91, 117, 153, .12), transparent 30%),
+        #080a12;
+    }
+    .stars, .stars::before, .stars::after {
+      position: fixed; inset: 0; content: "";
+      pointer-events: none;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,.75) 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(255,255,255,.4) 1px, transparent 1.5px);
+      background-size: 83px 83px, 137px 137px;
+      background-position: 10px 20px, 40px 70px;
+      opacity: .24;
+      animation: drift 24s linear infinite;
+    }
+    .stars::before { opacity: .16; transform: scale(1.2); animation-duration: 38s; }
+    .stars::after { opacity: .12; transform: scale(1.45); animation-duration: 55s; }
+    @keyframes drift { to { transform: translateY(-35px); } }
+
+    main {
+      position: relative;
+      z-index: 1;
+      width: min(920px, 92%);
+      margin: auto;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 55px 0;
+    }
+    .card {
+      width: 100%;
+      text-align: center;
+      padding: clamp(35px, 8vw, 85px) clamp(20px, 7vw, 75px);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 28px;
+      background: rgba(255,255,255,.035);
+      box-shadow: 0 30px 100px rgba(0,0,0,.45);
+      backdrop-filter: blur(12px);
+      animation: rise 1.2s ease both;
+    }
+    @keyframes rise { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:none; } }
+
+    .eyebrow {
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      font: 600 11px/1.5 Arial, sans-serif;
+      color: #c8b6d5;
+      margin-bottom: 25px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(48px, 10vw, 105px);
+      line-height: .9;
+      font-weight: 400;
+      letter-spacing: -.045em;
+    }
+    .subtitle {
+      max-width: 600px;
+      margin: 30px auto 0;
+      color: #cfcbd0;
+      font: 400 clamp(16px, 2.2vw, 20px)/1.8 Arial, sans-serif;
+    }
+    .highlight { color: #e8cde9; }
+    .divider {
+      width: 60px; height: 1px;
+      margin: 42px auto;
+      background: rgba(255,255,255,.35);
+    }
+    .count-label {
+      font: 600 10px/1.5 Arial, sans-serif;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: #aaa6ad;
+      margin-bottom: 16px;
+    }
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      max-width: 610px;
+      margin: auto;
+    }
+    .unit {
+      padding: 20px 8px;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 16px;
+      background: rgba(0,0,0,.14);
+    }
+    .number {
+      font: 400 clamp(27px, 5vw, 48px)/1 Arial, sans-serif;
+      font-variant-numeric: tabular-nums;
+    }
+    .unit-name {
+      margin-top: 9px;
+      color: #8f8b93;
+      font: 10px/1 Arial, sans-serif;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .mystery {
+      max-width: 590px;
+      margin: 48px auto 0;
+      padding: 27px;
+      border: 1px solid rgba(232,205,233,.16);
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(232,205,233,.06), rgba(255,255,255,.02));
+    }
+    .mystery strong { display:block; font-size: 20px; font-weight:400; margin-bottom:10px; }
+    .mystery p { margin:0; color:#aaa7ad; font: 14px/1.7 Arial,sans-serif; }
+    .day {
+      margin-top: 38px;
+      color: #817d84;
+      font: 10px/1.5 Arial,sans-serif;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+    }
+    .day span { color:#d7c1dc; }
+    footer {
+      position: fixed;
+      bottom: 18px;
+      left: 0; right: 0;
+      text-align:center;
+      z-index:2;
+      color:rgba(255,255,255,.28);
+      font:10px Arial,sans-serif;
+      letter-spacing:.08em;
+      pointer-events:none;
+    }
+    @media (max-width: 560px) {
+      .countdown { grid-template-columns: repeat(2, 1fr); }
+      .card { border-radius:22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <main>
+    <section class="card">
+      <div class="eyebrow">September 01 · Day 01</div>
+      <h1>Heyyy,<br><span class="highlight">Jeryy !!</span></h1>
+
+      <p class="subtitle">
+        September is Not Just Another Month.<br>
+        <span class="highlight">It's Your Birth Month,</span>That Officialy Starts Now. 
+      </p>
+
+      <div class="divider"></div>
+
+      <div class="count-label">Something Special is Waiting...</div>
+
+      <div class="countdown" aria-label="Countdown to September 28 at 11:24:25 PM">
+        <div class="unit"><div class="number" id="days">00</div><div class="unit-name">Days</div></div>
+        <div class="unit"><div class="number" id="hours">00</div><div class="unit-name">Hours</div></div>
+        <div class="unit"><div class="number" id="minutes">00</div><div class="unit-name">Minutes</div></div>
+        <div class="unit"><div class="number" id="seconds">00</div><div class="unit-name">Seconds</div></div>
+      </div>
+
+      <div class="mystery">
+        <strong>27 days. 27 Little Moments.</strong>
+        <p>
+          Lots of Surprises. Lots of Happy Memories.
+          And One Very Special Day. ❤️
+        </p>
+      </div>
+
+      <div class="day">Another Surprise Coming Soon.. Will Be Updated<span>👀</span></div>
+    </section>
+  </main>
+
+  <script>
+    // Countdown ends at 11:59:59 PM on September 27, 2026.
+    // The browser uses the visitor's local timezone.
+    const target = new Date(2026, 8, 28, 23, 24, 59);
+
+    function pad(n) { return String(Math.max(0, n)).padStart(2, "0"); }
+
+    function updateCountdown() {
+      const now = new Date();
+      let diff = target - now;
+
+      if (diff <= 0) {
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+        return;
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      document.getElementById("days").textContent = pad(days);
+      document.getElementById("hours").textContent = pad(hours);
+      document.getElementById("minutes").textContent = pad(minutes);
+      document.getElementById("seconds").textContent = pad(seconds);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
