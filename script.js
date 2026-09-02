@@ -29,7 +29,7 @@ const memories = [
     tag: "THE BEGINNING",
     title: "28 days. 28 little moments.",
     text: "This is only the beginning. Every day, one small piece of a bigger story will be waiting here. Come back tomorrow… there is more. ❤️",
-    image: "assets/day02.png",
+    image: "",
     quote: "Some stories are made of big moments. Ours is made of little ones."
   },
   {
