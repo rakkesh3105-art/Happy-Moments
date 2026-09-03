@@ -44,11 +44,11 @@ const memories = [
   {
     day: 3,
     date: "SEPTEMBER 03",
-    tag: "THAT SMILE",
-    title: "That smile.",
-    text: "There are some pictures where the photo itself is not the special part. It is the feeling behind it. This is one of those.",
+    tag: "THAT MOMENT",
+    title: "That Moment.",
+    text: "There are Some Pictures Where the Person Itself Is Not The Special Part. But Accessories Play a Major Role :) ",
     image: "assets/day03.jpg",
-    quote: "Some smiles quietly make an entire moment better."
+    quote: "Some Surprises Makes More Memories and Create Moments"
   },
   {
     day: 4,
