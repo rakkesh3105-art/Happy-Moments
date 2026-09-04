@@ -14,7 +14,7 @@
          day03.jpg
          ...
 */
-
+const TEST_MODE = true;
 const BIRTHDAY_YEAR = 2026;
 const BIRTHDAY_MONTH = 8; // September
 const BIRTHDAY_DAY = 28;
@@ -26,6 +26,7 @@ const memories = [
   {
     day: 1,
     date: "SEPTEMBER 01",
+	type: "photo",
     tag: "THE BEGINNING",
     title: "28 days. 28 little moments.",
     text: "This is only the beginning. Every day, one small piece of a bigger story will be waiting here. Come back tomorrow… there is more. ❤️",
@@ -36,6 +37,7 @@ const memories = [
     day: 2,
     date: "SEPTEMBER 02",
     tag: "A LITTLE MEMORY",
+	type: "photo",
     title: "Okay... You Came Back. 👀",
     text: "I Wanted The First Real Surprise To Be Simple. Just One Moment, One Picture, and One Memory That Deserves To Stay.",
     image: "assets/day02.png",
@@ -45,29 +47,31 @@ const memories = [
     day: 3,
     date: "SEPTEMBER 03",
     tag: "THAT MOMENT",
+	type: "photo",
     title: "That Moment.",
     text: "There are Some Pictures Where the Person Itself Is Not The Special Part. But Accessories Play a Major Role :) ",
     image: "assets/day03.jpg",
     quote: "Some Surprises Makes More Memories and Create Moments"
   },
   {
-    day: 4,
-    date: "SEPTEMBER 04",
-    tag: "THE FUNNY ONE",
-    title: "We really did that. 😂",
-    text: "A completely unserious memory that somehow became one of the moments I still remember and laugh about.",
-    image: "assets/day04.jpg",
-    quote: "The best memories usually start with 'this is probably a bad idea.'"
-  },
+	  day: 4,
+	  date: "SEPTEMBER 04",
+	  type: "puzzle",
+	  tag: "A LITTLE CHALLENGE",
+	  title: "Can You Remember This?",
+	  text: "Before Today's Memory Reveals Itself, There's a Tiny Challenge Waiting For You.",
+	  image: "assets/day04.jpg",
+	  quote: "The Moment Which Created This Entire Long Journey !!"
+	},
   {
-    day: 5,
-    date: "SEPTEMBER 05",
-    tag: "THROWBACK",
-    title: "Look how far we've come.",
-    text: "A little throwback today. Different time, different version of us, but somehow the same familiar feeling.",
-    image: "assets/day05.jpg",
-    quote: "Time changes pictures. It does not always change the feeling."
-  },
+	  day: 5,
+	  date: "SEPTEMBER 05",
+	  type: "letter",
+	  tag: "A LITTLE LETTER",
+	  title: "Something I Used To Tell You",
+	  text: "Not Everything Needs a Photo.",
+	  quote: "Stay Happy Forever !!"
+	},
   {
     day: 6,
     date: "SEPTEMBER 06",
@@ -301,6 +305,12 @@ function getBirthdayDate() {
 
 function getUnlockedDay(date = new Date()) {
 
+  // 🧪 TEST MODE
+  // Simulate September 4 at 11:25 PM
+  if (TEST_MODE) {
+    return 5;
+  }
+
   // Day 1 is available from September 1
   const start = new Date(
     BIRTHDAY_YEAR,
@@ -318,7 +328,6 @@ function getUnlockedDay(date = new Date()) {
 
   let unlockedDay = 1;
 
-  // Check every day from Day 2 to Day 28
   for (let day = 2; day <= 28; day++) {
 
     const unlockTime = getUnlockDate(day);
@@ -332,7 +341,6 @@ function getUnlockedDay(date = new Date()) {
 
   return unlockedDay;
 }
-
 function pad(n) {
   return String(n).padStart(2, "0");
 }
@@ -341,6 +349,7 @@ function renderDay(day) {
   const item = memories[day - 1];
   if (!item) return;
 
+  const type = item.type || "photo";
   $("dateLabel").textContent = `${item.date} · DAY ${pad(item.day)}`;
   $("memoryDay").textContent = `DAY ${pad(item.day)}`;
   $("memoryTag").textContent = item.tag;
@@ -351,25 +360,168 @@ function renderDay(day) {
   $("progressBar").style.width = `${(item.day / 28) * 100}%`;
 
   const image = $("memoryImage");
-  const placeholder = $("imagePlaceholder");
+	const placeholder = $("imagePlaceholder");
+	const imageWrap = $("imageWrap");
 
-  if (item.image) {
-    image.src = item.image;
-    image.alt = item.title;
-    image.onload = () => {
-      image.style.display = "block";
-      placeholder.style.display = "none";
-    };
-    image.onerror = () => {
-      image.style.display = "none";
-      placeholder.style.display = "flex";
-    };
-  } else {
-    image.style.display = "none";
-    image.removeAttribute("src");
-    placeholder.style.display = "flex";
-  }
+	const existingExperience = document.querySelector(
+	  "#letterExperience, #puzzleExperience"
+	);
 
+	if (existingExperience) {
+	  existingExperience.remove();
+	}
+
+	if (type === "photo") {
+	  imageWrap.style.display = "block";
+
+	  if (item.image) {
+		image.src = item.image;
+		image.alt = item.title;
+
+		image.onload = () => {
+		  image.style.display = "block";
+		  placeholder.style.display = "none";
+		};
+
+		image.onerror = () => {
+		  image.style.display = "none";
+		  placeholder.style.display = "flex";
+		};
+	  } else {
+		image.style.display = "none";
+		image.removeAttribute("src");
+		placeholder.style.display = "flex";
+	  }
+
+	}
+		else if (type === "puzzle") {
+
+		  image.style.display = "none";
+		  placeholder.style.display = "none";
+		  imageWrap.style.display = "none";
+
+		  const puzzle = document.createElement("div");
+		  puzzle.id = "puzzleExperience";
+		  puzzle.className = "puzzle-experience";
+
+		  puzzle.innerHTML = `
+			<div class="puzzle-image-wrap">
+			  <img
+				src="${item.image}"
+				alt="Hidden memory"
+				class="puzzle-image"
+				id="puzzleImage"
+			  />
+			  <div class="puzzle-overlay">
+				<span>?</span>
+			  </div>
+			</div>
+
+			<p class="puzzle-question">
+			  What Do You Think This Snap is About?
+			</p>
+
+			<div class="puzzle-options">
+			  <button type="button" data-answer="wrong">
+				A Random Moment
+			  </button>
+
+			  <button type="button" data-answer="correct">
+				Initial Point of This Journey
+			  </button>
+
+			  <button type="button" data-answer="wrong">
+				Just a funny photo
+			  </button>
+
+			</div>
+
+			<div class="puzzle-result hidden" id="puzzleResult">
+			  <div class="puzzle-success">✓</div>
+
+			  <h4>You remembered :)</h4>
+
+			  <img
+				src="${item.image}"
+				alt="${item.title}"
+				class="puzzle-reveal-image"
+			  />
+
+			</div>
+		  `;
+
+		  $("memoryCard").appendChild(puzzle);
+
+		  puzzle.querySelectorAll("[data-answer]").forEach(button => {
+
+			button.addEventListener("click", () => {
+
+			  const correct = button.dataset.answer === "correct";
+
+			  if (correct) {
+
+				puzzle.querySelectorAll("[data-answer]")
+				  .forEach(btn => btn.disabled = true);
+
+				$("puzzleResult").classList.remove("hidden");
+
+				$("puzzleImage").classList.add("revealed");
+
+			  } else {
+
+				button.classList.add("wrong");
+
+				setTimeout(() => {
+				  button.classList.remove("wrong");
+				}, 500);
+
+			  }
+
+			});
+
+		  });
+
+		}
+	else if (type === "letter") {
+	  image.style.display = "none";
+	  placeholder.style.display = "none";
+	  imageWrap.style.display = "none";
+
+	  const letter = document.createElement("div");
+	  letter.id = "letterExperience";
+	  letter.className = "letter-experience";
+
+	  letter.innerHTML = `
+		<div class="letter-envelope">
+		  <div class="letter-symbol">✉</div>
+		  <p class="letter-small">A LITTLE SOMETHING FOR YOU</p>
+		  <h3>Open This When You're Ready.</h3>
+		  <button type="button" id="openLetterBtn">
+			Open Letter
+		  </button>
+		</div>
+
+		<div class="letter-content hidden" id="letterContent">
+		  <p>
+			Just Wanna Say Thannkkk Youuu For Being With Me
+			For All These Days, To My Friend In The Opposite Side..
+			Also Don't Change Yourself For Anyone..
+			Epovum Sirichitae Iru Haseeenaaaa !!
+		  </p>
+
+		  <p class="letter-end">
+			— ❤️
+		  </p>
+		</div>
+	  `;
+
+	  $("memoryCard").appendChild(letter);
+
+	  $("openLetterBtn").addEventListener("click", () => {
+		$("letterContent").classList.remove("hidden");
+		$("openLetterBtn").classList.add("hidden");
+	  });
+	}
   $("prevBtn").disabled = item.day <= 1;
   $("nextBtn").disabled = item.day >= getUnlockedDay();
 
