@@ -14,7 +14,7 @@
          day03.jpg
          ...
 */
-const TEST_MODE = false;
+const TEST_MODE = true;
 const BIRTHDAY_YEAR = 2026;
 const BIRTHDAY_MONTH = 8; // September
 const BIRTHDAY_DAY = 28;
@@ -73,32 +73,137 @@ const memories = [
 	  quote: "Stay Happy Forever !!"
 	},
   {
-    day: 6,
-    date: "SEPTEMBER 06",
-    tag: "A RANDOM MOMENT",
-    title: "It was just a normal day.",
-    text: "Nothing dramatic. Nothing planned. Just one of those ordinary moments that became memorable because you were there.",
-    image: "assets/day06.jpg",
-    quote: "Ordinary days become special when the right person is part of them."
-  },
+	  day: 6,
+	  date: "SEPTEMBER 06",
+	  type: "jigsaw",
+	  tag: "Put The Pieces Together",
+	  title: "Can You Put This Memory Back Together?",
+	  text: "Today's Memory isn't Going to Reveal Itself That Easily.. A Few Pieces are Missing from the Picture.. Maybe You Can Put Them Back..",
+	  image: "assets/day06.jpg",
+	  quote: "Some Memories Are Worth Putting Back Together."
+	},
   {
-    day: 7,
-    date: "SEPTEMBER 07",
-    tag: "ONE WEEK",
-    title: "7 little moments.",
-    text: "One week already. So here is a tiny reminder that the first seven days were only the opening chapter.",
-    image: "assets/day07.jpg",
-    quote: "Seven days down. A lot more memories to uncover."
-  },
+	  day: 7,
+	  date: "SEPTEMBER 07",
+	  type: "chat",
+	  tag: "A Little Chat Replay",
+	  title: "Remember This One?",
+	  text: "No Context.. Just Us..",
+	  quote: "Some Conversations Are Completely Random. Somehow, Those Are The Ones We Remember.",
+	  chat: [
+		{
+		  sender: "jeryy",
+		  name: "Jerry",
+		  text: "Rakkkkessshhhh"
+		},
+		{
+		  sender: "me",
+		  name: "Tom",
+		  text: "Hasseenaaaa.."
+		},
+		{
+		  sender: "jeryy",
+		  name: "Jerry",
+		  text: "Ena Panringa"
+		},
+		{
+		  sender: "me",
+		  name: "Tom",
+		  text: "Vettiya Irukkaen.. Nee Enna Panrae ??"
+		},
+		{
+		  sender: "jeryy",
+		  name: "Jerry",
+		  text: "Nalla Saaptitu Thoongi Enchaenga Ipothan"
+		},
+		{
+		  sender: "me",
+		  name: "Tom",
+		  text: "Cher Cher.. En Mela Kovam aa Irukkiya Haseeenaaa ??"
+		},
+		{
+		  sender: "jeryy",
+		  name: "Jerry",
+		  text: "Kovam ila kolaveri la irkennga"
+		},
+		{
+		  sender: "me",
+		  name: "Tom",
+		  text: "Aiyo Sorryyyyy Haseeeenaaaa.. Naa Ethuvum venumnu Pannala Daa..."
+		},
+		{
+		  sender: "jeryy",
+		  name: "Jerry",
+		  text: "Onum Theva Illa Pesama Poirunga Rakkkesshhh"
+		},
+		{
+		  sender: "me",
+		  name: "Tom",
+		  text: "Meendum Muthal Iruntho.. Naan Theriyama Panna Thavaruku Mannipu Illaya Haseena ??"
+		},
+		{
+		  sender: "jeryy",
+		  name: "Jerry",
+		  text: "Ungaluku Neram Seri Illa nu Ninaikuraen Rakkkesshhh"
+		},
+		{
+		  sender: "me",
+		  name: "Tom",
+		  text: "Intha Oru Vaati mattum Manichiru daa.. Inimael Ipudi panna maataen.."
+		},
+		{
+		  sender: "jeryy",
+		  name: "Jerry",
+		  text: "Ahn"
+		},
+		{
+		  sender: "me",
+		  name: "Tom",
+		  text: "Kal Nenja Kaari.. Ivlo Kenjuran la oru vaati forgive pannalam la ??"
+		},
+		{
+		  sender: "jeryy",
+		  name: "Jerry",
+		  text: "Seri Yosikuraen"
+		},
+		{
+		  sender: "me",
+		  name: "Tom",
+		  text: "Hehe.."
+		},
+		{
+		  sender: "jeryy",
+		  name: "Jerry",
+		  text: "Yosikuraen thaan sonan seri nu solala"
+		},
+		{
+		  sender: "me",
+		  name: "Tom",
+		  text: "Nee Porumaiya Yosichu naaliku solu daa.."
+		},
+		{
+		  sender: "jeryy",
+		  name: "Jerry",
+		  text: "Ahn Good Night Naa thoongura apo"
+		},
+		{
+		  sender: "me",
+		  name: "Tom",
+		  text: "Okkayss.. Gud Ni8.."
+		}
+	  ]
+	},
   {
-    day: 8,
-    date: "SEPTEMBER 08",
-    tag: "FAVOURITE PHOTO",
-    title: "One of my favourites.",
-    text: "I have a lot of photos to choose from, but this one always finds its way back to the top.",
-    image: "assets/day08.jpg",
-    quote: "Some photos just feel like home."
-  },
+	  day: 8,
+	  date: "SEPTEMBER 08",
+	  type: "pin",
+	  tag: "A Little Secret",
+	  title: "Four Little Numbers",
+	  text: "See What Is Waiting For You ??",
+	  image: "assets/day08.png",
+	  quote: "Some Surprises Are Worth Unlocking..",
+	  pin: "1125"
+	},
   {
     day: 9,
     date: "SEPTEMBER 09",
@@ -308,7 +413,7 @@ function getUnlockedDay(date = new Date()) {
   // 🧪 TEST MODE
   // Simulate September 4 at 11:25 PM
   if (TEST_MODE) {
-    return 5;
+    return 8;
   }
 
   // Day 1 is available from September 1
@@ -362,10 +467,12 @@ function renderDay(day) {
   const image = $("memoryImage");
 	const placeholder = $("imagePlaceholder");
 	const imageWrap = $("imageWrap");
+		// Reset normal memory image area
+	image.style.display = "none";
+	placeholder.style.display = "none";
+	imageWrap.style.display = "none";
 
-	const existingExperience = document.querySelector(
-	  "#letterExperience, #puzzleExperience"
-	);
+	const existingExperience = document.querySelector(".memory-experience");
 
 	if (existingExperience) {
 	  existingExperience.remove();
@@ -402,7 +509,7 @@ function renderDay(day) {
 
 		  const puzzle = document.createElement("div");
 		  puzzle.id = "puzzleExperience";
-		  puzzle.className = "puzzle-experience";
+		  puzzle.className = "memory-experience puzzle-experience";
 
 		  puzzle.innerHTML = `
 			<div class="puzzle-image-wrap">
@@ -482,6 +589,501 @@ function renderDay(day) {
 		  });
 
 		}
+		
+		else if (type === "jigsaw") {
+
+		  image.style.display = "none";
+		  placeholder.style.display = "none";
+		  imageWrap.style.display = "none";
+
+		  const jigsaw = document.createElement("div");
+
+		  jigsaw.id = "jigsawExperience";
+		  jigsaw.className = "memory-experience jigsaw-experience";
+
+		  jigsaw.innerHTML = `
+			<div class="jigsaw-header">
+
+			  <span class="jigsaw-label">
+				A LITTLE CHALLENGE
+			  </span>
+
+			  <h3>
+				Put The Memory Back Together
+			  </h3>
+
+			  <p>
+				Drag the pieces around and see if you can rebuild the picture.
+			  </p>
+
+			</div>
+
+			<div
+			  class="jigsaw-board"
+			  id="jigsawBoard"
+			  aria-label="Jigsaw puzzle"
+			></div>
+
+			<div class="jigsaw-status">
+
+			  <span id="jigsawMoves">
+				MOVES: 0
+			  </span>
+
+			  <span id="jigsawMessage">
+				Start anywhere :)
+			  </span>
+
+			</div>
+
+			<div
+			  class="jigsaw-complete hidden"
+			  id="jigsawComplete"
+			>
+
+			  <div class="jigsaw-success">
+				✓
+			  </div>
+
+			  <h3>
+				You Put It Back Together !!
+			  </h3>
+
+			  <img
+				src="${item.image}"
+				alt="${item.title}"
+				class="jigsaw-final-image"
+			  />
+
+			</div>
+		  `;
+
+		  $("memoryCard").appendChild(jigsaw);
+
+		  const board = $("jigsawBoard");
+		  const movesText = $("jigsawMoves");
+		  const message = $("jigsawMessage");
+
+		  const GRID_SIZE = 3;
+		  const TOTAL_PIECES = GRID_SIZE * GRID_SIZE;
+
+		  let pieces = Array.from(
+			{ length: TOTAL_PIECES },
+			(_, index) => index
+		  );
+
+		  let moves = 0;
+		  let draggedPiece = null;
+
+
+		  /* =========================================
+			 SHUFFLE
+		  ========================================= */
+
+		  function shufflePieces() {
+
+			do {
+
+			  for (
+				let i = pieces.length - 1;
+				i > 0;
+				i--
+			  ) {
+
+				const randomIndex =
+				  Math.floor(Math.random() * (i + 1));
+
+				[
+				  pieces[i],
+				  pieces[randomIndex]
+				] = [
+				  pieces[randomIndex],
+				  pieces[i]
+				];
+
+			  }
+
+			} while (
+			  pieces.every(
+				(piece, index) => piece === index
+			  )
+			);
+		  }
+
+
+		  /* =========================================
+			 CREATE PIECE
+		  ========================================= */
+
+		  function createPiece(piece, position) {
+
+			const tile = document.createElement("div");
+
+			tile.className = "jigsaw-piece";
+
+			tile.dataset.position = position;
+			tile.dataset.piece = piece;
+
+			const row =
+			  Math.floor(piece / GRID_SIZE);
+
+			const column =
+			  piece % GRID_SIZE;
+
+
+			/*
+			  Each tile uses the same image,
+			  but displays a different section.
+			*/
+
+			tile.style.backgroundImage =
+			  `url("${item.image}")`;
+
+			tile.style.backgroundPosition =
+			  `${column * 50}% ${row * 50}%`;
+
+
+			/*
+			  Last piece becomes the empty slot.
+			*/
+
+			if (piece === TOTAL_PIECES - 1) {
+
+			  tile.classList.add(
+				"jigsaw-blank"
+			  );
+
+			}
+
+
+			/* =========================================
+			   DESKTOP DRAG
+			========================================= */
+
+			tile.draggable =
+			  piece !== TOTAL_PIECES - 1;
+
+
+			tile.addEventListener(
+			  "dragstart",
+			  (event) => {
+
+				if (
+				  piece === TOTAL_PIECES - 1
+				) {
+				  event.preventDefault();
+				  return;
+				}
+
+				draggedPiece = tile;
+
+				tile.classList.add(
+				  "dragging"
+				);
+
+				event.dataTransfer.effectAllowed =
+				  "move";
+
+				event.dataTransfer.setData(
+				  "text/plain",
+				  position
+				);
+
+			  }
+			);
+
+
+			tile.addEventListener(
+			  "dragend",
+			  () => {
+
+				tile.classList.remove(
+				  "dragging"
+				);
+
+				draggedPiece = null;
+
+				document
+				  .querySelectorAll(
+					".jigsaw-piece"
+				  )
+				  .forEach(piece => {
+
+					piece.classList.remove(
+					  "drag-over"
+					);
+
+				  });
+
+			  }
+			);
+
+
+			tile.addEventListener(
+			  "dragover",
+			  (event) => {
+
+				event.preventDefault();
+
+				if (
+				  !draggedPiece ||
+				  draggedPiece === tile
+				) {
+				  return;
+				}
+
+				tile.classList.add(
+				  "drag-over"
+				);
+
+			  }
+			);
+
+
+			tile.addEventListener(
+			  "dragleave",
+			  () => {
+
+				tile.classList.remove(
+				  "drag-over"
+				);
+
+			  }
+			);
+
+
+			tile.addEventListener(
+			  "drop",
+			  (event) => {
+
+				event.preventDefault();
+
+				tile.classList.remove(
+				  "drag-over"
+				);
+
+				if (
+				  !draggedPiece ||
+				  draggedPiece === tile
+				) {
+				  return;
+				}
+
+				const fromPosition =
+				  Number(
+					draggedPiece.dataset.position
+				  );
+
+				const toPosition =
+				  Number(
+					tile.dataset.position
+				  );
+
+				swapPieces(
+				  fromPosition,
+				  toPosition
+				);
+
+			  }
+			);
+
+
+			/* =========================================
+			   MOBILE TAP
+			========================================= */
+
+			tile.addEventListener(
+			  "click",
+			  () => {
+
+				handleTap(tile);
+
+			  }
+			);
+
+
+			return tile;
+		  }
+
+
+		  /* =========================================
+			 TAP-TO-SWAP
+		  ========================================= */
+
+		  let selectedPiece = null;
+
+		  function handleTap(tile) {
+
+			if (
+			  tile.classList.contains(
+				"jigsaw-blank"
+			  )
+			) {
+			  return;
+			}
+
+
+			if (!selectedPiece) {
+
+			  selectedPiece = tile;
+
+			  tile.classList.add(
+				"selected"
+			  );
+
+			  message.textContent =
+				"Now choose where to move it 👀";
+
+			  return;
+			}
+
+
+			if (selectedPiece === tile) {
+
+			  selectedPiece.classList.remove(
+				"selected"
+			  );
+
+			  selectedPiece = null;
+
+			  message.textContent =
+				"Choose another piece.";
+
+			  return;
+			}
+
+
+			const fromPosition =
+			  Number(
+				selectedPiece.dataset.position
+			  );
+
+			const toPosition =
+			  Number(
+				tile.dataset.position
+			  );
+
+
+			selectedPiece.classList.remove(
+			  "selected"
+			);
+
+			selectedPiece = null;
+
+			swapPieces(
+			  fromPosition,
+			  toPosition
+			);
+
+		  }
+
+
+		  /* =========================================
+			 SWAP PIECES
+		  ========================================= */
+
+		  function swapPieces(
+			fromPosition,
+			toPosition
+		  ) {
+
+			[
+			  pieces[fromPosition],
+			  pieces[toPosition]
+			] = [
+			  pieces[toPosition],
+			  pieces[fromPosition]
+			];
+
+			moves++;
+
+			movesText.textContent =
+			  `MOVES: ${moves}`;
+
+			message.textContent =
+			  "Keep going... you're getting there.";
+
+			renderBoard();
+
+			checkPuzzle();
+
+		  }
+
+
+		  /* =========================================
+			 RENDER BOARD
+		  ========================================= */
+
+		  function renderBoard() {
+
+			board.innerHTML = "";
+
+			pieces.forEach(
+			  (piece, position) => {
+
+				const tile =
+				  createPiece(
+					piece,
+					position
+				  );
+
+				board.appendChild(
+				  tile
+				);
+
+			  }
+			);
+
+		  }
+
+
+		  /* =========================================
+			 CHECK COMPLETION
+		  ========================================= */
+
+		  function checkPuzzle() {
+
+			const solved =
+			  pieces.every(
+				(piece, index) =>
+				  piece === index
+			  );
+
+
+			if (!solved) {
+			  return;
+			}
+
+
+			board.classList.add(
+			  "solved"
+			);
+
+			message.textContent =
+			  "You found the memory :)";
+
+
+			setTimeout(() => {
+
+			  $("jigsawComplete")
+				.classList
+				.remove("hidden");
+
+			}, 500);
+
+		  }
+
+
+		  /* =========================================
+			 START PUZZLE
+		  ========================================= */
+
+		  shufflePieces();
+
+		  renderBoard();
+
+		}
+
 	else if (type === "letter") {
 	  image.style.display = "none";
 	  placeholder.style.display = "none";
@@ -489,7 +1091,7 @@ function renderDay(day) {
 
 	  const letter = document.createElement("div");
 	  letter.id = "letterExperience";
-	  letter.className = "letter-experience";
+	  letter.className = "memory-experience letter-experience";
 
 	  letter.innerHTML = `
 		<div class="letter-envelope">
@@ -522,6 +1124,256 @@ function renderDay(day) {
 		$("openLetterBtn").classList.add("hidden");
 	  });
 	}
+	
+	else if (type === "chat") {
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
+
+  const chat = document.createElement("div");
+
+  chat.id = "chatExperience";
+  chat.className = "memory-experience chat-experience";
+
+  chat.innerHTML = `
+    <div class="chat-header">
+      <span class="chat-label">A LITTLE CHAT REPLAY</span>
+    </div>
+
+    <div class="chat-window" id="chatWindow"></div>
+
+    <div class="chat-controls">
+      <span id="chatStatus">A LITTLE MEMORY</span>
+
+      <button type="button" id="replayChatBtn">
+        ↻ Replay
+      </button>
+    </div>
+
+    <div class="chat-ending hidden" id="chatEnding">
+      And Somehow, This Conversation Became a Memory !!
+    </div>
+  `;
+
+  $("memoryCard").appendChild(chat);
+
+  const chatWindow = $("chatWindow");
+  const chatStatus = $("chatStatus");
+  const replayChatBtn = $("replayChatBtn");
+  const chatEnding = $("chatEnding");
+
+  let chatTimers = [];
+
+  function clearChatTimers() {
+    chatTimers.forEach(timer => clearTimeout(timer));
+    chatTimers = [];
+  }
+
+  function playChat() {
+    clearChatTimers();
+
+    chatWindow.innerHTML = "";
+    chatEnding.classList.add("hidden");
+
+    replayChatBtn.disabled = true;
+    chatStatus.textContent = "REPLAYING...";
+
+    item.chat.forEach((message, index) => {
+      const timer = setTimeout(() => {
+        const bubble = document.createElement("div");
+
+        bubble.className =
+          `chat-message ${message.sender === "me" ? "chat-me" : "chat-jeryy"}`;
+
+        bubble.innerHTML = `
+          <div class="chat-name">
+            ${message.name}
+          </div>
+
+          <div class="chat-bubble">
+            ${message.text}
+          </div>
+        `;
+
+        chatWindow.appendChild(bubble);
+
+        requestAnimationFrame(() => {
+          bubble.classList.add("show");
+        });
+
+        chatWindow.scrollTo({
+          top: chatWindow.scrollHeight,
+          behavior: "smooth"
+        });
+
+        if (index === item.chat.length - 1) {
+          const endingTimer = setTimeout(() => {
+            chatEnding.classList.remove("hidden");
+
+            replayChatBtn.disabled = false;
+            chatStatus.textContent = "END OF REPLAY";
+
+            chatEnding.classList.add("chat-ending-show");
+          }, 900);
+
+          chatTimers.push(endingTimer);
+        }
+      }, index * 950);
+
+      chatTimers.push(timer);
+    });
+  }
+
+  replayChatBtn.addEventListener("click", playChat);
+
+  playChat();
+}
+
+else if (item.type === "pin") {
+  const experience = document.createElement("div");
+  experience.className = "memory-experience pin-experience";
+
+  experience.innerHTML = `
+    <div class="pin-screen" id="pinScreen">
+
+      <p class="pin-description">
+        Enter The PIN To Unlock Today's Memory.
+      </p>
+
+      <div class="pin-dots" id="pinDots">
+        <span>•</span>
+        <span>•</span>
+        <span>•</span>
+        <span>•</span>
+      </div>
+
+      <div class="pin-keypad" id="pinKeypad">
+        <button type="button" data-digit="1">1</button>
+        <button type="button" data-digit="2">2</button>
+        <button type="button" data-digit="3">3</button>
+
+        <button type="button" data-digit="4">4</button>
+        <button type="button" data-digit="5">5</button>
+        <button type="button" data-digit="6">6</button>
+
+        <button type="button" data-digit="7">7</button>
+        <button type="button" data-digit="8">8</button>
+        <button type="button" data-digit="9">9</button>
+
+        <button type="button" class="pin-clear" id="pinClear">
+          Clear
+        </button>
+
+        <button type="button" data-digit="0">0</button>
+
+        <button type="button" class="pin-backspace" id="pinBackspace">
+          ←
+        </button>
+      </div>
+
+      <p class="pin-message" id="pinMessage"></p>
+    </div>
+
+    <div class="pin-reveal" id="pinReveal">
+      <div class="pin-popup">
+        <button type="button" class="pin-close" id="pinClose">
+          ×
+        </button>
+
+        <div class="pin-photo-wrap">
+          <img
+            src="${item.image}"
+            alt="Day ${item.day} memory"
+            class="pin-photo"
+          />
+        </div>
+
+        <p class="pin-countdown">
+          20 Days To Go !!
+        </p>
+      </div>
+    </div>
+  `;
+
+  memoryCard.appendChild(experience);
+
+  const pinScreen = experience.querySelector("#pinScreen");
+  const pinDots = experience.querySelector("#pinDots");
+  const pinKeypad = experience.querySelector("#pinKeypad");
+  const pinMessage = experience.querySelector("#pinMessage");
+  const pinReveal = experience.querySelector("#pinReveal");
+  const pinClose = experience.querySelector("#pinClose");
+  const pinClear = experience.querySelector("#pinClear");
+  const pinBackspace = experience.querySelector("#pinBackspace");
+
+  let enteredPin = "";
+
+  function updatePinDots() {
+    const dots = pinDots.querySelectorAll("span");
+
+    dots.forEach((dot, index) => {
+      dot.textContent = index < enteredPin.length ? "●" : "•";
+    });
+  }
+
+  function clearPin() {
+    enteredPin = "";
+    updatePinDots();
+    pinMessage.textContent = "";
+    pinScreen.classList.remove("pin-error");
+  }
+
+  function checkPin() {
+    if (enteredPin === item.pin) {
+      pinMessage.textContent = "Unlocked ❤️";
+
+      pinScreen.classList.add("pin-success");
+
+      setTimeout(() => {
+        pinReveal.classList.add("show");
+      }, 350);
+
+      return;
+    }
+
+    pinMessage.textContent = "Wrong PIN... Try again 👀";
+
+    pinScreen.classList.remove("pin-error");
+
+    void pinScreen.offsetWidth;
+
+    pinScreen.classList.add("pin-error");
+
+    setTimeout(() => {
+      clearPin();
+    }, 800);
+  }
+
+  pinKeypad.querySelectorAll("[data-digit]").forEach(button => {
+    button.addEventListener("click", () => {
+      if (enteredPin.length >= 4) return;
+
+      enteredPin += button.dataset.digit;
+      updatePinDots();
+
+      if (enteredPin.length === 4) {
+        setTimeout(checkPin, 180);
+      }
+    });
+  });
+
+  pinClear.addEventListener("click", clearPin);
+
+  pinBackspace.addEventListener("click", () => {
+    enteredPin = enteredPin.slice(0, -1);
+    updatePinDots();
+    pinMessage.textContent = "";
+  });
+
+  pinClose.addEventListener("click", () => {
+    pinReveal.classList.remove("show");
+  });
+}
   $("prevBtn").disabled = item.day <= 1;
   $("nextBtn").disabled = item.day >= getUnlockedDay();
 
