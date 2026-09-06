@@ -746,6 +746,838 @@ body.birthday-mode {
   }
 }
 
+/* =========================================
+   DAY 06 — JIGSAW PUZZLE
+========================================= */
+
+.jigsaw-experience {
+  margin-top: 28px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface-2);
+  text-align: center;
+}
+
+.jigsaw-header {
+  margin-bottom: 24px;
+}
+
+.jigsaw-label {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.jigsaw-header h3 {
+  margin: 0 0 8px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.jigsaw-header p {
+  max-width: 460px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   PUZZLE BOARD
+========================================= */
+
+.jigsaw-board {
+  width: min(100%, 430px);
+  aspect-ratio: 1 / 1;
+
+  margin: 25px auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  gap: 4px;
+
+  padding: 4px;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  background: var(--border);
+
+  touch-action: manipulation;
+}
+
+
+/* =========================================
+   PUZZLE PIECES
+========================================= */
+
+.jigsaw-piece {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 5px;
+
+  background-repeat: no-repeat;
+  background-size: 300% 300%;
+
+  cursor: grab;
+
+  transition:
+    transform 0.18s ease,
+    opacity 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.jigsaw-piece:hover {
+  transform: scale(0.97);
+}
+
+.jigsaw-piece:active {
+  cursor: grabbing;
+}
+
+.jigsaw-piece.dragging {
+  opacity: 0.45;
+  transform: scale(0.94);
+}
+
+.jigsaw-piece.drag-over {
+  transform: scale(0.94);
+  box-shadow:
+    inset 0 0 0 3px var(--accent);
+}
+
+.jigsaw-piece.selected {
+  transform: scale(0.94);
+  box-shadow:
+    inset 0 0 0 3px var(--accent);
+}
+
+
+/* =========================================
+   EMPTY SPACE
+========================================= */
+
+.jigsaw-piece.jigsaw-blank {
+  background-image: none !important;
+
+  background:
+    var(--surface);
+
+  opacity: 0.45;
+
+  cursor: default;
+}
+
+.jigsaw-piece.jigsaw-blank:hover {
+  transform: none;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.jigsaw-status {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 15px;
+
+  max-width: 430px;
+
+  margin: 0 auto;
+
+  font-size: 11px;
+
+  letter-spacing: 0.08em;
+
+  color: var(--muted);
+}
+
+#jigsawMessage {
+  letter-spacing: normal;
+}
+
+
+/* =========================================
+   SOLVED
+========================================= */
+
+.jigsaw-board.solved {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.jigsaw-complete {
+  margin-top: 28px;
+
+  padding-top: 26px;
+
+  border-top: 1px solid var(--border);
+
+  animation:
+    jigsawReveal 0.6s ease;
+}
+
+.jigsaw-success {
+  width: 48px;
+  height: 48px;
+
+  margin: 0 auto 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  color: var(--bg);
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.jigsaw-complete h3 {
+  margin: 0 0 10px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 28px;
+
+  color: var(--text);
+}
+
+.jigsaw-complete p {
+  max-width: 430px;
+
+  margin: 0 auto 20px;
+
+  color: var(--muted);
+
+  line-height: 1.7;
+}
+
+.jigsaw-final-image {
+  display: block;
+
+  width: 100%;
+  max-width: 430px;
+
+  margin: 0 auto;
+
+  border-radius: 14px;
+
+  object-fit: cover;
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes jigsawReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .jigsaw-experience {
+    padding: 22px 14px;
+  }
+
+  .jigsaw-header h3 {
+    font-size: 26px;
+  }
+
+  .jigsaw-header p {
+    font-size: 13px;
+  }
+
+  .jigsaw-board {
+    width: min(100%, 350px);
+
+    gap: 3px;
+
+    padding: 3px;
+
+    border-radius: 12px;
+  }
+
+  .jigsaw-status {
+    flex-direction: column;
+
+    gap: 7px;
+  }
+
+}
+
+/* =========================================================
+   DAY 07 — CHAT REPLAY
+   ========================================================= */
+
+.chat-experience {
+  width: 100%;
+  max-width: 760px;
+  margin: 28px auto 0;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: var(--surface-2);
+  box-sizing: border-box;
+}
+
+.chat-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.chat-label {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+}
+
+.chat-header h3 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.chat-header p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Chat window */
+
+.chat-window {
+  height: 470px;
+  overflow-y: auto;
+  padding: 22px 16px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar */
+
+.chat-window::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chat-window::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 20px;
+}
+
+/* Individual messages */
+
+.chat-message {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.chat-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Jerry */
+
+.chat-jeryy {
+  align-items: flex-start;
+}
+
+.chat-jeryy .chat-bubble {
+  border-radius: 6px 18px 18px 18px;
+  background: #1d1e27;
+  border: 1px solid var(--border);
+}
+
+/* Me */
+
+.chat-me {
+  align-items: flex-end;
+}
+
+.chat-me .chat-bubble {
+  border-radius: 18px 6px 18px 18px;
+  background: rgba(233, 201, 231, 0.12);
+  border: 1px solid rgba(233, 201, 231, 0.20);
+}
+
+/* Name */
+
+.chat-name {
+  margin: 0 8px 5px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Bubble */
+
+.chat-bubble {
+  max-width: 78%;
+  padding: 11px 15px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.55;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+
+/* Controls */
+
+.chat-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+#chatStatus {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+#replayChatBtn {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 9px 15px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+#replayChatBtn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--accent-2);
+  transform: translateY(-1px);
+}
+
+#replayChatBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Ending */
+
+.chat-ending {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  text-align: center;
+  color: var(--soft);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 19px;
+  line-height: 1.45;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.chat-ending-show {
+  animation: chatEndingReveal 0.6s ease forwards;
+}
+
+@keyframes chatEndingReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .chat-experience {
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .chat-header {
+    margin-bottom: 18px;
+  }
+
+  .chat-header h3 {
+    font-size: 28px;
+  }
+
+  .chat-header p {
+    font-size: 13px;
+  }
+
+  .chat-window {
+    height: 430px;
+    padding: 18px 12px;
+    border-radius: 15px;
+  }
+
+  .chat-bubble {
+    max-width: 86%;
+    padding: 10px 13px;
+    font-size: 13px;
+  }
+
+  .chat-name {
+    font-size: 9px;
+  }
+
+  .chat-controls {
+    margin-top: 13px;
+  }
+
+  .chat-ending {
+    font-size: 18px;
+  }
+}
+
+
+/* ================================
+   DAY 08 - PIN EXPERIENCE
+================================ */
+
+.pin-experience {
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+}
+
+.pin-screen {
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 35px 25px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.pin-label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.pin-screen h3 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.pin-description {
+  margin: 10px auto 25px;
+  max-width: 300px;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.65;
+}
+
+.pin-dots {
+  display: flex;
+  justify-content: center;
+  gap: 13px;
+  margin-bottom: 25px;
+}
+
+.pin-dots span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.pin-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.pin-keypad button {
+  height: 55px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  color: inherit;
+  font-size: 17px;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.pin-keypad button:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.pin-keypad button:active {
+  transform: scale(0.95);
+}
+
+.pin-keypad .pin-clear,
+.pin-keypad .pin-backspace {
+  font-size: 13px;
+  opacity: 0.65;
+}
+
+.pin-message {
+  min-height: 22px;
+  margin: 18px 0 0;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.pin-error {
+  animation: pinShake 0.35s ease;
+}
+
+.pin-success {
+  animation: pinSuccess 0.4s ease;
+}
+
+@keyframes pinShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-7px);
+  }
+
+  50% {
+    transform: translateX(7px);
+  }
+
+  75% {
+    transform: translateX(-4px);
+  }
+}
+
+@keyframes pinSuccess {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.02);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* ================================
+   DAY 08 - PHOTO POPUP
+================================ */
+
+.pin-reveal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(10px);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+}
+
+.pin-reveal.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.pin-popup {
+  position: relative;
+  width: min(90vw, 520px);
+  padding: 18px;
+
+  border-radius: 22px;
+
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  transform: scale(0.88) translateY(15px);
+
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.pin-reveal.show .pin-popup {
+  transform: scale(1) translateY(0);
+}
+
+.pin-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 34px;
+  height: 34px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+
+  font-size: 24px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  z-index: 2;
+}
+
+.pin-photo-wrap {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.pin-photo {
+  display: block;
+  width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+}
+
+.pin-countdown {
+  margin: 18px 0 5px;
+
+  text-align: center;
+
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .pin-screen {
+    padding: 28px 18px;
+  }
+
+  .pin-screen h3 {
+    font-size: 22px;
+  }
+
+  .pin-keypad {
+    max-width: 250px;
+  }
+
+  .pin-keypad button {
+    height: 50px;
+  }
+
+  .pin-countdown {
+    font-size: 20px;
+  }
+
+  .pin-popup {
+    padding: 12px;
+  }
+}
+
 @media (min-width: 681px) {
   .page-shell {
     margin-top: 30px;
