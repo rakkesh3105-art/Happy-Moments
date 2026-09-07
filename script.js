@@ -14,7 +14,7 @@
          day03.jpg
          ...
 */
-const TEST_MODE = false;
+const TEST_MODE = true;
 const BIRTHDAY_YEAR = 2026;
 const BIRTHDAY_MONTH = 8; // September
 const BIRTHDAY_DAY = 28;
@@ -468,12 +468,13 @@ function startDay07Music() {
 
   if (!audio) return;
 
-  audio.loop = true;
+  audio.loop = false;
   audio.volume = 0.35;
 
   if (audio.paused) {
     audio.play().catch(() => {
-      // Browser may require user interaction after reload.
+      // Browser blocked autoplay.
+      // The pointerdown listener will retry on user interaction.
     });
   }
 }
@@ -1363,9 +1364,9 @@ else if (type === "chat") {
   experience.className = "memory-experience chat-experience";
 
   experience.innerHTML = `
-    <audio id="day07Bgm" preload="auto" loop>
-      <source src="assets/day07.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="day07Bgm" preload="auto">
+	  <source src="assets/day07.mp3" type="audio/mpeg">
+	</audio>
 
     <div class="chat-header">
       <span class="chat-label">A Little Chat Replay..</span>
@@ -1410,8 +1411,8 @@ else if (type === "chat") {
      DAY 07 MUSIC
      ===================================================== */
 
-  day07Bgm.loop = true;
-  day07Bgm.volume = 0.35;
+	day07Bgm.loop = false;
+	day07Bgm.volume = 0.05;
 
   /*
      Make this audio available to the page-level
@@ -1514,24 +1515,18 @@ else if (type === "chat") {
      ===================================================== */
 
   replayChatBtn.addEventListener(
-    "click",
-    () => {
+  "click",
+  () => {
 
-      playChat();
+    playChat();
 
-      /*
-         Replay is a user interaction,
-         so this is allowed to start/resume audio.
-      */
+    day07Bgm.pause();
+    day07Bgm.currentTime = 0;
 
-      if (day07Bgm.paused) {
+    day07Bgm.play().catch(() => {});
 
-        day07Bgm.play().catch(() => {});
-
-      }
-
-    }
-  );
+  }
+);
 
 
  /* =====================================================
