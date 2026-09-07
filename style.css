@@ -1626,3 +1626,1018 @@ body.birthday-mode {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* =========================================================
+   DAY 07 - CHAT REPLAY
+========================================================= */
+
+.chat-experience {
+  width: 100%;
+  margin-top: 10px;
+  position: relative;
+}
+
+
+/* =========================================================
+   CHAT HEADER
+========================================================= */
+
+.chat-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.chat-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+
+/* =========================================================
+   CHAT WINDOW
+========================================================= */
+
+.chat-window {
+  width: 100%;
+  height: 470px;
+
+  box-sizing: border-box;
+
+  padding: 22px 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  scroll-behavior: smooth;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.chat-window::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-window::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.chat-message {
+  display: flex !important;
+  flex-direction: column !important;
+
+  /* IMPORTANT */
+  width: auto !important;
+  max-width: 78% !important;
+
+  position: relative;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  animation: chatMessageAppear 0.35s ease forwards;
+}
+
+
+/* =========================================================
+   JERYY - LEFT
+========================================================= */
+
+.chat-jeryy {
+  align-self: flex-start !important;
+  align-items: flex-start !important;
+}
+
+
+/* =========================================================
+   TOM - RIGHT
+========================================================= */
+
+.chat-me {
+  align-self: flex-end !important;
+  align-items: flex-end !important;
+}
+
+
+/* =========================================================
+   NAME
+========================================================= */
+
+.chat-name {
+  display: block !important;
+
+  margin: 0 8px 5px;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.8px;
+
+  opacity: 0.55;
+
+  visibility: visible !important;
+}
+
+
+/* =========================================================
+   CHAT BUBBLE
+========================================================= */
+
+.chat-bubble {
+  display: inline-block !important;
+
+  /* THIS FIXES THE CHARACTER-BY-CHARACTER WRAPPING */
+  width: max-content !important;
+
+  max-width: 100% !important;
+
+  box-sizing: border-box;
+
+  padding: 11px 15px;
+
+  border-radius: 16px;
+
+  font-size: 14px;
+  line-height: 1.5;
+
+  /*
+    Normal wrapping:
+    - words stay together
+    - long sentences wrap at spaces
+  */
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+
+/* =========================================================
+   JERYY BUBBLE
+========================================================= */
+
+.chat-jeryy .chat-bubble {
+  border-bottom-left-radius: 5px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   TOM BUBBLE
+========================================================= */
+
+.chat-me .chat-bubble {
+  border-bottom-right-radius: 5px;
+
+  background: rgba(160, 120, 170, 0.18);
+
+  border: 1px solid rgba(190, 150, 200, 0.18);
+}
+
+
+/* =========================================================
+   MESSAGE ANIMATION
+========================================================= */
+
+@keyframes chatMessageAppear {
+
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.chat-controls {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 16px;
+
+  gap: 12px;
+}
+
+
+#chatStatus {
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+
+  opacity: 0.55;
+}
+
+
+/* =========================================================
+   REPLAY BUTTON
+========================================================= */
+
+#replayChatBtn {
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  background: rgba(255, 255, 255, 0.035);
+
+  color: inherit;
+
+  border-radius: 999px;
+
+  padding: 9px 15px;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    opacity 0.2s ease;
+}
+
+#replayChatBtn:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#replayChatBtn:active {
+  transform: scale(0.97);
+}
+
+#replayChatBtn:disabled {
+  cursor: default;
+  opacity: 0.4;
+  transform: none;
+}
+
+
+/* =========================================================
+   ENDING
+========================================================= */
+
+.chat-ending {
+  margin-top: 22px;
+
+  padding: 18px;
+
+  text-align: center;
+
+  border-radius: 14px;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  opacity: 1;
+
+  animation: chatEndingAppear 0.5s ease;
+}
+
+
+@keyframes chatEndingAppear {
+
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+.chat-ending.hidden {
+  display: none !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .chat-window {
+    height: 420px;
+    padding: 16px 13px;
+    gap: 13px;
+    border-radius: 15px;
+  }
+
+  .chat-message {
+    max-width: 88% !important;
+  }
+
+  .chat-bubble {
+    width: max-content !important;
+    max-width: 100% !important;
+
+    padding: 10px 13px;
+
+    font-size: 13px;
+
+    line-height: 1.45;
+
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .chat-name {
+    font-size: 9px;
+  }
+
+  .chat-controls {
+    margin-top: 13px;
+  }
+
+  #chatStatus {
+    font-size: 9px;
+  }
+
+  #replayChatBtn {
+    padding: 8px 13px;
+    font-size: 10px;
+  }
+
+  .chat-ending {
+    font-size: 12px;
+    padding: 15px;
+  }
+
+}
+
+/* =========================================================
+   DAY 09 - AUDIO MEMORY
+========================================================= */
+
+.audio-experience {
+  width: 100%;
+  margin-top: 10px;
+  position: relative;
+}
+
+
+.audio-card {
+  width: min(100%, 520px);
+
+  margin: 0 auto;
+
+  padding: 42px 35px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+/* =========================================================
+   AUDIO ICON
+========================================================= */
+
+.audio-icon {
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  font-size: 23px;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.audio-label {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  opacity: 0.55;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.audio-card h3 {
+  margin: 0;
+
+  font-size: 27px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.3px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.audio-description {
+  max-width: 320px;
+
+  margin: 12px auto 30px;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  opacity: 0.6;
+}
+
+
+/* =========================================================
+   HIDE NATIVE AUDIO
+========================================================= */
+
+.audio-experience audio {
+  display: none;
+}
+
+
+/* =========================================================
+   AUDIO PLAYER
+========================================================= */
+
+.audio-player {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  width: 100%;
+
+  margin-top: 10px;
+}
+
+
+/* =========================================================
+   PLAY BUTTON
+========================================================= */
+
+.audio-play-button {
+  flex: 0 0 auto;
+
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: inherit;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.audio-play-button:hover {
+  transform: scale(1.05);
+
+  background: rgba(255, 255, 255, 0.12);
+}
+
+
+.audio-play-button:active {
+  transform: scale(0.96);
+}
+
+
+/* =========================================================
+   PLAYER CONTENT
+========================================================= */
+
+.audio-player-content {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.audio-progress-container {
+  width: 100%;
+
+  height: 5px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.10);
+
+  cursor: pointer;
+}
+
+
+.audio-progress {
+  width: 0%;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  transition: width 0.1s linear;
+}
+
+
+/* =========================================================
+   TIME
+========================================================= */
+
+.audio-time-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 7px;
+
+  font-size: 9px;
+
+  letter-spacing: 0.4px;
+
+  opacity: 0.45;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.audio-status {
+  margin: 22px 0 0;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  opacity: 0.5;
+}
+
+
+/* =========================================================
+   ENDING
+========================================================= */
+
+.audio-ending {
+  margin-top: 22px;
+
+  padding: 15px 18px;
+
+  border-radius: 13px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  background: rgba(255, 255, 255, 0.025);
+
+  font-size: 12px;
+
+  line-height: 1.6;
+
+  animation: audioEndingAppear 0.5s ease;
+}
+
+
+.audio-ending.hidden {
+  display: none !important;
+}
+
+
+@keyframes audioEndingAppear {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .audio-card {
+    padding: 32px 20px;
+
+    border-radius: 18px;
+  }
+
+
+  .audio-icon {
+    width: 52px;
+    height: 52px;
+
+    font-size: 20px;
+
+    margin-bottom: 17px;
+  }
+
+
+  .audio-card h3 {
+    font-size: 23px;
+  }
+
+
+  .audio-description {
+    font-size: 12px;
+
+    margin-bottom: 25px;
+  }
+
+
+  .audio-player {
+    gap: 11px;
+  }
+
+
+  .audio-play-button {
+    width: 48px;
+    height: 48px;
+
+    font-size: 14px;
+  }
+
+
+  .audio-status {
+    font-size: 9px;
+  }
+
+}
+
+/* =========================================================
+   DAY 10 - LETTER
+========================================================= */
+
+.letter10-experience {
+  width: 100%;
+  margin-top: 10px;
+}
+
+
+.letter10-card {
+  width: min(100%, 600px);
+
+  margin: 0 auto;
+
+  padding: 42px 35px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  border-radius: 22px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.letter10-envelope {
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  font-size: 23px;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.letter10-label {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  opacity: 0.55;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.letter10-card h3 {
+  margin: 0;
+
+  font-size: 27px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.letter10-intro {
+  max-width: 350px;
+
+  margin: 12px auto 28px;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  opacity: 0.6;
+}
+
+
+/* =========================================================
+   OPEN BUTTON
+========================================================= */
+
+.letter10-open {
+  padding: 11px 20px;
+
+  border-radius: 999px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(255, 255, 255, 0.06);
+
+  color: inherit;
+
+  font-size: 11px;
+
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.letter10-open:hover {
+  transform: translateY(-2px);
+
+  background: rgba(255, 255, 255, 0.10);
+}
+
+
+.letter10-open:active {
+  transform: scale(0.97);
+}
+
+
+/* =========================================================
+   LETTER CONTENT
+========================================================= */
+
+.letter10-content {
+  max-height: 0;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  transform: translateY(12px);
+
+  transition:
+    max-height 1s ease,
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+
+.letter10-content.show {
+  max-height: 1500px;
+
+  margin-top: 30px;
+
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   PAPER
+========================================================= */
+
+.letter10-paper {
+  padding: 30px 28px;
+
+  text-align: left;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   LETTER TEXT
+========================================================= */
+
+.letter10-text {
+  font-size: 14px;
+
+  line-height: 1.85;
+
+  opacity: 0.82;
+}
+
+
+.letter10-text p {
+  margin: 0 0 14px;
+}
+
+
+.letter10-text p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   SIGNATURE
+========================================================= */
+
+.letter10-signature {
+  margin-top: 25px;
+
+  text-align: right;
+
+  font-size: 18px;
+
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .letter10-card {
+    padding: 32px 20px;
+
+    border-radius: 18px;
+  }
+
+
+  .letter10-card h3 {
+    font-size: 23px;
+  }
+
+
+  .letter10-intro {
+    font-size: 12px;
+  }
+
+
+  .letter10-paper {
+    padding: 24px 19px;
+  }
+
+
+  .letter10-text {
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+}
