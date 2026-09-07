@@ -14,7 +14,7 @@
          day03.jpg
          ...
 */
-const TEST_MODE = false;
+const TEST_MODE = true;
 const BIRTHDAY_YEAR = 2026;
 const BIRTHDAY_MONTH = 8; // September
 const BIRTHDAY_DAY = 28;
@@ -87,7 +87,7 @@ const memories = [
 	  date: "SEPTEMBER 07",
 	  type: "chat",
 	  tag: "A Little Chat Replay",
-	  title: "Remember This One?",
+	  title: "Remember This One ??",
 	  text: "No Context.. Just Us..",
 	  quote: "Some Conversations Are Completely Random. Somehow, Those Are The Ones We Remember.",
 	  chat: [
@@ -205,23 +205,31 @@ const memories = [
 	  pin: "1125"
 	},
   {
-    day: 9,
-    date: "SEPTEMBER 09",
-    tag: "A MESSAGE",
-    title: "A small thing I wanted to say.",
-    text: "Not every important thing needs a big speech. Sometimes a simple 'I'm glad you are in my life' is enough.",
-    image: "assets/day09.jpg",
-    quote: "The little things we say can stay with someone for a long time."
-  },
+	  day: 9,
+	  date: "SEPTEMBER 09",
+	  type: "audio",
+	  tag: "A Little Audio Memory",
+	  title: "Just Press Play.",
+	  text: "No Photo Today. Just Listen For A Little While.",
+	  quote: "Voices and Polambals of Hasee All Over Theses Days !!",
+	  audio: "assets/day09.mp3"
+	},
   {
-    day: 10,
-    date: "SEPTEMBER 10",
-    tag: "OUR CHAOS",
-    title: "Proof that we have no normal conversations.",
-    text: "Today's memory is here purely because looking at it made me laugh again.",
-    image: "assets/day10.jpg",
-    quote: "Normal is overrated anyway."
-  },
+	  day: 10,
+	  date: "SEPTEMBER 10",
+	  type: "letter",
+	  tag: "A Few Things",
+	  title: "I Don't Say These Often.",
+	  text: "Some Things Are Easier To Write Than To Say.",
+	  quote: "Some Words Take Longer To Say, But They Stay Longer as Memories Forever !!",
+
+	  letter: `
+	Heyyy Haseee,
+	New House.. New Beginning.. For the past 15yrs you are living in the same area, same house.. Yrs maybe gone but the memories stay forever..
+	Hope Everything going well in this new home.. Soon you will be adapted to this area and neighbours around you.. Insha Allah intha veetula 
+	aachum ellam nallathave nadakatum.. Epovum solrathu thaan ethunaalum paathukalam daa.. Aprm unkitta sonna maari Intha September 2026 
+	`
+	},
   {
     day: 11,
     date: "SEPTEMBER 11",
@@ -413,7 +421,7 @@ function getUnlockedDay(date = new Date()) {
   // 🧪 TEST MODE
   // Simulate September 4 at 11:25 PM
   if (TEST_MODE) {
-    return 8;
+    return 10;
   }
 
   // Day 1 is available from September 1
@@ -1085,45 +1093,232 @@ function renderDay(day) {
 		}
 
 	else if (type === "letter") {
-	  image.style.display = "none";
-	  placeholder.style.display = "none";
-	  imageWrap.style.display = "none";
 
-	  const letter = document.createElement("div");
-	  letter.id = "letterExperience";
-	  letter.className = "memory-experience letter-experience";
+  /* Hide normal image area */
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
 
-	  letter.innerHTML = `
-		<div class="letter-envelope">
-		  <div class="letter-symbol">✉</div>
-		  <p class="letter-small">A LITTLE SOMETHING FOR YOU</p>
-		  <h3>Open This When You're Ready.</h3>
-		  <button type="button" id="openLetterBtn">
-			Open Letter
-		  </button>
-		</div>
 
-		<div class="letter-content hidden" id="letterContent">
-		  <p>
-			Just Wanna Say Thannkkk Youuu For Being With Me
-			For All These Days, To My Friend In The Opposite Side..
-			Also Don't Change Yourself For Anyone..
-			Epovum Sirichitae Iru Haseeenaaaa !!
-		  </p>
+  /* =====================================================
+     DAY 05 - EXISTING LETTER
+     DO NOT CHANGE ITS DESIGN
+  ===================================================== */
 
-		  <p class="letter-end">
-			— ❤️
-		  </p>
-		</div>
-	  `;
+  if (item.day === 5) {
 
-	  $("memoryCard").appendChild(letter);
+    const letter = document.createElement("div");
 
-	  $("openLetterBtn").addEventListener("click", () => {
-		$("letterContent").classList.remove("hidden");
-		$("openLetterBtn").classList.add("hidden");
-	  });
-	}
+    letter.id = "letterExperience";
+    letter.className =
+      "memory-experience letter-experience";
+
+    letter.innerHTML = `
+      <div class="letter-envelope">
+
+        <div class="letter-symbol">
+          ✉
+        </div>
+
+        <p class="letter-small">
+          A LITTLE SOMETHING FOR YOU
+        </p>
+
+        <h3>
+          Open This When You're Ready.
+        </h3>
+
+        <button
+          type="button"
+          id="openLetterBtn"
+        >
+          Open Letter
+        </button>
+
+      </div>
+
+
+      <div
+        class="letter-content hidden"
+        id="letterContent"
+      >
+
+        <p>
+          Just Wanna Say Thannkkk Youuu For Being With Me
+          For All These Days, To My Friend In The Opposite Side..
+          Also Don't Change Yourself For Anyone..
+          Epovum Sirichitae Iru Haseeenaaaa !!
+        </p>
+
+        <p class="letter-end">
+          — ❤️
+        </p>
+
+      </div>
+    `;
+
+    $("memoryCard").appendChild(letter);
+
+
+    $("openLetterBtn").addEventListener(
+      "click",
+      () => {
+
+        $("letterContent")
+          .classList
+          .remove("hidden");
+
+        $("openLetterBtn")
+          .classList
+          .add("hidden");
+
+      }
+    );
+
+  }
+
+
+  /* =====================================================
+     DAY 10 - NEW LETTER
+  ===================================================== */
+
+  else if (item.day === 10) {
+
+    const letter10 =
+      document.createElement("div");
+
+    letter10.className =
+      "memory-experience letter10-experience";
+
+
+    letter10.innerHTML = `
+      <div class="letter10-card">
+
+        <div class="letter10-envelope">
+          💌
+        </div>
+
+
+        <span class="letter10-label">
+          A FEW THINGS
+        </span>
+
+
+        <h3>
+          I Don't Say These Often.
+        </h3>
+
+
+        <p class="letter10-intro">
+          Some things are easier to write than to say.
+        </p>
+
+
+        <button
+          type="button"
+          class="letter10-open"
+          id="letter10Open"
+        >
+          Open Letter
+        </button>
+
+
+        <div
+          class="letter10-content"
+          id="letter10Content"
+        >
+
+          <div class="letter10-paper">
+
+            <div
+              class="letter10-text"
+              id="letter10Text"
+            ></div>
+
+
+            <div class="letter10-signature">
+              -❤️
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    `;
+
+
+    $("memoryCard").appendChild(
+      letter10
+    );
+
+
+    const openButton =
+      letter10.querySelector(
+        "#letter10Open"
+      );
+
+    const content =
+      letter10.querySelector(
+        "#letter10Content"
+      );
+
+    const textContainer =
+      letter10.querySelector(
+        "#letter10Text"
+      );
+
+
+    /* =====================================================
+       OPEN DAY 10 LETTER
+    ===================================================== */
+
+    openButton.addEventListener(
+      "click",
+      () => {
+
+        openButton.disabled = true;
+
+        openButton.textContent =
+          "Opening...";
+
+        content.classList.add("show");
+
+
+        setTimeout(() => {
+
+          /*
+           * Use the letter text from
+           * the Day 10 memory object.
+           */
+
+          textContainer.innerHTML =
+            item.letter
+              .trim()
+              .split("\n")
+              .map(line => {
+
+                if (line.trim() === "") {
+                  return "<br>";
+                }
+
+                return `<p>${line}</p>`;
+
+              })
+              .join("");
+
+
+          openButton.style.display =
+            "none";
+
+        }, 350);
+
+      }
+    );
+
+  }
+
+}
 	
 	else if (type === "chat") {
   image.style.display = "none";
@@ -1136,97 +1331,624 @@ function renderDay(day) {
   chat.className = "memory-experience chat-experience";
 
   chat.innerHTML = `
+    <audio id="day07Bgm" preload="auto">
+      <source src="assets/day07.mp3" type="audio/mpeg">
+    </audio>
+
     <div class="chat-header">
-      <span class="chat-label">A LITTLE CHAT REPLAY</span>
+      <span class="chat-label">A Little Chat Replay !!</span>
     </div>
 
     <div class="chat-window" id="chatWindow"></div>
 
     <div class="chat-controls">
-      <span id="chatStatus">A LITTLE MEMORY</span>
+      <span id="chatStatus">A Little Memory</span>
 
-      <button type="button" id="replayChatBtn">
+      <button
+        type="button"
+        id="replayChatBtn"
+      >
         ↻ Replay
       </button>
     </div>
 
-    <div class="chat-ending hidden" id="chatEnding">
+    <div
+      class="chat-ending hidden"
+      id="chatEnding"
+    >
       And Somehow, This Conversation Became a Memory !!
     </div>
   `;
 
   $("memoryCard").appendChild(chat);
 
-  const chatWindow = $("chatWindow");
-  const chatStatus = $("chatStatus");
-  const replayChatBtn = $("replayChatBtn");
-  const chatEnding = $("chatEnding");
+  /* =========================================
+     DAY 07 ELEMENTS
+  ========================================= */
+
+  const chatWindow = chat.querySelector("#chatWindow");
+  const chatStatus = chat.querySelector("#chatStatus");
+  const replayChatBtn = chat.querySelector("#replayChatBtn");
+  const chatEnding = chat.querySelector("#chatEnding");
+  const day07Bgm = chat.querySelector("#day07Bgm");
+
+
+  /* =========================================
+     CHAT STATE
+  ========================================= */
 
   let chatTimers = [];
 
+
+  /* =========================================
+     CLEAR TIMERS
+  ========================================= */
+
   function clearChatTimers() {
-    chatTimers.forEach(timer => clearTimeout(timer));
+    chatTimers.forEach(timer => {
+      clearTimeout(timer);
+    });
+
     chatTimers = [];
   }
 
-  function playChat() {
-    clearChatTimers();
 
-    chatWindow.innerHTML = "";
-    chatEnding.classList.add("hidden");
+  /* =========================================
+     STOP AUDIO
+  ========================================= */
 
-    replayChatBtn.disabled = true;
-    chatStatus.textContent = "REPLAYING...";
-
-    item.chat.forEach((message, index) => {
-      const timer = setTimeout(() => {
-        const bubble = document.createElement("div");
-
-        bubble.className =
-          `chat-message ${message.sender === "me" ? "chat-me" : "chat-jeryy"}`;
-
-        bubble.innerHTML = `
-          <div class="chat-name">
-            ${message.name}
-          </div>
-
-          <div class="chat-bubble">
-            ${message.text}
-          </div>
-        `;
-
-        chatWindow.appendChild(bubble);
-
-        requestAnimationFrame(() => {
-          bubble.classList.add("show");
-        });
-
-        chatWindow.scrollTo({
-          top: chatWindow.scrollHeight,
-          behavior: "smooth"
-        });
-
-        if (index === item.chat.length - 1) {
-          const endingTimer = setTimeout(() => {
-            chatEnding.classList.remove("hidden");
-
-            replayChatBtn.disabled = false;
-            chatStatus.textContent = "END OF REPLAY";
-
-            chatEnding.classList.add("chat-ending-show");
-          }, 900);
-
-          chatTimers.push(endingTimer);
-        }
-      }, index * 950);
-
-      chatTimers.push(timer);
-    });
+  function stopBgm() {
+    day07Bgm.pause();
+    day07Bgm.currentTime = 0;
   }
 
-  replayChatBtn.addEventListener("click", playChat);
+
+  /* =========================================
+     PLAY CHAT REPLAY
+  ========================================= */
+
+  function playChat() {
+
+    /* Stop any previous replay */
+    clearChatTimers();
+
+    /* Clear previous messages */
+    chatWindow.innerHTML = "";
+
+    /* Hide ending message */
+    chatEnding.classList.add("hidden");
+
+    /* Reset status */
+    chatStatus.textContent = "A Little Memory..";
+
+    /* Reset audio */
+    stopBgm();
+
+    day07Bgm.volume = 0.15;
+
+
+    /* =========================================
+       START BACKGROUND MUSIC
+    ========================================= */
+
+    const audioPromise = day07Bgm.play();
+
+    if (audioPromise !== undefined) {
+
+      audioPromise.catch(() => {
+
+        console.log(
+          "Day 07 audio playback was blocked."
+        );
+
+      });
+
+    }
+
+
+    /* Disable replay while playing */
+    replayChatBtn.disabled = true;
+
+
+    /* =========================================
+       MESSAGE INDEX
+    ========================================= */
+
+    let index = 0;
+
+
+    /* =========================================
+       SHOW NEXT MESSAGE
+    ========================================= */
+
+    function showNextMessage() {
+
+      /* Safety check */
+      if (index >= item.chat.length) {
+
+        stopBgm();
+
+        chatStatus.textContent =
+          "End of Replay !!";
+
+        chatEnding.classList.remove("hidden");
+
+        replayChatBtn.disabled = false;
+
+        return;
+      }
+
+
+      /* Get current message */
+      const message = item.chat[index];
+
+
+      /* =========================================
+         CREATE MESSAGE
+      ========================================= */
+
+      const messageElement =
+        document.createElement("div");
+
+      messageElement.classList.add(
+        "chat-message",
+        `chat-${message.sender}`
+      );
+
+
+      /* =========================================
+         CREATE NAME
+      ========================================= */
+
+      const nameElement =
+        document.createElement("span");
+
+      nameElement.className = "chat-name";
+
+      nameElement.textContent =
+        message.name;
+
+
+      /* =========================================
+         CREATE BUBBLE
+      ========================================= */
+
+      const bubbleElement =
+        document.createElement("div");
+
+      bubbleElement.className =
+        "chat-bubble";
+
+      bubbleElement.textContent =
+        message.text;
+
+
+      /* =========================================
+         ADD NAME + BUBBLE
+      ========================================= */
+
+      messageElement.appendChild(
+        nameElement
+      );
+
+      messageElement.appendChild(
+        bubbleElement
+      );
+
+
+      /* =========================================
+         ADD MESSAGE TO CHAT WINDOW
+      ========================================= */
+
+      chatWindow.appendChild(
+        messageElement
+      );
+
+
+      /* Scroll to newest message */
+      chatWindow.scrollTop =
+        chatWindow.scrollHeight;
+
+
+      /* =========================================
+         FINAL MESSAGE
+      ========================================= */
+
+      if (
+        index === item.chat.length - 1
+      ) {
+
+        /*
+         * The final message is now visible.
+         * Stop the BGM immediately.
+         */
+
+        stopBgm();
+
+        chatStatus.textContent =
+          "End of Replay !!";
+
+        chatEnding.classList.remove(
+          "hidden"
+        );
+
+        replayChatBtn.disabled = false;
+
+        return;
+      }
+
+
+      /* Move to next message */
+      index++;
+
+
+      /* =========================================
+         NEXT MESSAGE DELAY
+      ========================================= */
+
+      const timer = setTimeout(
+        showNextMessage,
+        950
+      );
+
+      chatTimers.push(timer);
+    }
+
+
+    /* =========================================
+       START FIRST MESSAGE
+    ========================================= */
+
+    showNextMessage();
+  }
+
+
+  /* =========================================
+     REPLAY BUTTON
+  ========================================= */
+
+  replayChatBtn.addEventListener(
+    "click",
+    playChat
+  );
+
+
+  /* =========================================
+     START AUTOMATICALLY
+  ========================================= */
 
   playChat();
+}
+
+else if (type === "audio") {
+
+  /* Hide normal image area */
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
+
+
+  /* =========================================
+     CREATE AUDIO EXPERIENCE
+  ========================================= */
+
+  const audioExperience =
+    document.createElement("div");
+
+  audioExperience.className =
+    "memory-experience audio-experience";
+
+
+  audioExperience.innerHTML = `
+    <div class="audio-card">
+
+      <div class="audio-icon">
+        🎧
+      </div>
+
+      <span class="audio-label">
+        Use HeadPhones For Better Experience !!
+      </span>
+	  
+      <!-- AUDIO -->
+      <audio
+        id="day09Audio"
+        preload="metadata"
+      >
+        <source
+          src="${item.audio}"
+          type="audio/mpeg"
+        >
+      </audio>
+
+
+      <!-- PLAYER -->
+      <div class="audio-player">
+
+        <button
+          type="button"
+          class="audio-play-button"
+          id="audioPlayButton"
+          aria-label="Play audio"
+        >
+          ▶
+        </button>
+
+
+        <div class="audio-player-content">
+
+          <div class="audio-progress-container">
+            <div
+              class="audio-progress"
+              id="audioProgress"
+            ></div>
+          </div>
+
+
+          <div class="audio-time-row">
+
+            <span id="audioCurrentTime">
+              0:00
+            </span>
+
+            <span id="audioDuration">
+              0:00
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- STATUS -->
+      <p
+        class="audio-status"
+        id="audioStatus"
+      >
+        Press Play When You're Ready..
+      </p>
+
+
+      <!-- ENDING -->
+      <div
+        class="audio-ending hidden"
+        id="audioEnding"
+      >
+        Some Memories Sound Better
+        When You Hear Them Again..
+      </div>
+
+    </div>
+  `;
+
+
+  $("memoryCard").appendChild(
+    audioExperience
+  );
+
+
+  /* =========================================
+     ELEMENTS
+  ========================================= */
+
+  const audio =
+    audioExperience.querySelector(
+      "#day09Audio"
+    );
+
+  const playButton =
+    audioExperience.querySelector(
+      "#audioPlayButton"
+    );
+
+  const progress =
+    audioExperience.querySelector(
+      "#audioProgress"
+    );
+
+  const currentTime =
+    audioExperience.querySelector(
+      "#audioCurrentTime"
+    );
+
+  const duration =
+    audioExperience.querySelector(
+      "#audioDuration"
+    );
+
+  const status =
+    audioExperience.querySelector(
+      "#audioStatus"
+    );
+
+  const ending =
+    audioExperience.querySelector(
+      "#audioEnding"
+    );
+
+
+  /* =========================================
+     FORMAT TIME
+  ========================================= */
+
+  function formatTime(seconds) {
+
+    if (!Number.isFinite(seconds)) {
+      return "0:00";
+    }
+
+    const minutes =
+      Math.floor(seconds / 60);
+
+    const remainingSeconds =
+      Math.floor(seconds % 60);
+
+    return `${minutes}:${String(
+      remainingSeconds
+    ).padStart(2, "0")}`;
+  }
+
+
+  /* =========================================
+     PLAY / PAUSE
+  ========================================= */
+
+  playButton.addEventListener(
+    "click",
+    () => {
+
+      if (audio.paused) {
+
+        audio.play()
+          .then(() => {
+
+            playButton.textContent = "Ⅱ";
+
+            playButton.setAttribute(
+              "aria-label",
+              "Pause audio"
+            );
+
+            status.textContent =
+              "Listening...";
+
+            ending.classList.add(
+              "hidden"
+            );
+
+          })
+          .catch(() => {
+
+            status.textContent =
+              "Unable to play this audio.";
+
+          });
+
+      } else {
+
+        audio.pause();
+
+        playButton.textContent = "▶";
+
+        playButton.setAttribute(
+          "aria-label",
+          "Play audio"
+        );
+
+        status.textContent =
+          "Paused.";
+      }
+
+    }
+  );
+
+
+  /* =========================================
+     AUDIO LOADED
+  ========================================= */
+
+  audio.addEventListener(
+    "loadedmetadata",
+    () => {
+
+      duration.textContent =
+        formatTime(audio.duration);
+
+    }
+  );
+
+
+  /* =========================================
+     AUDIO PROGRESS
+  ========================================= */
+
+  audio.addEventListener(
+    "timeupdate",
+    () => {
+
+      if (!audio.duration) {
+        return;
+      }
+
+      const percentage =
+        (audio.currentTime /
+          audio.duration) * 100;
+
+      progress.style.width =
+        `${percentage}%`;
+
+      currentTime.textContent =
+        formatTime(audio.currentTime);
+
+    }
+  );
+
+
+  /* =========================================
+     AUDIO ENDED
+  ========================================= */
+
+  audio.addEventListener(
+    "ended",
+    () => {
+
+      playButton.textContent = "▶";
+
+      playButton.setAttribute(
+        "aria-label",
+        "Play audio"
+      );
+
+      progress.style.width = "100%";
+
+      currentTime.textContent =
+        formatTime(audio.duration);
+
+      status.textContent =
+        "Memories Completed !!";
+
+      ending.classList.remove(
+        "hidden"
+      );
+
+    }
+  );
+
+
+  /* =========================================
+     CLICK PROGRESS BAR
+  ========================================= */
+
+  const progressContainer =
+    audioExperience.querySelector(
+      ".audio-progress-container"
+    );
+
+  progressContainer.addEventListener(
+    "click",
+    (event) => {
+
+      if (!audio.duration) {
+        return;
+      }
+
+      const rect =
+        progressContainer.getBoundingClientRect();
+
+      const clickPosition =
+        event.clientX - rect.left;
+
+      const percentage =
+        clickPosition / rect.width;
+
+      audio.currentTime =
+        percentage * audio.duration;
+
+    }
+  );
+
 }
 
 else if (item.type === "pin") {
