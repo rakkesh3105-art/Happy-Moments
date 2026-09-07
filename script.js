@@ -421,7 +421,7 @@ function getUnlockedDay(date = new Date()) {
   // 🧪 TEST MODE
   // Simulate September 4 at 11:25 PM
   if (TEST_MODE) {
-    return 10;
+    return 7;
   }
 
   // Day 1 is available from September 1
@@ -457,6 +457,26 @@ function getUnlockedDay(date = new Date()) {
 function pad(n) {
   return String(n).padStart(2, "0");
 }
+/* =====================================================
+   DAY 07 MUSIC STARTER
+===================================================== */
+
+function startDay07Music() {
+  if (currentDay !== 7) return;
+
+  const audio = document.getElementById("day07Bgm");
+
+  if (!audio) return;
+
+  audio.loop = true;
+  audio.volume = 0.35;
+
+  if (audio.paused) {
+    audio.play().catch(() => {
+      // Browser may require user interaction after reload.
+    });
+  }
+}
 
 function renderDay(day) {
   const item = memories[day - 1];
@@ -480,11 +500,23 @@ function renderDay(day) {
 	placeholder.style.display = "none";
 	imageWrap.style.display = "none";
 
-	const existingExperience = document.querySelector(".memory-experience");
+	const existingExperience =
+	  document.querySelector(".memory-experience");
 
 	if (existingExperience) {
+
+	  const existingAudio =
+		existingExperience.querySelector("audio");
+
+	  if (existingAudio) {
+		existingAudio.pause();
+		existingAudio.currentTime = 0;
+	  }
+
 	  existingExperience.remove();
 	}
+
+	window.day07Music = null;
 
 	if (type === "photo") {
 	  imageWrap.style.display = "block";
@@ -1319,154 +1351,97 @@ function renderDay(day) {
   }
 
 }
-	
-	else if (type === "chat") {
+
+else if (type === "chat") {
   image.style.display = "none";
   placeholder.style.display = "none";
   imageWrap.style.display = "none";
 
-  const chat = document.createElement("div");
+  const experience = document.createElement("div");
 
-  chat.id = "chatExperience";
-  chat.className = "memory-experience chat-experience";
+  experience.id = "chatExperience";
+  experience.className = "memory-experience chat-experience";
 
-  chat.innerHTML = `
-    <audio id="day07Bgm" preload="auto">
+  experience.innerHTML = `
+    <audio id="day07Bgm" preload="auto" loop>
       <source src="assets/day07.mp3" type="audio/mpeg">
     </audio>
 
     <div class="chat-header">
-      <span class="chat-label">A Little Chat Replay !!</span>
+      <span class="chat-label">A Little Chat Replay..</span>
     </div>
 
     <div class="chat-window" id="chatWindow"></div>
 
     <div class="chat-controls">
-      <span id="chatStatus">A Little Memory</span>
+      <span id="chatStatus">A Little Memory..</span>
 
-      <button
-        type="button"
-        id="replayChatBtn"
-      >
+      <button type="button" id="replayChatBtn">
         ↻ Replay
       </button>
     </div>
 
-    <div
-      class="chat-ending hidden"
-      id="chatEnding"
-    >
+    <div class="chat-ending hidden" id="chatEnding">
       And Somehow, This Conversation Became a Memory !!
     </div>
   `;
 
-  $("memoryCard").appendChild(chat);
+  $("memoryCard").appendChild(experience);
 
-  /* =========================================
-     DAY 07 ELEMENTS
-  ========================================= */
+  const chatWindow =
+    experience.querySelector("#chatWindow");
 
-  const chatWindow = chat.querySelector("#chatWindow");
-  const chatStatus = chat.querySelector("#chatStatus");
-  const replayChatBtn = chat.querySelector("#replayChatBtn");
-  const chatEnding = chat.querySelector("#chatEnding");
-  const day07Bgm = chat.querySelector("#day07Bgm");
+  const chatStatus =
+    experience.querySelector("#chatStatus");
 
+  const replayChatBtn =
+    experience.querySelector("#replayChatBtn");
 
-  /* =========================================
-     CHAT STATE
-  ========================================= */
+  const chatEnding =
+    experience.querySelector("#chatEnding");
 
-  let chatTimers = [];
+  const day07Bgm =
+    experience.querySelector("#day07Bgm");
 
-
-  /* =========================================
-     CLEAR TIMERS
-  ========================================= */
-
-  function clearChatTimers() {
-    chatTimers.forEach(timer => {
-      clearTimeout(timer);
-    });
-
-    chatTimers = [];
-  }
+  let chatTimer = null;
 
 
-  /* =========================================
-     STOP AUDIO
-  ========================================= */
+  /* =====================================================
+     DAY 07 MUSIC
+     ===================================================== */
 
-  function stopBgm() {
-    day07Bgm.pause();
-    day07Bgm.currentTime = 0;
-  }
+  day07Bgm.loop = true;
+  day07Bgm.volume = 0.35;
+
+  /*
+     Make this audio available to the page-level
+     Day 07 music starter below.
+  */
+  window.day07Music = day07Bgm;
 
 
-  /* =========================================
-     PLAY CHAT REPLAY
-  ========================================= */
+  /* =====================================================
+     CHAT REPLAY
+     ===================================================== */
 
   function playChat() {
 
-    /* Stop any previous replay */
-    clearChatTimers();
-
-    /* Clear previous messages */
-    chatWindow.innerHTML = "";
-
-    /* Hide ending message */
-    chatEnding.classList.add("hidden");
-
-    /* Reset status */
-    chatStatus.textContent = "A Little Memory..";
-
-    /* Reset audio */
-    stopBgm();
-
-    day07Bgm.volume = 0.15;
-
-
-    /* =========================================
-       START BACKGROUND MUSIC
-    ========================================= */
-
-    const audioPromise = day07Bgm.play();
-
-    if (audioPromise !== undefined) {
-
-      audioPromise.catch(() => {
-
-        console.log(
-          "Day 07 audio playback was blocked."
-        );
-
-      });
-
+    if (chatTimer) {
+      clearTimeout(chatTimer);
+      chatTimer = null;
     }
 
+    chatWindow.innerHTML = "";
+    chatEnding.classList.add("hidden");
 
-    /* Disable replay while playing */
+    chatStatus.textContent = "A Little Memory..";
     replayChatBtn.disabled = true;
-
-
-    /* =========================================
-       MESSAGE INDEX
-    ========================================= */
 
     let index = 0;
 
-
-    /* =========================================
-       SHOW NEXT MESSAGE
-    ========================================= */
-
     function showNextMessage() {
 
-      /* Safety check */
       if (index >= item.chat.length) {
-
-        stopBgm();
 
         chatStatus.textContent =
           "End of Replay !!";
@@ -1475,149 +1450,103 @@ function renderDay(day) {
 
         replayChatBtn.disabled = false;
 
+        /*
+           IMPORTANT:
+           DO NOT STOP MUSIC HERE.
+        */
+
         return;
       }
 
-
-      /* Get current message */
       const message = item.chat[index];
-
-
-      /* =========================================
-         CREATE MESSAGE
-      ========================================= */
 
       const messageElement =
         document.createElement("div");
 
-      messageElement.classList.add(
-        "chat-message",
-        `chat-${message.sender}`
-      );
+      messageElement.className =
+        `chat-message chat-${message.sender}`;
 
+      messageElement.innerHTML = `
+        <span class="chat-name">
+          ${message.name}
+        </span>
 
-      /* =========================================
-         CREATE NAME
-      ========================================= */
+        <div class="chat-bubble">
+          ${message.text}
+        </div>
+      `;
 
-      const nameElement =
-        document.createElement("span");
+      chatWindow.appendChild(messageElement);
 
-      nameElement.className = "chat-name";
-
-      nameElement.textContent =
-        message.name;
-
-
-      /* =========================================
-         CREATE BUBBLE
-      ========================================= */
-
-      const bubbleElement =
-        document.createElement("div");
-
-      bubbleElement.className =
-        "chat-bubble";
-
-      bubbleElement.textContent =
-        message.text;
-
-
-      /* =========================================
-         ADD NAME + BUBBLE
-      ========================================= */
-
-      messageElement.appendChild(
-        nameElement
-      );
-
-      messageElement.appendChild(
-        bubbleElement
-      );
-
-
-      /* =========================================
-         ADD MESSAGE TO CHAT WINDOW
-      ========================================= */
-
-      chatWindow.appendChild(
-        messageElement
-      );
-
-
-      /* Scroll to newest message */
       chatWindow.scrollTop =
         chatWindow.scrollHeight;
 
+      index++;
 
-      /* =========================================
-         FINAL MESSAGE
-      ========================================= */
+      if (index < item.chat.length) {
 
-      if (
-        index === item.chat.length - 1
-      ) {
+        chatTimer = setTimeout(
+          showNextMessage,
+          950
+        );
 
-        /*
-         * The final message is now visible.
-         * Stop the BGM immediately.
-         */
-
-        stopBgm();
+      } else {
 
         chatStatus.textContent =
           "End of Replay !!";
 
-        chatEnding.classList.remove(
-          "hidden"
-        );
+        chatEnding.classList.remove("hidden");
 
         replayChatBtn.disabled = false;
 
-        return;
+        /*
+           Music continues playing.
+        */
       }
-
-
-      /* Move to next message */
-      index++;
-
-
-      /* =========================================
-         NEXT MESSAGE DELAY
-      ========================================= */
-
-      const timer = setTimeout(
-        showNextMessage,
-        950
-      );
-
-      chatTimers.push(timer);
     }
-
-
-    /* =========================================
-       START FIRST MESSAGE
-    ========================================= */
 
     showNextMessage();
   }
 
 
-  /* =========================================
+  /* =====================================================
      REPLAY BUTTON
-  ========================================= */
+     ===================================================== */
 
   replayChatBtn.addEventListener(
     "click",
-    playChat
+    () => {
+
+      playChat();
+
+      /*
+         Replay is a user interaction,
+         so this is allowed to start/resume audio.
+      */
+
+      if (day07Bgm.paused) {
+
+        day07Bgm.play().catch(() => {});
+
+      }
+
+    }
   );
 
 
-  /* =========================================
-     START AUTOMATICALLY
-  ========================================= */
+ /* =====================================================
+   START CHAT
+   ===================================================== */
 
-  playChat();
+playChat();
+
+/*
+   Start Day 07 music.
+   If the browser blocks autoplay after reload,
+   the pointerdown listener below will start it
+   on the first user interaction.
+*/
+startDay07Music();
 }
 
 else if (type === "audio") {
@@ -2152,7 +2081,7 @@ function buildCalendar() {
       });
     } else {
       button.addEventListener("click", () => {
-        showToast(`Day ${pad(item.day)} unlocks on September ${item.day}. ❤️`);
+        showToast(`Day ${pad(item.day)} unlocks on September ${item.day}`);
       });
     }
 
@@ -2219,8 +2148,19 @@ $("nextBtn").addEventListener("click", () => {
   }
 });
 
+/* =====================================================
+   DAY 07 MUSIC CONTROLLER
+===================================================== */
+
+document.addEventListener("pointerdown", () => {
+  startDay07Music();
+}, { passive: true });
+
 buildCalendar();
 renderDay(currentDay || 1);
+if (currentDay === 7) {
+  startDay07Music();
+}
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
