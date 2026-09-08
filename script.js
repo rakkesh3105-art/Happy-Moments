@@ -14,7 +14,7 @@
          day03.jpg
          ...
 */
-const TEST_MODE = true;
+const TEST_MODE = false;
 const BIRTHDAY_YEAR = 2026;
 const BIRTHDAY_MONTH = 8; // September
 const BIRTHDAY_DAY = 28;
@@ -27,39 +27,39 @@ const memories = [
     day: 1,
     date: "SEPTEMBER 01",
 	type: "photo",
-    tag: "THE BEGINNING",
-    title: "28 days. 28 little moments.",
-    text: "This is only the beginning. Every day, one small piece of a bigger story will be waiting here. Come back tomorrow… there is more. ❤️",
+    tag: "The Beginning",
+    title: "28 Days. 28 Little Moments.",
+    text: "This is Only The Beginning.. Every Day, One Small Piece of a Bigger Story Will be Waiting Here.. Come Back Everyday.. There is Lot To Explore..",
     image: " ",
-    quote: "Some stories are made of big moments. Ours is made of little ones."
+    quote: "Some Stories Are Made of Big Moments.. While, Ours is Made of Little Ones.."
   },
   {
     day: 2,
     date: "SEPTEMBER 02",
-    tag: "A LITTLE MEMORY",
+    tag: "A Little Memory",
 	type: "photo",
-    title: "Okay... You Came Back. 👀",
-    text: "I Wanted The First Real Surprise To Be Simple. Just One Moment, One Picture, and One Memory That Deserves To Stay.",
+    title: "Okkay... You Came Back Jerry !!",
+    text: "I Wanted The First Real Surprise To Be Simple.. Just One Moment, One Picture and One Memory That Deserves To Stay..",
     image: "assets/day02.png",
     quote: "I Know You Remember This Moment, The Very First Surprise From My Side.."
   },
   {
     day: 3,
     date: "SEPTEMBER 03",
-    tag: "THAT MOMENT",
+    tag: "That Moment",
 	type: "photo",
-    title: "That Moment.",
-    text: "There are Some Pictures Where the Person Itself Is Not The Special Part. But Accessories Play a Major Role :) ",
+    title: "Kinder Surprises !!",
+    text: "There are Some Pictures, Where the Person Itself Is Not The Special Part.. But Accessories Play a Major Role :) ",
     image: "assets/day03.jpg",
-    quote: "Some Surprises Makes More Memories and Create Moments"
+    quote: "Some Surprises Makes More Memories and Create Moments.."
   },
   {
 	  day: 4,
 	  date: "SEPTEMBER 04",
 	  type: "puzzle",
-	  tag: "A LITTLE CHALLENGE",
-	  title: "Can You Remember This?",
-	  text: "Before Today's Memory Reveals Itself, There's a Tiny Challenge Waiting For You.",
+	  tag: "A Little Challenge",
+	  title: "Can You Remember This ??",
+	  text: "Before Today's Memory Reveals Itself, There's a Tiny Challenge Waiting For You..",
 	  image: "assets/day04.jpg",
 	  quote: "The Moment Which Created This Entire Long Journey !!"
 	},
@@ -67,9 +67,9 @@ const memories = [
 	  day: 5,
 	  date: "SEPTEMBER 05",
 	  type: "letter",
-	  tag: "A LITTLE LETTER",
+	  tag: "A Little Letter",
 	  title: "Something I Used To Tell You",
-	  text: "Not Everything Needs a Photo.",
+	  text: "Not Everything Needs a Photo..",
 	  quote: "Stay Happy Forever !!"
 	},
   {
@@ -77,10 +77,10 @@ const memories = [
 	  date: "SEPTEMBER 06",
 	  type: "jigsaw",
 	  tag: "Put The Pieces Together",
-	  title: "Can You Put This Memory Back Together?",
+	  title: "Can You Put This Memory Back Together ??",
 	  text: "Today's Memory isn't Going to Reveal Itself That Easily.. A Few Pieces are Missing from the Picture.. Maybe You Can Put Them Back..",
 	  image: "assets/day06.jpg",
-	  quote: "Some Memories Are Worth Putting Back Together."
+	  quote: "Some Memories Are Worth Putting Back Together !!"
 	},
   {
 	  day: 7,
@@ -89,7 +89,7 @@ const memories = [
 	  tag: "A Little Chat Replay",
 	  title: "Remember This One ??",
 	  text: "No Context.. Just Us..",
-	  quote: "Some Conversations Are Completely Random. Somehow, Those Are The Ones We Remember.",
+	  quote: "Some Conversations Are Completely Random.. Somehow, Those Are The Ones We Remember..",
 	  chat: [
 		{
 		  sender: "jeryy",
@@ -114,7 +114,7 @@ const memories = [
 		{
 		  sender: "jeryy",
 		  name: "Jerry",
-		  text: "Nalla Saaptitu Thoongi Enchaenga Ipothan"
+		  text: "Nalla Saaptitu Thoongi Enchaen Ipothan"
 		},
 		{
 		  sender: "me",
@@ -184,7 +184,7 @@ const memories = [
 		{
 		  sender: "jeryy",
 		  name: "Jerry",
-		  text: "Ahn Good Night Naa thoongura apo"
+		  text: "Ahn Good Night Naa Thoonga poraen"
 		},
 		{
 		  sender: "me",
@@ -209,8 +209,8 @@ const memories = [
 	  date: "SEPTEMBER 09",
 	  type: "audio",
 	  tag: "A Little Audio Memory",
-	  title: "Just Press Play.",
-	  text: "No Photo Today. Just Listen For A Little While.",
+	  title: "Just Press Play",
+	  text: "No Photo Today.. Just Listen For A Little While..",
 	  quote: "Voices and Polambals of Hasee All Over Theses Days !!",
 	  audio: "assets/day09.mp3"
 	},
@@ -219,7 +219,7 @@ const memories = [
 	  date: "SEPTEMBER 10",
 	  type: "letter",
 	  tag: "A Few Things",
-	  title: "I Don't Say These Often.",
+	  title: "I Don't Say These Often..",
 	  text: "Some Things Are Easier To Write Than To Say.",
 	  quote: "Some Words Take Longer To Say, But They Stay Longer as Memories Forever !!",
 
@@ -566,7 +566,7 @@ function renderDay(day) {
 			</div>
 
 			<p class="puzzle-question">
-			  What Do You Think This Snap is About?
+			  What Do You Think This Snap is About ??
 			</p>
 
 			<div class="puzzle-options">
@@ -579,7 +579,7 @@ function renderDay(day) {
 			  </button>
 
 			  <button type="button" data-answer="wrong">
-				Just a funny photo
+				Just a Funny Photo
 			  </button>
 
 			</div>
@@ -646,7 +646,7 @@ function renderDay(day) {
 			<div class="jigsaw-header">
 
 			  <span class="jigsaw-label">
-				A LITTLE CHALLENGE
+				A Little Challenge
 			  </span>
 
 			  <h3>
@@ -654,7 +654,7 @@ function renderDay(day) {
 			  </h3>
 
 			  <p>
-				Drag the pieces around and see if you can rebuild the picture.
+				Drag The Pieces Around and See If You Can Rebuild The Picture..
 			  </p>
 
 			</div>
@@ -973,7 +973,7 @@ function renderDay(day) {
 			  );
 
 			  message.textContent =
-				"Now choose where to move it 👀";
+				"Now Choose Where To Move It";
 
 			  return;
 			}
@@ -988,7 +988,7 @@ function renderDay(day) {
 			  selectedPiece = null;
 
 			  message.textContent =
-				"Choose another piece.";
+				"Choose Another Piece";
 
 			  return;
 			}
@@ -1042,7 +1042,7 @@ function renderDay(day) {
 			  `MOVES: ${moves}`;
 
 			message.textContent =
-			  "Keep going... you're getting there.";
+			  "Keep Going.. You're Getting There..";
 
 			renderBoard();
 
@@ -1101,7 +1101,7 @@ function renderDay(day) {
 			);
 
 			message.textContent =
-			  "You found the memory :)";
+			  "You Found The Memory :)";
 
 
 			setTimeout(() => {
@@ -1154,11 +1154,11 @@ function renderDay(day) {
         </div>
 
         <p class="letter-small">
-          A LITTLE SOMETHING FOR YOU
+          A Little Something For You !!
         </p>
 
         <h3>
-          Open This When You're Ready.
+          Open This When You're Ready..
         </h3>
 
         <button
@@ -1178,7 +1178,7 @@ function renderDay(day) {
 
         <p>
           Just Wanna Say Thannkkk Youuu For Being With Me
-          For All These Days, To My Friend In The Opposite Side..
+          For All These Days In My Both Good As Well As My Bad, To My Favourite Person In The Opposite Gender..
           Also Don't Change Yourself For Anyone..
           Epovum Sirichitae Iru Haseeenaaaa !!
         </p>
@@ -1233,17 +1233,17 @@ function renderDay(day) {
 
 
         <span class="letter10-label">
-          A FEW THINGS
+          A Few Things
         </span>
 
 
         <h3>
-          I Don't Say These Often.
+          I Don't Say These Often..
         </h3>
 
 
         <p class="letter10-intro">
-          Some things are easier to write than to say.
+          Some Things Are Easier To Write Than To Say !!
         </p>
 
 
@@ -1746,7 +1746,7 @@ else if (type === "audio") {
           .catch(() => {
 
             status.textContent =
-              "Unable to play this audio.";
+              "Unable To Play This Audio";
 
           });
 
@@ -1762,7 +1762,7 @@ else if (type === "audio") {
         );
 
         status.textContent =
-          "Paused.";
+          "Paused";
       }
 
     }
@@ -1883,7 +1883,7 @@ else if (item.type === "pin") {
     <div class="pin-screen" id="pinScreen">
 
       <p class="pin-description">
-        Enter The PIN To Unlock Today's Memory.
+        Enter The PIN To Unlock Today's Memory..
       </p>
 
       <div class="pin-dots" id="pinDots">
@@ -1935,7 +1935,7 @@ else if (item.type === "pin") {
         </div>
 
         <p class="pin-countdown">
-          20 Days To Go !!
+          20 More Surprise Moments Waiting For You !!
         </p>
       </div>
     </div>
@@ -1971,7 +1971,7 @@ else if (item.type === "pin") {
 
   function checkPin() {
     if (enteredPin === item.pin) {
-      pinMessage.textContent = "Unlocked ❤️";
+      pinMessage.textContent = "Unlocked";
 
       pinScreen.classList.add("pin-success");
 
@@ -1982,7 +1982,7 @@ else if (item.type === "pin") {
       return;
     }
 
-    pinMessage.textContent = "Wrong PIN... Try again 👀";
+    pinMessage.textContent = "Wrong PIN... Try Again..";
 
     pinScreen.classList.remove("pin-error");
 
