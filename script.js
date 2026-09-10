@@ -225,9 +225,7 @@ const memories = [
 
 	  letter: `
 	Heyyy Haseee,
-	New House.. New Beginning.. For the past 15yrs you are living in the same area, same house.. Yrs maybe gone but the memories stay forever..
-	Hope Everything going well in this new home.. Soon you will be adapted to this area and neighbours around you.. Insha Allah intha veetula 
-	aachum ellam nallathave nadakatum.. Epovum solrathu thaan ethunaalum paathukalam daa.. Aprm unkitta sonna maari Intha September 2026 
+	Today 10/09/26, New House.. New Beginning.. For the past 15yrs you are living in the same area, same house.. Years maybe gone but the memories stay forever.. Hope Everything going well in this new home.. Soon you will be adapted to this area and neighbours around you.. Enna puthusa solla nu terilae because Unkitta Ethunalum all of the sudden solliralam ethuvum yosikama so already ellamae sollitaen.. Epovum solrathu thaan ethunaalum paathukalam daa, Ethukum romba stress panni overthink pannikatha, Epovum sirichitae iru, Avlo prblm unnaku irukku ellam overcome panni nee ivlo thooram vanthirukka innum 18 days to complete your 21 and to start your 22.. So enjoy every moment and make memories.. Aprm unkitta sonna maari Intha September 2026 kandipa memorable aa Iruka vaipaen and these 10days and upcoming days are just a part of it.. Aprm one big Thanks for coming into my life actually started with an attitude mindset but ipo like ur somewhat became very close and the only one person I can trust and share anything, whatever stuff or tea, without any second taught.. Thanks for Everything you done to me.. No other words to say.. Stay Happy Forever..
 	`
 	},
   {
@@ -421,7 +419,7 @@ function getUnlockedDay(date = new Date()) {
   // 🧪 TEST MODE
   // Simulate September 4 at 11:25 PM
   if (TEST_MODE) {
-    return 7;
+    return 10;
   }
 
   // Day 1 is available from September 1
