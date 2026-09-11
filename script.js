@@ -229,14 +229,61 @@ const memories = [
 	`
 	},
   {
-    day: 11,
-    date: "SEPTEMBER 11",
-    tag: "THINGS THAT REMIND ME",
-    title: "Little things = you.",
-    text: "A place, a song, a phrase, a random joke… sometimes the smallest things unexpectedly bring a person to mind.",
-    image: "assets/day11.jpg",
-    quote: "Funny how a tiny thing can suddenly remind you of someone."
-  },
+  day: 11,
+  date: "SEPTEMBER 11",
+  type: "quiz",
+  tag: "A Little Test",
+  title: "How Well Do You Remember?",
+  text: "We Are Frds, Since 2025.. Now Let's See How Much You Actually Remember..",
+  quote: "Maybe The Little Things Really Did Stay With You..",
+  quiz: [
+    {
+      question: "Inital Beginning Point Of This Bond ??",
+      options: [
+        "WhatsApp Chat",
+        "Instagram Text",
+        "Phone Calls"
+      ],
+      answer: 2
+    },
+    {
+      question: "Who Usually Says 'Paathukalam' First When Something Happens ??",
+      options: [
+        "Haseena",
+        "Rakkesh",
+        "Both of Them"
+      ],
+      answer: 1
+    },
+    {
+      question: "What Is The Content We Mostly Share In Text, Call or Whenever We Communicate ??",
+      options: [
+		"No Specific Topics, Everything What Comes To Mind..",
+        "Studies And How To Improve Ourself..",
+        "Gossips And Tea About Others.."
+      ],
+      answer: 0
+    },
+    {
+      question: "Where Did We Took Our First Photo Together?",
+      options: [
+        "SVCE",
+        "Symposium",
+        "IV"
+      ],
+      answer: 2
+    },
+    {
+      question: "Which Moment Made Our Friendship Feel More Real ??",
+      options: [
+        "Our First Conversation",
+        "Helping Each Other",
+        "A Random Unplanned Moment"
+      ],
+      answer: 2
+    }
+  ]
+},
   {
     day: 12,
     date: "SEPTEMBER 12",
@@ -419,7 +466,7 @@ function getUnlockedDay(date = new Date()) {
   // 🧪 TEST MODE
   // Simulate September 4 at 11:25 PM
   if (TEST_MODE) {
-    return 10;
+    return 11;
   }
 
   // Day 1 is available from September 1
@@ -1234,14 +1281,8 @@ function renderDay(day) {
           A Few Things
         </span>
 
-
-        <h3>
-          I Don't Say These Often..
-        </h3>
-
-
         <p class="letter10-intro">
-          Some Things Are Easier To Write Than To Say !!
+          A Letter That Holds More Memories !!
         </p>
 
 
@@ -1348,6 +1389,399 @@ function renderDay(day) {
     );
 
   }
+
+}
+
+else if (type === "quiz") {
+
+  /* =====================================================
+     DAY 11 - MEMORY QUIZ
+  ===================================================== */
+
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
+
+  const quizExperience = document.createElement("div");
+
+  quizExperience.id = "quizExperience";
+  quizExperience.className =
+    "memory-experience quiz-experience";
+
+  quizExperience.innerHTML = `
+    <div class="quiz-card">
+
+      <div class="quiz-header">
+
+        <span class="quiz-label">
+          A Little Test
+        </span>
+
+      </div>
+
+      <div class="quiz-progress">
+        <span id="quizQuestionNumber">
+          QUESTION 1 OF ${item.quiz.length}
+        </span>
+
+        <div class="quiz-progress-bar">
+          <div
+            class="quiz-progress-fill"
+            id="quizProgressFill"
+          ></div>
+        </div>
+      </div>
+
+      <div
+        class="quiz-question"
+        id="quizQuestion"
+      ></div>
+
+      <div
+        class="quiz-options"
+        id="quizOptions"
+      ></div>
+
+      <div
+        class="quiz-feedback"
+        id="quizFeedback"
+      ></div>
+
+      <button
+        type="button"
+        class="quiz-next hidden"
+        id="quizNext"
+      >
+        Next Question →
+      </button>
+
+      <div
+        class="quiz-result hidden"
+        id="quizResult"
+      ></div>
+
+    </div>
+  `;
+
+  $("memoryCard").appendChild(quizExperience);
+
+
+  /* =====================================================
+     QUIZ ELEMENTS
+  ===================================================== */
+
+  const questionNumber =
+    quizExperience.querySelector("#quizQuestionNumber");
+
+  const progressFill =
+    quizExperience.querySelector("#quizProgressFill");
+
+  const questionText =
+    quizExperience.querySelector("#quizQuestion");
+
+  const optionsContainer =
+    quizExperience.querySelector("#quizOptions");
+
+  const feedback =
+    quizExperience.querySelector("#quizFeedback");
+
+  const nextButton =
+    quizExperience.querySelector("#quizNext");
+
+  const result =
+    quizExperience.querySelector("#quizResult");
+
+
+  /* =====================================================
+     QUIZ STATE
+  ===================================================== */
+
+  let currentQuestion = 0;
+  let score = 0;
+
+
+  /* =====================================================
+     LOAD QUESTION
+  ===================================================== */
+
+  function loadQuestion() {
+
+    const question = item.quiz[currentQuestion];
+
+    if (!question) {
+      showResult();
+      return;
+    }
+
+    questionNumber.textContent =
+      `QUESTION ${currentQuestion + 1} OF ${item.quiz.length}`;
+
+    progressFill.style.width =
+      `${((currentQuestion + 1) / item.quiz.length) * 100}%`;
+
+    questionText.textContent =
+      question.question;
+
+    optionsContainer.innerHTML = "";
+
+    feedback.textContent = "";
+    feedback.className = "quiz-feedback";
+
+    nextButton.classList.add("hidden");
+
+
+    question.options.forEach((option, index) => {
+
+      const button =
+        document.createElement("button");
+
+      button.type = "button";
+
+      button.className =
+        "quiz-option";
+
+      button.textContent =
+        option;
+
+      button.dataset.index =
+        index;
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          answerQuestion(
+            index,
+            question.answer
+          );
+
+        }
+      );
+
+      optionsContainer.appendChild(button);
+
+    });
+
+  }
+
+
+  /* =====================================================
+     ANSWER QUESTION
+  ===================================================== */
+
+  function answerQuestion(selectedIndex, correctIndex) {
+
+    const optionButtons =
+      optionsContainer.querySelectorAll(
+        ".quiz-option"
+      );
+
+    /* Prevent multiple answers */
+
+    optionButtons.forEach(button => {
+      button.disabled = true;
+    });
+
+
+    const selectedButton =
+      optionButtons[selectedIndex];
+
+    const correctButton =
+      optionButtons[correctIndex];
+
+
+    /* ===================================================
+       CORRECT
+    =================================================== */
+
+    if (selectedIndex === correctIndex) {
+
+      score++;
+
+      selectedButton.classList.add(
+        "correct"
+      );
+
+      feedback.textContent =
+        "Correct !!";
+
+      feedback.classList.add(
+        "correct-feedback"
+      );
+
+    }
+
+    /* ===================================================
+       WRONG
+    =================================================== */
+
+    else {
+
+      selectedButton.classList.add(
+        "wrong"
+      );
+
+      correctButton.classList.add(
+        "correct"
+      );
+
+      feedback.textContent =
+        "Not Quite... But I'll Give You Another Chance..";
+
+      feedback.classList.add(
+        "wrong-feedback"
+      );
+
+    }
+
+
+    /* ===================================================
+       SHOW NEXT BUTTON
+    =================================================== */
+
+    if (
+      currentQuestion <
+      item.quiz.length - 1
+    ) {
+
+      nextButton.textContent =
+        "Next Question →";
+
+    } else {
+
+      nextButton.textContent =
+        "See My Score !!";
+
+    }
+
+    nextButton.classList.remove(
+      "hidden"
+    );
+
+  }
+
+
+  /* =====================================================
+     NEXT QUESTION
+  ===================================================== */
+
+  nextButton.addEventListener(
+    "click",
+    () => {
+
+      currentQuestion++;
+
+      if (
+        currentQuestion >=
+        item.quiz.length
+      ) {
+
+        showResult();
+
+      } else {
+
+        loadQuestion();
+
+      }
+
+    }
+  );
+
+
+  /* =====================================================
+     FINAL RESULT
+  ===================================================== */
+
+  function showResult() {
+
+    questionNumber.textContent =
+      "Quiz Completed !!";
+
+    progressFill.style.width =
+      "100%";
+
+    questionText.innerHTML =
+      "Okkay.. Let's See How Well You Remember Us..";
+
+    optionsContainer.innerHTML = "";
+
+    feedback.textContent = "";
+
+    nextButton.classList.add(
+      "hidden"
+    );
+
+    let resultTitle = "";
+    let resultMessage = "";
+
+    if (score === item.quiz.length) {
+
+      resultTitle =
+        "Perfect Score..️";
+
+      resultMessage =
+        "Okayyy... You Actually Remember Everything !!";
+
+    }
+
+    else if (score >= 4) {
+
+      resultTitle =
+        `${score} / ${item.quiz.length}`;
+
+      resultMessage =
+        "Not Bad At All... I Knew You Were Paying Attention..";
+
+    }
+
+    else if (score >= 3) {
+
+      resultTitle =
+        `${score} / ${item.quiz.length}`;
+
+      resultMessage =
+        "Hmm... Not Perfect, But I'll Let That One Slide..";
+
+    }
+
+    else {
+
+      resultTitle =
+        `${score} / ${item.quiz.length}`;
+
+      resultMessage =
+        "I'm Slightly Concerned Now.. ";
+
+    }
+
+
+    result.innerHTML = `
+      <div class="quiz-result-icon">
+        ${score === item.quiz.length ? "❤️" : "✨"}
+      </div>
+
+      <h3>
+        ${resultTitle}
+      </h3>
+
+      <p>
+        ${resultMessage}
+      </p>
+
+    `;
+
+    result.classList.remove(
+      "hidden"
+    );
+
+  }
+
+
+  /* =====================================================
+     START QUIZ
+  ===================================================== */
+
+  loadQuestion();
 
 }
 
