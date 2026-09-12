@@ -229,70 +229,75 @@ const memories = [
 	`
 	},
   {
-  day: 11,
-  date: "SEPTEMBER 11",
-  type: "quiz",
-  tag: "A Little Test",
-  title: "How Well Do You Remember?",
-  text: "We Are Frds, Since 2025.. Now Let's See How Much You Actually Remember..",
-  quote: "Maybe The Little Things Really Did Stay With You..",
-  quiz: [
-    {
-      question: "Inital Beginning Point Of This Bond ??",
-      options: [
-        "WhatsApp Chat",
-        "Instagram Text",
-        "Phone Calls"
-      ],
-      answer: 2
-    },
-    {
-      question: "Who Usually Says 'Paathukalam' First When Something Happens ??",
-      options: [
-        "Haseena",
-        "Rakkesh",
-        "Both of Them"
-      ],
-      answer: 1
-    },
-    {
-      question: "What Is The Content We Mostly Share In Text, Call or Whenever We Communicate ??",
-      options: [
-		"No Specific Topics, Everything What Comes To Mind..",
-        "Studies And How To Improve Ourself..",
-        "Gossips And Tea About Others.."
-      ],
-      answer: 0
-    },
-    {
-      question: "Where Did We Took Our First Photo Together?",
-      options: [
-        "SVCE",
-        "Symposium",
-        "IV"
-      ],
-      answer: 2
-    },
-    {
-      question: "Which Moment Made Our Friendship Feel More Real ??",
-      options: [
-        "Our First Conversation",
-        "Helping Each Other",
-        "A Random Unplanned Moment"
-      ],
-      answer: 2
-    }
-  ]
-},
+	  day: 11,
+	  date: "SEPTEMBER 11",
+	  type: "quiz",
+	  tag: "A Little Test",
+	  title: "How Well Do You Remember?",
+	  text: "We Are Frds, Since 2025.. Now Let's See How Much You Actually Remember..",
+	  quote: "Maybe The Little Things Really Did Stay With You..",
+	  quiz: [
+		{
+		  question: "Inital Beginning Point Of This Bond ??",
+		  options: [
+			"WhatsApp Chat",
+			"Instagram Text",
+			"Phone Calls"
+		  ],
+		  answer: 2
+		},
+		{
+		  question: "Who Usually Says 'Paathukalam' First When Something Happens ??",
+		  options: [
+			"Haseena",
+			"Rakkesh",
+			"Both of Them"
+		  ],
+		  answer: 1
+		},
+		{
+		  question: "What Is The Content We Mostly Share In Text, Call or Whenever We Communicate ??",
+		  options: [
+			"No Specific Topics, Everything What Comes To Mind..",
+			"Studies And How To Improve Ourself..",
+			"Gossips And Tea About Others.."
+		  ],
+		  answer: 0
+		},
+		{
+		  question: "Where Did We Took Our First Photo Together?",
+		  options: [
+			"SVCE",
+			"Symposium",
+			"IV"
+		  ],
+		  answer: 2
+		},
+		{
+		  question: "Which Moment Made Our Friendship Feel More Real ??",
+		  options: [
+			"Our First Conversation",
+			"Helping Each Other",
+			"A Random Unplanned Moment"
+		  ],
+		  answer: 2
+		}
+	  ]
+	},
   {
-    day: 12,
-    date: "SEPTEMBER 12",
-    tag: "YOU FORGOT THIS ONE",
-    title: "You probably forgot this photo. 😭",
-    text: "I didn't. So naturally, it had to make an appearance here.",
-    image: "assets/day12.jpg",
-    quote: "Some forgotten pictures deserve a second life."
-  },
+	  day: 12,
+	  date: "SEPTEMBER 12",
+	  type: "reveal",
+	  tag: "You Remember This One !!",
+	  title: "Hope, You Remember This !!",
+	  text: "I Didn't.. So Naturally, It Had To Make An Appearance Here..",
+	  image: "assets/day12.jpg",
+	  quote: "Some Forgotten Pictures Deserve A Second Life..",
+
+	  revealText: `
+	I don't know if you remember this ?? And apparently, remembering it was enough reason to put it here..
+	`
+	},
   {
     day: 13,
     date: "SEPTEMBER 13",
@@ -466,7 +471,7 @@ function getUnlockedDay(date = new Date()) {
   // 🧪 TEST MODE
   // Simulate September 4 at 11:25 PM
   if (TEST_MODE) {
-    return 11;
+    return 12;
   }
 
   // Day 1 is available from September 1
@@ -1782,6 +1787,180 @@ else if (type === "quiz") {
   ===================================================== */
 
   loadQuestion();
+
+}
+
+else if (type === "reveal") {
+
+  /* =====================================================
+     DAY 12 - HIDDEN PHOTO REVEAL
+  ===================================================== */
+
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
+
+
+  const revealExperience =
+    document.createElement("div");
+
+  revealExperience.id = "revealExperience";
+  revealExperience.className =
+    "memory-experience reveal-experience";
+
+
+  revealExperience.innerHTML = `
+    <div class="reveal-card">
+
+      <div class="reveal-header">
+
+        <span class="reveal-label">
+          A Little Memory !!
+        </span>
+
+        <h3>
+          You Probably Don't Realise How Many Little Things You Leave Behind !!
+        </h3>
+
+      </div>
+
+
+      <div class="reveal-photo-wrap">
+
+        <img
+          src="${item.image}"
+          alt="${item.title}"
+          class="reveal-photo hidden-photo"
+          id="revealPhoto"
+        />
+
+        <div
+          class="reveal-overlay"
+          id="revealOverlay"
+        >
+          <span>?</span>
+        </div>
+
+      </div>
+
+
+      <button
+        type="button"
+        class="reveal-button"
+        id="revealButton"
+      >
+        Reveal Memory
+      </button>
+
+
+      <div
+        class="reveal-message hidden"
+        id="revealMessage"
+      >
+
+        <h4>
+          I Remember This One..
+        </h4>
+
+        <div
+          class="reveal-story"
+          id="revealStory"
+        ></div>
+
+      </div>
+
+    </div>
+  `;
+
+
+  $("memoryCard").appendChild(
+    revealExperience
+  );
+
+
+  /* =====================================================
+     ELEMENTS
+  ===================================================== */
+
+  const revealPhoto =
+    revealExperience.querySelector(
+      "#revealPhoto"
+    );
+
+  const revealOverlay =
+    revealExperience.querySelector(
+      "#revealOverlay"
+    );
+
+  const revealButton =
+    revealExperience.querySelector(
+      "#revealButton"
+    );
+
+  const revealMessage =
+    revealExperience.querySelector(
+      "#revealMessage"
+    );
+
+  const revealStory =
+    revealExperience.querySelector(
+      "#revealStory"
+    );
+
+
+  /* =====================================================
+     REVEAL MEMORY
+  ===================================================== */
+
+  revealButton.addEventListener(
+    "click",
+    () => {
+
+      revealButton.disabled = true;
+
+      revealButton.textContent =
+        "Memory Revealed !!";
+
+
+      revealPhoto.classList.remove(
+        "hidden-photo"
+      );
+
+      revealPhoto.classList.add(
+        "photo-revealed"
+      );
+
+      revealOverlay.classList.add(
+        "hidden"
+      );
+
+
+      setTimeout(() => {
+
+        revealStory.innerHTML =
+          item.revealText
+            .trim()
+            .split("\n")
+            .map(line => {
+
+              if (line.trim() === "") {
+                return "<br>";
+              }
+
+              return `<p>${line}</p>`;
+
+            })
+            .join("");
+
+
+        revealMessage.classList.remove(
+          "hidden"
+        );
+
+      }, 450);
+
+    }
+  );
 
 }
 
