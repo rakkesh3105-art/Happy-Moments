@@ -298,33 +298,109 @@ const memories = [
 	I don't know if you remember this ?? And apparently, remembering it was enough reason to put it here..
 	`
 	},
-  {
-    day: 13,
-    date: "SEPTEMBER 13",
-    tag: "A FAVOURITE MEMORY",
-    title: "If I had to pick one...",
-    text: "This would be somewhere very high on the list. Not because it was perfect, but because it felt real.",
-    image: "assets/day13.jpg",
-    quote: "The memories we keep are rarely the ones we planned."
-  },
-  {
-    day: 14,
-    date: "SEPTEMBER 14",
-    tag: "HALFWAY",
-    title: "Halfway there. ✨",
-    text: "14 days. 14 little pieces. And now we are halfway to the day this whole thing was made for.",
-    image: "assets/day14.jpg",
-    quote: "Half the countdown is over. The best part is still waiting."
-  },
-  {
-    day: 15,
-    date: "SEPTEMBER 15",
-    tag: "HOW I SEE YOU",
-    title: "If I had to describe you...",
-    text: "I could probably write pages. But for today, I will just say this: you make ordinary moments feel a little less ordinary.",
-    image: "assets/day15.jpg",
-    quote: "Some people become part of your favourite memories without even trying."
-  },
+{
+  day: 13,
+  date: "SEPTEMBER 13",
+  type: "mystery",
+  tag: "A Little Mystery !!",
+  title: "There's A Message For You..",
+  text: "Five Little Clues.. One Hidden Message.. Take Your Time And See If You Can Figure It Out..",
+  quote: "Sometimes The Simplest Things Are The Ones Worth Figuring Out..",
+  
+  clues: [
+    {
+      number: 1,
+      icon: "🕐",
+      title: "The Time",
+      question: "This Isn't Just A Time.. What Does It Remind You Of ??",
+      answer: "1125",
+      hint: "Think About A Very Specific Time.."
+    },
+    {
+      number: 2,
+      icon: "📅",
+      title: "The Date",
+      question: "Two Numbers.. One Very Important Day.. What Day Is This ??",
+      answer: "2809",
+      hint: "It's Written As DDMM.."
+    },
+    {
+      number: 3,
+      icon: "🔤",
+      title: "Mixed Up",
+      question: "These Letters Got Mixed Up.. Put Them Back Together..",
+      scrambled: "M S G B E A H A N E U E",
+      answer: "Haseena Begum",
+      hint: "You Already Know Who This Belongs To.."
+    },
+    {
+      number: 4,
+      icon: "💬",
+      title: "The Phrase",
+      question: "There's One Phrase That Somehow Became Our Default Answer..",
+      subtext: "Not A Yes.. Not A No.. Just.....",
+      answer: "Paathukalam",
+      hint: "You Definitely Know This One.."
+    },
+    {
+      number: 5,
+      icon: "🧩",
+      title: "Put It Together",
+      question: "You've Found All The Pieces. Now Enter The Final Key..",
+      answer: "Jerry",
+	  hint: "How I Used To Call You ??"
+    }
+  ],
+
+  finalMessage: `
+  Because this day isn't really about solving anything.. It's just a small reminder that the person behind all these little surprises is you.. Lot more yet to come.. Let's unlock it together.. And also a big thanks for everything.. #Epovum Sirichitae Iru Haseeeenaaaa :)
+  `
+},
+{
+  day: 14,
+  date: "SEPTEMBER 14",
+  type: "halfway",
+  tag: "HalfWay There !!",
+  title: "14 Days Down.. 14 To Go..",
+  text: "You've Made It Exactly HalfWay Through The Little Journey !!",
+  quote: "Half The Journey Is Over, Half is Waiting For You.. "
+},
+{
+  day: 15,
+  date: "SEPTEMBER 15",
+  type: "choice",
+  tag: "A Little Trip Down Memory Lane !!",
+  title: "A Few Things From Our College Days",
+  text: "Three Little Pieces From The Days, People and Moments That Made College Days A Little More Memorable..",
+  quote: "Some Memories Are Pictures.. Some Are Stories.. Some Just Stay With Us..",
+  choices: [
+    {
+      id: "college",
+      icon: "😂",
+      title: "Those Days",
+      text: `
+    From random laughs between classes to completely unnecessary conversations, teasing each other and all the little things we did without even realizing they would become memories.. Some days were stressful and some were just pure fun.. But somehow, those ordinary college days became some of our favourite memories.. Looking back, We think that's what made college day special..
+    `
+    },
+
+    {
+      id: "everyone",
+      icon: "📸",
+      title: "All of Us",
+      image: "assets/day15.jpg",
+      text: "A Collection Of Some Funnier Moments We Made !!"
+    },
+
+    {
+      id: "memory",
+      icon: "🫶",
+      title: "One Memory",
+      text: `
+    It's not necessarily the biggest or most important moment.. It's just one of those small moments that randomly comes back to our mind sometimes and makes us smile.. That's probably what makes a memory special.. We don't have to try to remember it.. It just stays..
+      `
+    }
+  ]
+},
   {
     day: 16,
     date: "SEPTEMBER 16",
@@ -471,7 +547,7 @@ function getUnlockedDay(date = new Date()) {
   // 🧪 TEST MODE
   // Simulate September 4 at 11:25 PM
   if (TEST_MODE) {
-    return 12;
+    return 15;
   }
 
   // Day 1 is available from September 1
@@ -592,6 +668,123 @@ function renderDay(day) {
 	  }
 
 	}
+	else if (type === "halfway") {
+
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
+
+  const halfway = document.createElement("div");
+
+  halfway.className =
+    "memory-experience halfway-experience";
+
+  halfway.innerHTML = `
+
+    <div class="halfway-icon">
+      ⏳
+    </div>
+
+    <div class="halfway-label">
+      HALFWAY THERE
+    </div>
+
+    <div class="halfway-counter">
+
+      <div class="halfway-number">
+        <strong>14</strong>
+        <span>DAYS DONE</span>
+      </div>
+
+      <div class="halfway-divider"></div>
+
+      <div class="halfway-number">
+        <strong>14</strong>
+        <span>DAYS LEFT</span>
+      </div>
+
+    </div>
+
+    <div class="halfway-timeline">
+
+      <div class="halfway-track">
+
+        <div class="halfway-complete"></div>
+
+        <div class="halfway-point halfway-start">
+          <span>01</span>
+        </div>
+
+        <div class="halfway-point halfway-middle">
+          <span>14</span>
+        </div>
+
+        <div class="halfway-point halfway-end">
+          <span>28</span>
+        </div>
+
+      </div>
+
+      <div class="halfway-timeline-labels">
+        <span>START</span>
+        <span>HALFWAY</span>
+        <span>BIRTHDAY</span>
+      </div>
+
+    </div>
+
+    <div class="halfway-message">
+
+		<p class="halfway-main-message">
+			The first half brought memories, little surprises, puzzles and a few
+			things you probably didn't expect. But we're only halfway. There are
+			still fourteen days waiting for you with lots of surprises, memories
+			and unexpected moments. Also 14 days exactly 2 weeks to go for the
+			born-day of the dad's little princess Haseena Begum !!
+		</p>
+
+		<p class="halfway-birthday-message">
+			❤️ Advance Happy Birthday Jerry ❤️
+		</p>
+
+	</div>
+
+    <button
+      type="button"
+      class="halfway-button"
+      id="halfwayContinue"
+    >
+      Continue the journey →
+    </button>
+
+    <div
+      class="halfway-final hidden"
+      id="halfwayFinal"
+    >
+      <span>14 Days Down..</span>
+      <strong>14 Days To Go..</strong>
+    </div>
+
+  `;
+
+  $("memoryCard").appendChild(halfway);
+
+  const continueButton =
+    halfway.querySelector("#halfwayContinue");
+
+  const finalMessage =
+    halfway.querySelector("#halfwayFinal");
+
+  continueButton.addEventListener("click", () => {
+
+    continueButton.classList.add("hidden");
+
+    finalMessage.classList.remove("hidden");
+
+    finalMessage.classList.add("halfway-final-show");
+
+  });
+}
 		else if (type === "puzzle") {
 
 		  image.style.display = "none";
@@ -680,6 +873,322 @@ function renderDay(day) {
 		  });
 
 		}
+		
+		else if (type === "mystery") {
+
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
+
+  const mystery = document.createElement("div");
+
+  mystery.className =
+    "memory-experience mystery-experience";
+
+  mystery.innerHTML = `
+    <div class="mystery-header">
+
+      <h3>
+        A Little Mystery !!
+      </h3>
+
+    </div>
+
+    <div class="mystery-progress">
+      <span id="mysteryProgress">
+        CLUE 01 OF 05
+      </span>
+
+      <div class="mystery-progress-track">
+        <div
+          class="mystery-progress-fill"
+          id="mysteryProgressFill"
+        ></div>
+      </div>
+    </div>
+
+    <div
+      class="mystery-clue"
+      id="mysteryClue"
+    ></div>
+
+    <div
+      class="mystery-feedback"
+      id="mysteryFeedback"
+    ></div>
+
+    <button
+      type="button"
+      class="mystery-next hidden"
+      id="mysteryNext"
+    >
+      Next Clue →
+    </button>
+
+    <div
+      class="mystery-final hidden"
+      id="mysteryFinal"
+    ></div>
+  `;
+
+  $("memoryCard").appendChild(mystery);
+
+  const clueContainer =
+    mystery.querySelector("#mysteryClue");
+
+  const progress =
+    mystery.querySelector("#mysteryProgress");
+
+  const progressFill =
+    mystery.querySelector("#mysteryProgressFill");
+
+  const feedback =
+    mystery.querySelector("#mysteryFeedback");
+
+  const nextButton =
+    mystery.querySelector("#mysteryNext");
+
+  const final =
+    mystery.querySelector("#mysteryFinal");
+
+  let clueIndex = 0;
+
+  function normalizeAnswer(value) {
+    return value
+      .toUpperCase()
+      .replace(/[^A-Z0-9]/g, "");
+  }
+
+  function renderClue() {
+
+    const clue = item.clues[clueIndex];
+
+    progress.textContent =
+      `CLUE ${String(clue.number).padStart(2, "0")} OF 05`;
+
+    progressFill.style.width =
+      `${((clueIndex + 1) / item.clues.length) * 100}%`;
+
+    feedback.textContent = "";
+    feedback.className = "mystery-feedback";
+
+    nextButton.classList.add("hidden");
+
+    let extraContent = "";
+
+    if (clue.scrambled) {
+      extraContent = `
+        <div class="mystery-scrambled">
+          ${clue.scrambled}
+        </div>
+      `;
+    }
+
+    if (clue.subtext) {
+      extraContent += `
+        <p class="mystery-subtext">
+          ${clue.subtext}
+        </p>
+      `;
+    }
+
+    clueContainer.innerHTML = `
+
+      <div class="mystery-clue-icon">
+        ${clue.icon}
+      </div>
+
+      <span class="mystery-clue-number">
+        CLUE ${String(clue.number).padStart(2, "0")}
+      </span>
+
+      <h4>
+        ${clue.title}
+      </h4>
+
+      <p class="mystery-question">
+        ${clue.question}
+      </p>
+
+      ${extraContent}
+
+      <div class="mystery-input-row">
+
+        <input
+          type="text"
+          id="mysteryAnswer"
+          class="mystery-input"
+          placeholder="Your answer..."
+          autocomplete="off"
+        />
+
+        <button
+          type="button"
+          class="mystery-submit"
+          id="mysterySubmit"
+        >
+          Check
+        </button>
+
+      </div>
+
+      <button
+        type="button"
+        class="mystery-hint"
+        id="mysteryHint"
+      >
+        Need A Hint ??
+      </button>
+
+      <p
+        class="mystery-hint-text hidden"
+        id="mysteryHintText"
+      >
+        ${clue.hint || ""}
+      </p>
+    `;
+
+    const input =
+      mystery.querySelector("#mysteryAnswer");
+
+    const submit =
+      mystery.querySelector("#mysterySubmit");
+
+    const hintButton =
+      mystery.querySelector("#mysteryHint");
+
+    const hintText =
+      mystery.querySelector("#mysteryHintText");
+
+    function checkAnswer() {
+
+      const userAnswer =
+        normalizeAnswer(input.value);
+
+      const correctAnswer =
+        normalizeAnswer(clue.answer);
+
+      if (!userAnswer) {
+        feedback.textContent =
+          "Enter Something First..";
+
+        feedback.className =
+          "mystery-feedback error";
+
+        return;
+      }
+
+      if (userAnswer === correctAnswer) {
+
+        feedback.textContent =
+          "Correct !! You Found This One ✓";
+
+        feedback.className =
+          "mystery-feedback success";
+
+        input.disabled = true;
+        submit.disabled = true;
+
+        if (clueIndex === item.clues.length - 1) {
+
+          setTimeout(showFinalMessage, 600);
+
+        } else {
+
+          nextButton.classList.remove("hidden");
+
+        }
+
+      } else {
+
+        feedback.textContent =
+          "Not Quite.. Try Again..";
+
+        feedback.className =
+          "mystery-feedback error";
+
+        input.classList.add("mystery-shake");
+
+        setTimeout(() => {
+          input.classList.remove("mystery-shake");
+        }, 450);
+      }
+    }
+
+    submit.addEventListener(
+      "click",
+      checkAnswer
+    );
+
+    input.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (event.key === "Enter") {
+          checkAnswer();
+        }
+
+      }
+    );
+
+    hintButton.addEventListener(
+      "click",
+      () => {
+
+        hintText.classList.toggle("hidden");
+
+      }
+    );
+
+    setTimeout(() => {
+      input.focus();
+    }, 100);
+  }
+
+  function showFinalMessage() {
+
+    clueContainer.classList.add("hidden");
+    feedback.classList.add("hidden");
+    nextButton.classList.add("hidden");
+
+    progress.textContent =
+      "Message Found ✓";
+
+    progressFill.style.width = "100%";
+
+    final.innerHTML = `
+
+      <div class="mystery-final-message">
+        ${item.finalMessage
+          .trim()
+          .split(/\n\s*\n/)
+          .map(paragraph => `<p>${paragraph.trim()}</p>`)
+          .join("")
+        }
+      </div>
+
+      <div class="mystery-final-heart">
+        ❤️
+      </div>
+
+    `;
+
+    final.classList.remove("hidden");
+  }
+
+  nextButton.addEventListener(
+    "click",
+    () => {
+
+      clueIndex++;
+
+      renderClue();
+
+    }
+  );
+
+  renderClue();
+}
 		
 		else if (type === "jigsaw") {
 
@@ -1964,6 +2473,248 @@ else if (type === "reveal") {
 
 }
 
+/* =====================================================
+   DAY 13 — MEMORY POPUP EXPERIENCE
+===================================================== */
+
+if (type === "choice") {
+
+  const experience = document.createElement("div");
+  experience.className = "memory-experience choice-experience";
+
+  experience.innerHTML = `
+    <div class="choice-header">
+      <span class="choice-kicker">
+        A Little Trip Down Memory Lane !!
+      </span>
+
+      <h3>Three Little Pieces Of College Life..</h3>
+
+    </div>
+
+    <div class="choice-grid"></div>
+
+    <!-- POPUP -->
+    <div class="choice-modal" id="choiceModal">
+
+      <div class="choice-modal-overlay"></div>
+
+      <div class="choice-modal-box">
+
+        <button
+          type="button"
+          class="choice-modal-close"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+        <div class="choice-modal-icon"></div>
+
+        <h3 class="choice-modal-title"></h3>
+
+        <div class="choice-modal-body"></div>
+
+      </div>
+
+    </div>
+  `;
+
+  const choiceGrid =
+    experience.querySelector(".choice-grid");
+
+  const choiceModal =
+    experience.querySelector("#choiceModal");
+
+  const modalOverlay =
+    choiceModal.querySelector(".choice-modal-overlay");
+
+  const modalClose =
+    choiceModal.querySelector(".choice-modal-close");
+
+  const modalIcon =
+    choiceModal.querySelector(".choice-modal-icon");
+
+  const modalTitle =
+    choiceModal.querySelector(".choice-modal-title");
+
+  const modalBody =
+    choiceModal.querySelector(".choice-modal-body");
+
+
+  /* ---------------------------------------------
+     CREATE THREE CARDS
+  --------------------------------------------- */
+
+  item.choices.forEach((choice) => {
+
+    const card = document.createElement("div");
+
+    card.className = "choice-card";
+
+    card.innerHTML = `
+      <button
+        type="button"
+        class="choice-button"
+      >
+
+        <span class="choice-icon">
+          ${choice.icon}
+        </span>
+
+        <span class="choice-title">
+          ${choice.title}
+        </span>
+
+        <span class="choice-open">
+          Open →
+        </span>
+
+      </button>
+    `;
+
+
+    const button =
+      card.querySelector(".choice-button");
+
+
+    /* ---------------------------------------------
+       OPEN POPUP
+    --------------------------------------------- */
+
+    button.addEventListener("click", () => {
+
+      modalIcon.textContent = choice.icon;
+
+      modalTitle.textContent = choice.title;
+
+      let contentHTML = "";
+
+
+      /* -----------------------------------------
+         COLLEGE DAYS
+      ----------------------------------------- */
+
+      if (choice.id === "college") {
+
+        contentHTML = `
+          <div class="popup-story">
+            ${choice.text
+              .trim()
+              .split("\n\n")
+              .map(
+                paragraph =>
+                  `<p>${paragraph.trim()}</p>`
+              )
+              .join("")}
+          </div>
+        `;
+      }
+
+
+      /* -----------------------------------------
+         ALL OF US
+      ----------------------------------------- */
+
+      else if (choice.id === "everyone") {
+
+        contentHTML = `
+          <div class="popup-photo">
+
+            <img
+              src="${choice.image}"
+              alt="College memories"
+            >
+
+            <p>
+              ${choice.text}
+            </p>
+
+          </div>
+        `;
+      }
+
+
+      /* -----------------------------------------
+         ONE MEMORY
+      ----------------------------------------- */
+
+      else if (choice.id === "memory") {
+
+        contentHTML = `
+          <div class="popup-story personal-popup">
+
+
+            ${choice.text
+              .trim()
+              .split("\n\n")
+              .map(
+                paragraph =>
+                  `<p>${paragraph.trim()}</p>`
+              )
+              .join("")}
+
+          </div>
+        `;
+      }
+
+
+      modalBody.innerHTML = contentHTML;
+
+      choiceModal.classList.add("show");
+
+      document.body.classList.add("day13-modal-open");
+    });
+
+
+    choiceGrid.appendChild(card);
+  });
+
+
+  /* ---------------------------------------------
+     CLOSE POPUP
+  --------------------------------------------- */
+
+  function closeChoiceModal() {
+
+    choiceModal.classList.remove("show");
+
+    document.body.classList.remove(
+      "day13-modal-open"
+    );
+  }
+
+
+  modalClose.addEventListener(
+    "click",
+    closeChoiceModal
+  );
+
+  modalOverlay.addEventListener(
+    "click",
+    closeChoiceModal
+  );
+
+
+  /* ESC KEY */
+  document.addEventListener("keydown", (event) => {
+
+    if (
+      event.key === "Escape" &&
+      choiceModal.classList.contains("show")
+    ) {
+      closeChoiceModal();
+    }
+
+  });
+
+
+  $("quote").insertAdjacentElement(
+    "afterend",
+    experience
+  );
+}
+
 else if (type === "chat") {
   image.style.display = "none";
   placeholder.style.display = "none";
@@ -2485,6 +3236,7 @@ else if (type === "audio") {
   );
 
 }
+
 
 else if (item.type === "pin") {
   const experience = document.createElement("div");
