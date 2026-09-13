@@ -14,7 +14,7 @@
          day03.jpg
          ...
 */
-const TEST_MODE = true;
+const TEST_MODE = false;
 const BIRTHDAY_YEAR = 2026;
 const BIRTHDAY_MONTH = 8; // September
 const BIRTHDAY_DAY = 28;
