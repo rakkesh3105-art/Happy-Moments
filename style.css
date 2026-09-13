@@ -3159,3 +3159,1414 @@ body.birthday-mode {
   }
 
 }
+
+/* =====================================================
+   DAY 13 — MEMORY POPUP EXPERIENCE
+===================================================== */
+
+.choice-experience {
+  width: 100%;
+  max-width: 1050px;
+  margin: 42px auto 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.choice-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.choice-header .choice-kicker {
+  display: inline-block;
+
+  color: #9ca3af !important;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 10px;
+}
+
+.choice-header h3 {
+  margin: 0 0 10px;
+
+  color: #f9fafb !important;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  line-height: 1.25;
+
+  opacity: 1 !important;
+}
+
+.choice-header p {
+  margin: 0;
+
+  color: #d1d5db !important;
+
+  font-size: 15px;
+  line-height: 1.7;
+
+  opacity: 1 !important;
+}
+
+
+/* =====================================================
+   THREE CARDS
+===================================================== */
+
+.choice-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+
+  align-items: stretch;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.choice-card {
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.choice-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #cbd5e1;
+
+  box-shadow:
+    0 14px 35px rgba(15, 23, 42, 0.12);
+}
+
+
+/* =====================================================
+   CARD BUTTON
+===================================================== */
+
+.choice-button {
+  width: 100%;
+
+  min-height: 205px;
+
+  padding: 28px 20px;
+
+  border: none;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  color: #111827;
+
+  transition:
+    background 0.25s ease;
+}
+
+.choice-button:hover {
+  background: #f8fafc;
+}
+
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.choice-icon {
+  width: 64px;
+  height: 64px;
+
+  border-radius: 50%;
+
+  background: #f8fafc;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+
+  margin-bottom: 18px;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.choice-title {
+  color: #111827 !important;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  line-height: 1.35;
+
+  margin-bottom: 10px;
+}
+
+
+/* =====================================================
+   OPEN
+===================================================== */
+
+.choice-open {
+  color: #2563eb !important;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.choice-button:hover .choice-open {
+  transform: translateX(4px);
+}
+
+
+/* =====================================================
+   MODAL BACKDROP
+===================================================== */
+
+.choice-modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+
+  visibility: hidden;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.choice-modal.show {
+  visibility: visible;
+
+  opacity: 1;
+}
+
+
+/* =====================================================
+   MODAL OVERLAY
+===================================================== */
+
+.choice-modal-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    rgba(0, 0, 0, 0.68);
+
+  backdrop-filter: blur(5px);
+}
+
+
+/* =====================================================
+   MODAL BOX
+===================================================== */
+
+.choice-modal-box {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(650px, 100%);
+
+  max-height: 82vh;
+
+  overflow-y: auto;
+
+  padding: 38px 40px;
+
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.3);
+
+  transform:
+    translateY(25px)
+    scale(0.96);
+
+  transition:
+    transform 0.3s ease;
+}
+
+.choice-modal.show .choice-modal-box {
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/* =====================================================
+   CLOSE BUTTON
+===================================================== */
+
+.choice-modal-close {
+  position: absolute;
+
+  top: 14px;
+  right: 16px;
+
+  width: 38px;
+  height: 38px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #f3f4f6;
+
+  color: #374151;
+
+  font-size: 25px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.choice-modal-close:hover {
+  background: #e5e7eb;
+
+  transform: rotate(90deg);
+}
+
+
+/* =====================================================
+   MODAL ICON
+===================================================== */
+
+.choice-modal-icon {
+  width: 68px;
+  height: 68px;
+
+  margin: 0 auto 15px;
+
+  border-radius: 50%;
+
+  background: #f8fafc;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 32px;
+
+  text-align: center;
+}
+
+
+/* =====================================================
+   MODAL TITLE
+===================================================== */
+
+.choice-modal-title {
+  margin: 0 0 24px;
+
+  text-align: center;
+
+  color: #111827 !important;
+
+  font-size: 25px;
+
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+
+/* =====================================================
+   POPUP STORY
+===================================================== */
+
+.popup-story {
+  color: #374151 !important;
+
+  font-size: 16px;
+
+  line-height: 1.85;
+
+  text-align: left;
+}
+
+.popup-story p {
+  margin: 0 0 18px;
+
+  color: #374151 !important;
+}
+
+.popup-story p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =====================================================
+   PERSONAL MEMORY
+===================================================== */
+
+.personal-popup {
+  text-align: center;
+}
+
+.popup-heart {
+  font-size: 27px;
+
+  margin-bottom: 15px;
+}
+
+/* =====================================================
+   DAY 13 — FULL COLLAGE INSIDE POPUP
+===================================================== */
+
+.popup-photo {
+  width: 100%;
+  text-align: center;
+}
+
+.popup-photo img {
+  display: block;
+
+  width: auto;
+  max-width: 100%;
+
+  height: auto;
+
+  max-height: 58vh;
+
+  object-fit: contain;
+
+  margin: 0 auto 18px;
+
+  border-radius: 12px;
+
+  background: #f8fafc;
+}
+
+.popup-photo p {
+  margin: 0;
+
+  color: #6b7280 !important;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  text-align: center;
+}
+
+
+/* =====================================================
+   BODY LOCK WHEN POPUP IS OPEN
+===================================================== */
+
+body.day13-modal-open {
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .choice-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .choice-button {
+    min-height: 155px;
+
+    padding: 22px 18px;
+  }
+
+  .choice-icon {
+    width: 55px;
+    height: 55px;
+
+    font-size: 27px;
+
+    margin-bottom: 12px;
+  }
+
+  .choice-header h3 {
+    font-size: 24px;
+  }
+
+  .choice-experience {
+    padding: 0 14px;
+  }
+
+  .choice-modal {
+    padding: 15px;
+  }
+
+ .choice-modal-box {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(650px, 100%);
+
+  max-height: 90vh;
+
+  overflow: hidden;
+
+  padding: 38px 40px;
+
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.3);
+
+  transform:
+    translateY(25px)
+    scale(0.96);
+
+  transition:
+    transform 0.3s ease;
+}
+
+  .choice-modal-title {
+    font-size: 22px;
+  }
+
+  .popup-story {
+    font-size: 15px;
+
+    line-height: 1.75;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .choice-header h3 {
+    font-size: 22px;
+  }
+
+  .choice-header p {
+    font-size: 14px;
+  }
+
+  .choice-modal-box {
+    padding: 30px 20px;
+  }
+
+  .choice-modal-icon {
+    width: 58px;
+    height: 58px;
+
+    font-size: 28px;
+  }
+
+  .choice-modal-title {
+    font-size: 20px;
+
+    margin-bottom: 20px;
+  }
+
+  .popup-photo img {
+    max-height: 380px;
+  }
+}
+
+/* Day 13 — Justified popup text */
+
+.popup-story {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.popup-story p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.personal-popup {
+  text-align: justify;
+}
+
+.personal-popup p {
+  text-align: justify;
+}
+
+/* =====================================================
+   MOBILE — DAY 13 CARD SCROLL FIX
+===================================================== */
+
+@media (max-width: 800px) {
+
+  /* Allow the main page to scroll normally */
+  html,
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .choice-experience {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .choice-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .choice-card {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+  }
+
+  .choice-button {
+    width: 100%;
+    min-height: 155px;
+  }
+
+
+  /* ---------------------------------------------
+     DAY 13 POPUP ON MOBILE
+  --------------------------------------------- */
+
+  .choice-modal {
+    position: fixed;
+    inset: 0;
+
+    padding: 14px;
+
+    overflow-y: auto;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .choice-modal-box {
+    width: 100%;
+
+    max-width: 650px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    -webkit-overflow-scrolling: touch;
+
+    box-sizing: border-box;
+  }
+
+  /* Full collage should still fit */
+  .popup-photo img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 55vh;
+
+    object-fit: contain;
+  }
+
+  /* Long text can scroll inside popup */
+  .popup-story {
+    max-height: none;
+    overflow: visible;
+
+    text-align: justify;
+  }
+
+  .popup-story p {
+    text-align: justify;
+  }
+}
+
+/* =====================================================
+   DAY 13 — MYSTERY MESSAGE
+===================================================== */
+
+.mystery-experience {
+  width: 100%;
+  max-width: 720px;
+  margin: 28px auto 10px;
+  text-align: center;
+}
+
+.mystery-header {
+  margin-bottom: 26px;
+}
+
+.mystery-icon {
+  font-size: 42px;
+  margin-bottom: 8px;
+}
+
+.mystery-label,
+.mystery-clue-number,
+.mystery-final-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  opacity: 0.65;
+  margin-bottom: 8px;
+}
+
+.mystery-header h3 {
+  margin: 0 0 8px;
+  font-size: 25px;
+}
+
+.mystery-header p {
+  margin: 0 auto;
+  max-width: 520px;
+  line-height: 1.7;
+  opacity: 0.72;
+}
+
+/* Progress */
+
+.mystery-progress {
+  margin-bottom: 26px;
+}
+
+#mysteryProgress {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 9px;
+  opacity: 0.65;
+}
+
+.mystery-progress-track {
+  width: 100%;
+  height: 5px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.mystery-progress-fill {
+  height: 100%;
+  width: 20%;
+  border-radius: inherit;
+  background: currentColor;
+  transition: width 0.35s ease;
+}
+
+/* Clue */
+
+.mystery-clue {
+  padding: 30px 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+
+  /* clean light background */
+  background: #ffffff;
+
+  color: #111827;
+}
+
+.mystery-clue-number {
+  color: #6b7280;
+}
+
+.mystery-clue-icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.mystery-clue h4 {
+  margin: 5px 0 12px;
+  font-size: 23px;
+  color: #111827;
+}
+
+.mystery-question {
+  max-width: 520px;
+  margin: 0 auto 20px;
+  line-height: 1.7;
+  font-size: 16px;
+  color: #374151;
+}
+
+.mystery-subtext {
+  font-style: italic;
+  opacity: 0.75;
+  margin-bottom: 18px;
+  color: #4b5563;
+}
+
+/* Scrambled letters */
+
+.mystery-scrambled {
+  display: inline-flex;
+  padding: 13px 20px;
+  margin: 4px auto 20px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.05);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 7px;
+}
+
+/* Input */
+
+.mystery-input-row {
+  display: flex;
+  gap: 10px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.mystery-input {
+  flex: 1;
+  min-width: 0;
+  height: 48px;
+  padding: 0 15px;
+
+  border: 1px solid #9ca3af;
+  border-radius: 10px;
+
+  outline: none;
+  background: #ffffff;
+  color: #111827;
+
+  font: inherit;
+}
+
+
+.mystery-input:focus {
+  border-color: #111827;
+}
+
+.mystery-submit,
+.mystery-next {
+  height: 48px;
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  background: #111827;
+  color: #ffffff;
+
+  font: inherit;
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.mystery-submit:hover,
+.mystery-next:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+.mystery-submit:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.mystery-input::placeholder {
+  color: #6b7280;
+}
+
+/* Hint */
+
+.mystery-hint {
+  margin-top: 17px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  opacity: 0.6;
+  text-decoration: underline;
+}
+
+.mystery-hint-text {
+  margin: 10px auto 0;
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: 0.65;
+}
+
+/* Feedback */
+
+.mystery-feedback {
+  min-height: 24px;
+  margin: 15px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.mystery-feedback.success {
+  opacity: 0.85;
+}
+
+.mystery-feedback.error {
+  opacity: 0.7;
+}
+
+.mystery-shake {
+  animation: mysteryShake 0.4s ease;
+}
+
+@keyframes mysteryShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-6px);
+  }
+
+  75% {
+    transform: translateX(6px);
+  }
+}
+
+/* Final */
+
+.mystery-final {
+  padding: 34px 25px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  animation: mysteryReveal 0.5s ease;
+}
+
+.mystery-final-icon {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+.mystery-final h3 {
+  margin: 5px 0 22px;
+  font-size: 24px;
+}
+
+.mystery-final-message {
+  max-width: 570px;
+  margin: 0 auto;
+
+  line-height: 1.8;
+
+  text-align: justify;
+  text-justify: inter-word;
+
+  color: #374151;
+}
+
+.mystery-final-message p {
+  margin: 0 0 18px;
+
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.mystery-final-heart {
+  font-size: 28px;
+  margin-top: 12px;
+}
+
+@keyframes mysteryReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .mystery-experience {
+    margin-top: 20px;
+  }
+
+  .mystery-header h3 {
+    font-size: 22px;
+  }
+
+  .mystery-clue {
+    padding: 25px 16px;
+  }
+
+  .mystery-clue h4 {
+    font-size: 21px;
+  }
+
+  .mystery-input-row {
+    flex-direction: column;
+  }
+
+  .mystery-input,
+  .mystery-submit {
+    width: 100%;
+  }
+
+  .mystery-scrambled {
+    font-size: 18px;
+    letter-spacing: 5px;
+  }
+
+  .mystery-final {
+    padding: 28px 18px;
+  }
+
+  .mystery-final-message {
+    text-align: justify;
+  }
+
+  .mystery-final-message p {
+    text-align: justify;
+  }
+}
+
+/* =====================================================
+   DAY 14 — HALFWAY EXPERIENCE
+===================================================== */
+
+.halfway-experience {
+  width: 100%;
+  max-width: 700px;
+  margin: 28px auto 10px;
+  text-align: center;
+  color: #111827;
+}
+
+.halfway-icon {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.halfway-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.halfway-title {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.halfway-intro {
+  max-width: 500px;
+  margin: 15px auto 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #6b7280;
+}
+
+/* Counter */
+
+.halfway-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 42px;
+  margin: 35px auto 32px;
+}
+
+.halfway-number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.halfway-number strong {
+  font-size: 42px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.halfway-number span {
+  margin-top: 8px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  color: #6b7280;
+}
+
+.halfway-divider {
+  width: 1px;
+  height: 48px;
+  background: #d1d5db;
+}
+
+/* Timeline */
+
+.halfway-timeline {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto 35px;
+}
+
+.halfway-track {
+  position: relative;
+  height: 5px;
+  border-radius: 10px;
+  background: #e5e7eb;
+}
+
+.halfway-complete {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  border-radius: inherit;
+  background: #111827;
+}
+
+.halfway-point {
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.halfway-point span {
+  position: absolute;
+  top: 22px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #6b7280;
+}
+
+.halfway-start {
+  left: 0;
+}
+
+.halfway-middle {
+  left: 50%;
+}
+
+.halfway-end {
+  left: 100%;
+  border-color: #d1d5db;
+}
+
+.halfway-timeline-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 28px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #9ca3af;
+}
+
+/* Message */
+
+.halfway-message {
+  max-width: 560px;
+  margin: 0 auto 30px;
+  padding: 24px 25px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.halfway-message p {
+  margin: 0 0 15px;
+  line-height: 1.8;
+  color: #374151;
+  text-align: center;
+}
+
+.halfway-message p:last-child {
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+/* Button */
+
+.halfway-button {
+  min-height: 48px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 10px;
+
+  background: #111827;
+  color: #ffffff;
+
+  font: inherit;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.halfway-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Final message */
+
+.halfway-final {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  margin-top: 20px;
+}
+
+.halfway-final span {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #6b7280;
+  font-weight: 700;
+}
+
+.halfway-final strong {
+  font-size: 24px;
+}
+
+.halfway-final small {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.halfway-final-show {
+  animation: halfwayReveal 0.5s ease forwards;
+}
+
+@keyframes halfwayReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =====================================================
+   DAY 14 — MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .halfway-experience {
+    margin-top: 20px;
+  }
+
+  .halfway-title {
+    font-size: 25px;
+  }
+
+  .halfway-intro {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .halfway-counter {
+    gap: 25px;
+    margin: 30px auto;
+  }
+
+  .halfway-number strong {
+    font-size: 35px;
+  }
+
+  .halfway-divider {
+    height: 42px;
+  }
+
+  .halfway-timeline {
+    width: 86%;
+  }
+
+  .halfway-message {
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 21px 18px;
+  }
+
+  .halfway-message p {
+    text-align: justify;
+  }
+
+  .halfway-button {
+    width: 100%;
+  }
+
+}
+
+/* =====================================================
+   DAY 14 — TEXT VISIBILITY FIX
+===================================================== */
+
+.halfway-experience .halfway-title {
+  color: #f9fafb !important;
+}
+
+.halfway-experience .halfway-intro {
+  color: #9ca3af !important;
+}
+
+.halfway-experience .halfway-number strong {
+  color: #f9fafb !important;
+}
+
+.halfway-experience .halfway-number span {
+  color: #9ca3af !important;
+}
+
+.halfway-experience .halfway-timeline-labels {
+  color: #9ca3af !important;
+}
+
+.halfway-experience .halfway-point span {
+  color: #9ca3af !important;
+}
+
+.halfway-experience .halfway-message {
+  color: #374151 !important;
+  background: #ffffff !important;
+}
+
+.halfway-experience .halfway-message p {
+  color: #374151 !important;
+}
+
+.halfway-experience .halfway-final span {
+  color: #9ca3af !important;
+}
+
+.halfway-experience .halfway-final strong {
+  color: #f9fafb !important;
+}
+
+.halfway-experience .halfway-final small {
+  color: #9ca3af !important;
+}
+
+/* Day 14 — Justified message */
+.halfway-experience .halfway-message p {
+  text-align: justify !important;
+  text-justify: inter-word;
+}
+
+/* Keep the final sentence centered */
+.halfway-experience .halfway-message p:last-child {
+  text-align: center !important;
+}
