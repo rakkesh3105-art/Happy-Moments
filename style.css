@@ -4570,3 +4570,1472 @@ body.day13-modal-open {
 .halfway-experience .halfway-message p:last-child {
   text-align: center !important;
 }
+
+/* =========================================================
+   DAY 16 — CHILDHOOD MEMORY REVEAL
+========================================================= */
+
+.childhood-reveal-experience {
+  width: 100%;
+  max-width: 1080px;
+  margin: 25px auto 0;
+  padding: 10px 0 30px;
+  color: #f8fafc;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.childhood-top {
+  text-align: center;
+}
+
+.childhood-day {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  color: #f8fafc;
+  margin-bottom: 15px;
+}
+
+.childhood-gift-icon {
+  font-size: 46px;
+  line-height: 1;
+  margin-bottom: 12px;
+
+  filter:
+    drop-shadow(0 0 12px rgba(255, 150, 170, 0.45));
+}
+
+.childhood-heading {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 40px;
+  line-height: 1.2;
+
+  font-weight: 500;
+
+  color: #f6b7c2 !important;
+}
+
+.childhood-subheading {
+  margin: 12px auto 0;
+
+  max-width: 600px;
+
+  font-size: 15px;
+  line-height: 1.7;
+
+  color: #cbd5e1 !important;
+}
+
+
+/* =========================================================
+   HINTS
+========================================================= */
+
+.childhood-hints {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 22px;
+
+  max-width: 1000px;
+
+  margin: 32px auto 5px;
+}
+
+.childhood-hint {
+  min-height: 88px;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 16px;
+
+  padding: 18px 20px;
+
+  border: 1px solid rgba(246, 183, 194, 0.55);
+
+  border-radius: 16px;
+
+  background:
+    rgba(17, 24, 39, 0.55);
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.childhood-hint:hover {
+  transform: translateY(-3px);
+
+  background:
+    rgba(30, 35, 50, 0.75);
+
+  border-color: #f6b7c2;
+}
+
+.hint-icon {
+  width: 30px;
+  min-width: 30px;
+
+  font-size: 22px;
+
+  line-height: 1.2;
+
+  text-align: center;
+}
+
+.hint-content strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 14px;
+
+  color: #f6c5ce;
+}
+
+.hint-content p {
+  margin: 0;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  color: #d1d5db;
+}
+
+
+/* =========================================================
+   GIFT AREA
+========================================================= */
+
+.childhood-gift-area {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  margin-top: 28px;
+
+  min-height: 360px;
+}
+
+.childhood-gift {
+  position: relative;
+
+  width: 330px;
+  height: 230px;
+
+  margin-top: 20px;
+}
+
+
+/* Gift shadow */
+
+.childhood-gift::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 430px;
+  height: 65px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    rgba(0, 0, 0, 0.45);
+
+  filter: blur(14px);
+
+  z-index: -1;
+}
+
+
+/* Box */
+
+.gift-box {
+  position: absolute;
+
+  left: 50%;
+  bottom: 20px;
+
+  width: 270px;
+  height: 150px;
+
+  transform: translateX(-50%);
+}
+
+.gift-body {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 125px;
+
+  border-radius: 5px 5px 14px 14px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #f5ddd7,
+      #fff1eb 45%,
+      #edc9c3
+    );
+
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.35);
+}
+
+.gift-lid {
+  position: absolute;
+
+  left: -10px;
+  top: -15px;
+
+  width: calc(100% + 20px);
+  height: 45px;
+
+  border-radius: 7px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #f7e3dd,
+      #fff5ef,
+      #ebcbc5
+    );
+
+  box-shadow:
+    0 7px 14px rgba(0, 0, 0, 0.25);
+
+  z-index: 4;
+}
+
+
+/* Ribbon */
+
+.gift-ribbon-horizontal {
+  position: absolute;
+
+  left: 50%;
+  bottom: 20px;
+
+  width: 100%;
+  height: 30px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      #ed7184,
+      #ff9aa8,
+      #ed7184
+    );
+
+  z-index: 5;
+}
+
+.gift-ribbon-vertical {
+  position: absolute;
+
+  left: 50%;
+  bottom: 20px;
+
+  width: 34px;
+  height: 150px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      #ed7184,
+      #ff9aa8,
+      #ed7184
+    );
+
+  z-index: 6;
+}
+
+
+/* Bow */
+
+.gift-bow {
+  position: absolute;
+
+  left: 50%;
+  top: -48px;
+
+  width: 120px;
+  height: 70px;
+
+  transform: translateX(-50%);
+
+  z-index: 10;
+}
+
+.bow-left,
+.bow-right {
+  position: absolute;
+
+  top: 10px;
+
+  width: 60px;
+  height: 48px;
+
+  border: 8px solid #ff9ba9;
+
+  background: #f7b0ba;
+
+  box-shadow:
+    0 5px 12px rgba(0, 0, 0, 0.25);
+}
+
+.bow-left {
+  left: 0;
+
+  border-radius:
+    50% 50% 15% 50%;
+
+  transform:
+    rotate(25deg);
+}
+
+.bow-right {
+  right: 0;
+
+  border-radius:
+    50% 50% 50% 15%;
+
+  transform:
+    rotate(-25deg);
+}
+
+.bow-center {
+  position: absolute;
+
+  left: 50%;
+  top: 30px;
+
+  width: 28px;
+  height: 28px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background: #ef7e91;
+
+  z-index: 3;
+}
+
+
+/* Gift tag */
+
+.gift-tag {
+  position: absolute;
+
+  right: -52px;
+  top: 35px;
+
+  width: 90px;
+
+  padding: 13px 10px;
+
+  background: #fff4ef;
+
+  color: #374151;
+
+  font-family:
+    "Segoe Print",
+    "Comic Sans MS",
+    cursive;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+
+  text-align: center;
+
+  transform:
+    rotate(7deg);
+
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.25);
+
+  z-index: 12;
+}
+
+
+/* =========================================================
+   OPEN BUTTON
+========================================================= */
+
+.childhood-open-button {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  min-width: 235px;
+  min-height: 50px;
+
+  margin-top: 15px;
+
+  padding: 0 28px;
+
+  border: none;
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff9eae,
+      #f48c9d
+    );
+
+  color: #171923;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(244, 140, 157, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.childhood-open-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 30px rgba(244, 140, 157, 0.35);
+}
+
+.childhood-open-button:active {
+  transform: scale(0.97);
+}
+
+.childhood-open-button.childhood-opened {
+  opacity: 0.5;
+  transform: scale(0.96);
+}
+
+
+/* Hint underneath button */
+
+.childhood-open-hint {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 3px;
+
+  margin-top: 12px;
+
+  font-family:
+    "Segoe Print",
+    "Comic Sans MS",
+    cursive;
+
+  font-size: 18px;
+
+  color: #f2a7b3;
+}
+
+.childhood-open-hint span {
+  font-size: 12px;
+
+  line-height: 1.4;
+
+  text-align: center;
+
+  color: #aeb7c7;
+}
+
+
+/* =========================================================
+   REVEAL SECTION
+========================================================= */
+
+.childhood-reveal {
+  width: 100%;
+
+  margin-top: 35px;
+
+  padding: 40px 35px 45px;
+
+  box-sizing: border-box;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 22px;
+
+  background:
+    rgba(10, 14, 25, 0.55);
+
+  opacity: 0;
+
+  transform:
+    translateY(35px)
+    scale(0.98);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.childhood-reveal-visible {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   PHOTO SECTION
+========================================================= */
+
+.childhood-photo-section {
+  position: relative;
+
+  min-height: 390px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.childhood-photo-wrap {
+  position: relative;
+
+  width: 290px;
+
+  z-index: 4;
+}
+
+.childhood-photo {
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 4 / 5;
+
+  object-fit: cover;
+
+  padding: 10px;
+
+  box-sizing: border-box;
+
+  background: #fff7f3;
+
+  border: 1px solid #e9d5d0;
+
+  transform:
+    rotate(-3deg);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.45);
+
+  animation:
+    childhoodPhotoIn 0.9s ease forwards;
+}
+
+@keyframes childhoodPhotoIn {
+
+  from {
+    opacity: 0;
+    transform:
+      rotate(-8deg)
+      scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      rotate(-3deg)
+      scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   PHOTO DECORATIONS
+========================================================= */
+
+.photo-decoration {
+  position: absolute;
+
+  z-index: 8;
+
+  pointer-events: none;
+
+  filter:
+    drop-shadow(
+      0 4px 8px rgba(0, 0, 0, 0.25)
+    );
+}
+
+.decoration-heart-1 {
+  left: -45px;
+  top: 45px;
+
+  font-size: 30px;
+
+  transform: rotate(-15deg);
+}
+
+.decoration-heart-2 {
+  right: -45px;
+  bottom: 60px;
+
+  font-size: 27px;
+
+  transform: rotate(15deg);
+}
+
+.decoration-star {
+  right: -30px;
+  top: 25px;
+
+  font-size: 27px;
+
+  color: #ffc6a6;
+}
+
+.decoration-crown {
+  left: -35px;
+  bottom: 50px;
+
+  font-size: 38px;
+
+  color: #ffbf8c;
+
+  transform: rotate(-10deg);
+}
+
+
+/* =========================================================
+   SIDE CAPTIONS
+========================================================= */
+
+.childhood-caption {
+  position: absolute;
+
+  width: 210px;
+
+  font-family:
+    "Segoe Print",
+    "Comic Sans MS",
+    cursive;
+
+  font-size: 14px;
+
+  line-height: 1.65;
+
+  color: #f5d8d8;
+
+  z-index: 5;
+}
+
+.childhood-caption span {
+  display: block;
+}
+
+.childhood-caption-left {
+  left: 30px;
+  top: 80px;
+
+  text-align: left;
+
+  transform: rotate(-4deg);
+}
+
+.childhood-caption-right {
+  right: 30px;
+  top: 90px;
+
+  text-align: left;
+
+  transform: rotate(4deg);
+}
+
+.caption-arrow {
+  margin-top: 8px;
+
+  font-family: sans-serif;
+
+  font-size: 28px;
+
+  color: #f6a6b4;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.childhood-message {
+  max-width: 710px;
+
+  margin: 0 auto;
+
+  padding: 28px 30px 25px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    rgba(246, 183, 194, 0.65);
+
+  border-radius: 18px;
+
+  background:
+    rgba(17, 24, 39, 0.72);
+
+  text-align: center;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.childhood-main-message {
+  max-width: 680px;
+  margin: 0 auto;
+
+  color: #f8fafc !important;
+
+  font-size: 16px;
+  line-height: 1.8;
+
+  text-align: justify !important;
+  text-justify: inter-word;
+}
+
+.childhood-small-message {
+  max-width: 600px;
+  margin: 12px auto 20px;
+
+  color: #cbd5e1 !important;
+
+  font-size: 14px;
+  line-height: 1.8;
+
+  text-align: justify !important;
+  text-justify: inter-word;
+}
+
+
+/* =========================================================
+   KEEP MEMORY
+========================================================= */
+
+.childhood-keep-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  min-height: 48px;
+
+  padding: 0 25px;
+
+  border: none;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff9eae,
+      #f48c9d
+    );
+
+  color: #171923;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.childhood-keep-button:hover {
+  transform: translateY(-2px);
+}
+
+.childhood-keep-button.childhood-memory-kept {
+  background: #f6b7c2;
+
+  cursor: default;
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.childhood-start-reveal .childhood-gift {
+  animation:
+    childhoodGiftOpen 0.65s ease forwards;
+}
+
+@keyframes childhoodGiftOpen {
+
+  0% {
+    transform:
+      scale(1)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      scale(1.08)
+      translateY(-12px);
+  }
+
+  100% {
+    transform:
+      scale(0.92)
+      translateY(20px);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .childhood-reveal-experience {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .childhood-heading {
+    font-size: 31px;
+  }
+
+  .childhood-subheading {
+    font-size: 14px;
+  }
+
+  .childhood-hints {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .childhood-hint {
+    min-height: auto;
+  }
+
+  .childhood-gift {
+    transform: scale(0.82);
+    transform-origin: center;
+  }
+
+  .childhood-gift-area {
+    min-height: 315px;
+  }
+
+  .childhood-open-button {
+    margin-top: 0;
+  }
+
+  .childhood-reveal {
+    padding: 25px 15px 30px;
+
+    border-radius: 18px;
+  }
+
+  .childhood-photo-section {
+    min-height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+  .childhood-photo-wrap {
+    width: min(280px, 78vw);
+
+    order: 1;
+  }
+
+  .childhood-caption {
+    position: relative;
+
+    width: 100%;
+
+    top: auto;
+    left: auto;
+    right: auto;
+
+    text-align: center;
+
+    transform: none;
+  }
+
+  .childhood-caption-left {
+    order: 2;
+  }
+
+  .childhood-caption-right {
+    order: 3;
+  }
+
+  .caption-arrow {
+    display: none;
+  }
+
+  .childhood-message {
+    margin-top: 30px;
+
+    padding: 24px 18px 22px;
+  }
+
+  .childhood-main-message {
+    font-size: 16px;
+  }
+
+  .childhood-small-message {
+    font-size: 13px;
+  }
+
+  .decoration-heart-1 {
+    left: -15px;
+  }
+
+  .decoration-heart-2 {
+    right: -15px;
+  }
+
+  .decoration-crown {
+    left: -10px;
+  }
+
+  .decoration-star {
+    right: -5px;
+  }
+
+}
+
+.childhood-main-message p {
+  margin: 0 0 18px;
+
+  color: #f8fafc !important;
+
+  text-align: justify !important;
+  text-justify: inter-word;
+}
+
+/* Special bold line */
+.childhood-main-message .childhood-special-line {
+  font-size: 17px;
+  font-weight: 700;
+
+  text-align: center !important;
+}
+
+.childhood-main-message .childhood-special-line strong {
+  color: #f6b7c2 !important;
+}
+
+/* Last paragraph also justified */
+.childhood-main-message p:last-child {
+  margin-bottom: 0;
+  text-align: justify !important;
+}
+
+@media (max-width: 700px) {
+
+  .childhood-main-message {
+    font-size: 14px;
+    line-height: 1.8;
+
+    text-align: justify !important;
+  }
+
+  .childhood-main-message p {
+    text-align: justify !important;
+  }
+
+  .childhood-main-message .childhood-special-line {
+    text-align: justify !important;
+    font-size: 15px;
+  }
+
+}
+
+/* =========================================================
+   DAY 17 — PONDICHERRY PLACE MEMORY
+========================================================= */
+
+.place-memory-experience {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 20px auto 10px;
+
+  padding: 10px 15px 35px;
+
+  box-sizing: border-box;
+
+  color: #f8fafc;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.place-memory-header {
+  text-align: center;
+
+  margin-bottom: 28px;
+}
+
+.place-memory-small-label {
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 5px;
+
+  color: #9ca3af;
+
+  margin-bottom: 12px;
+}
+
+.place-memory-icon {
+  font-size: 32px;
+
+  margin-bottom: 8px;
+}
+
+.place-memory-title {
+  margin: 0;
+
+  color: #f8fafc !important;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 32px;
+
+  font-weight: 500;
+
+  line-height: 1.3;
+}
+
+.place-memory-intro {
+  max-width: 540px;
+
+  margin: 12px auto 0;
+
+  color: #9ca3af !important;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PHOTO
+========================================================= */
+
+.place-photo-area {
+  display: flex;
+
+  justify-content: center;
+
+  width: 100%;
+
+  margin: 10px auto 35px;
+}
+
+.place-photo-frame {
+  width: min(430px, 88%);
+  padding: 13px;
+}
+
+.place-photo-frame:hover {
+  transform:
+    rotate(0deg)
+    translateY(-3px);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+.place-memory-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  aspect-ratio: 4 / 5;
+
+  object-fit: contain;
+
+  opacity: 0;
+
+  filter: blur(8px);
+
+  transform: scale(1.025);
+
+  transition:
+    opacity 1.1s ease,
+    filter 1.1s ease,
+    transform 1.1s ease;
+}
+
+.place-photo-visible {
+  opacity: 1;
+
+  filter: blur(0);
+
+  transform:
+    scale(1);
+}
+
+
+/* =========================================================
+   PHOTO CAPTION
+========================================================= */
+
+.place-photo-caption {
+  padding: 12px 8px 5px;
+
+  color: #0000000;
+
+  font-family:
+    "Segoe Print",
+    "Comic Sans MS",
+    cursive;
+
+  font-size: 12px;
+
+  text-align: center;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   PHOTO TAPE
+========================================================= */
+
+.place-photo-tape {
+  position: absolute;
+
+  width: 100px;
+  height: 25px;
+
+  top: -12px;
+
+  background:
+    rgba(248, 215, 201, 0.82);
+
+  z-index: 5;
+
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.tape-left {
+  left: 45px;
+
+  transform:
+    rotate(-5deg);
+}
+
+.tape-right {
+  right: 45px;
+
+  transform:
+    rotate(5deg);
+}
+
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.place-memory-story {
+  max-width: 700px;
+
+  margin: 0 auto 28px;
+
+  padding: 25px 28px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+
+  border-radius: 17px;
+
+  background:
+    rgba(17, 24, 39, 0.6);
+
+  box-sizing: border-box;
+}
+
+.place-memory-story p {
+  margin: 0 0 17px;
+
+  color: #d1d5db !important;
+
+  font-size: 14px;
+
+  line-height: 1.85;
+
+  text-align: justify;
+
+  text-justify: inter-word;
+}
+
+.place-memory-story p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.place-memory-quote {
+  position: relative;
+
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  padding: 25px 50px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+}
+
+.place-memory-quote p {
+  margin: 0;
+
+  color: #f3d4d8 !important;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 18px;
+
+  font-style: italic;
+
+  line-height: 1.7;
+}
+
+.quote-mark {
+  position: absolute;
+
+  left: 15px;
+  top: 5px;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 60px;
+
+  line-height: 1;
+
+  color: #f19aaa;
+
+  opacity: 0.65;
+}
+
+.quote-mark-end {
+  left: auto;
+
+  right: 15px;
+
+  top: auto;
+
+  bottom: 0;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.place-memory-footer {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 20px;
+
+  color: #6b7280;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.place-memory-footer span:not(:last-child)::after {
+  content: "•";
+
+  margin-left: 10px;
+
+  color: #9ca3af;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .place-memory-experience {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .place-memory-title {
+    font-size: 27px;
+  }
+
+  .place-memory-intro {
+    font-size: 13px;
+  }
+
+ .place-photo-frame {
+    width: min(88vw, 390px);
+  }
+
+  .place-memory-photo {
+    aspect-ratio: 4 / 5;
+    object-fit: contain;
+  }
+
+  .place-photo-tape {
+    width: 70px;
+    height: 20px;
+  }
+
+  .tape-left {
+    left: 25px;
+  }
+
+  .tape-right {
+    right: 25px;
+  }
+
+  .place-memory-story {
+    padding: 21px 18px;
+  }
+
+  .place-memory-story p {
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    text-align: justify !important;
+  }
+
+  .place-memory-quote {
+    padding:
+      25px 35px;
+  }
+
+  .place-memory-quote p {
+    font-size: 16px;
+  }
+
+  .quote-mark {
+    left: 5px;
+  }
+
+  .quote-mark-end {
+    right: 5px;
+  }
+
+  .place-memory-footer {
+    gap: 7px;
+
+    font-size: 8px;
+  }
+
+}
