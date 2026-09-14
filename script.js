@@ -70,7 +70,7 @@ const memories = [
 	  tag: "A Little Letter",
 	  title: "Something I Used To Tell You",
 	  text: "Not Everything Needs a Photo..",
-	  quote: "Stay Happy Forever !!"
+	  quote: "Stay Happy Forever also Stay Strong !!"
 	},
   {
 	  day: 6,
@@ -288,7 +288,7 @@ const memories = [
 	  day: 12,
 	  date: "SEPTEMBER 12",
 	  type: "reveal",
-	  tag: "You Remember This One !!",
+	  tag: "You Remember This One",
 	  title: "Hope, You Remember This !!",
 	  text: "I Didn't.. So Naturally, It Had To Make An Appearance Here..",
 	  image: "assets/day12.jpg",
@@ -302,7 +302,7 @@ const memories = [
   day: 13,
   date: "SEPTEMBER 13",
   type: "mystery",
-  tag: "A Little Mystery !!",
+  tag: "A Little Mystery",
   title: "There's A Message For You..",
   text: "Five Little Clues.. One Hidden Message.. Take Your Time And See If You Can Figure It Out..",
   quote: "Sometimes The Simplest Things Are The Ones Worth Figuring Out..",
@@ -318,7 +318,7 @@ const memories = [
     },
     {
       number: 2,
-      icon: "📅",
+      icon: "🗓️",
       title: "The Date",
       question: "Two Numbers.. One Very Important Day.. What Day Is This ??",
       answer: "2809",
@@ -331,7 +331,7 @@ const memories = [
       question: "These Letters Got Mixed Up.. Put Them Back Together..",
       scrambled: "M S G B E A H A N E U E",
       answer: "Haseena Begum",
-      hint: "You Already Know Who This Belongs To.."
+      hint: "The One To Whom All This Belongs To.."
     },
     {
       number: 4,
@@ -340,7 +340,7 @@ const memories = [
       question: "There's One Phrase That Somehow Became Our Default Answer..",
       subtext: "Not A Yes.. Not A No.. Just.....",
       answer: "Paathukalam",
-      hint: "You Definitely Know This One.."
+      hint: "Word Mostly Used By Us !!"
     },
     {
       number: 5,
@@ -360,7 +360,7 @@ const memories = [
   day: 14,
   date: "SEPTEMBER 14",
   type: "halfway",
-  tag: "HalfWay There !!",
+  tag: "HalfWay There",
   title: "14 Days Down.. 14 To Go..",
   text: "You've Made It Exactly HalfWay Through The Little Journey !!",
   quote: "Half The Journey Is Over, Half is Waiting For You.. "
@@ -369,7 +369,7 @@ const memories = [
   day: 15,
   date: "SEPTEMBER 15",
   type: "choice",
-  tag: "A Little Trip Down Memory Lane !!",
+  tag: "A Little Memory Lane",
   title: "A Few Things From Our College Days",
   text: "Three Little Pieces From The Days, People and Moments That Made College Days A Little More Memorable..",
   quote: "Some Memories Are Pictures.. Some Are Stories.. Some Just Stay With Us..",
@@ -401,23 +401,25 @@ const memories = [
     }
   ]
 },
-  {
-    day: 16,
-    date: "SEPTEMBER 16",
-    tag: "ANOTHER FUNNY ONE",
-    title: "Still makes me laugh.",
-    text: "There are memories that age like fine wine, and then there are ours that somehow become funnier every time.",
-    image: "assets/day16.jpg",
-    quote: "Same joke. Same laugh. Still worth it."
-  },
+{
+  day: 16,
+  date: "SEPTEMBER 16",
+  type: "childhoodReveal",
+  tag: "A Little Surprise",
+  title: "Memories Forever !!",
+  text: "Some Memories Are Too Special To Just Show Directly.. Let's Unwrap This One Together..",
+  quote: "Some Things Never Change Forever, You Were Always Special And You Always Will Be..",
+  image: "assets/day16.png"
+},
   {
     day: 17,
     date: "SEPTEMBER 17",
-    tag: "A PLACE",
-    title: "A place with a memory.",
-    text: "Sometimes a location becomes special simply because of what happened there.",
+	type: "placeMemory",
+    tag: "A Place We Remember",
+    title: "Some Places Become Memories..",
+    text: "Sometimes A Location Becomes Special Simply Because Of What Happened There..",
     image: "assets/day17.jpg",
-    quote: "Places remember things too, if only in our minds."
+    quote: "Some Places Become Special Because Of The People With Whom We Shared It !!"
   },
   {
     day: 18,
@@ -547,7 +549,7 @@ function getUnlockedDay(date = new Date()) {
   // 🧪 TEST MODE
   // Simulate September 4 at 11:25 PM
   if (TEST_MODE) {
-    return 15;
+    return 17;
   }
 
   // Day 1 is available from September 1
@@ -737,9 +739,9 @@ function renderDay(day) {
 
 		<p class="halfway-main-message">
 			The first half brought memories, little surprises, puzzles and a few
-			things you probably didn't expect. But we're only halfway. There are
+			things you probably didn't expect.. But we're only halfway.. There are
 			still fourteen days waiting for you with lots of surprises, memories
-			and unexpected moments. Also 14 days exactly 2 weeks to go for the
+			and unexpected moments.. Also 14 days exactly 2 weeks to go for the
 			born-day of the dad's little princess Haseena Begum !!
 		</p>
 
@@ -1189,7 +1191,263 @@ function renderDay(day) {
 
   renderClue();
 }
-		
+
+else if (type === "childhoodReveal") {
+
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
+
+  const experience = document.createElement("div");
+
+  experience.className =
+    "memory-experience childhood-reveal-experience";
+
+  experience.innerHTML = `
+
+    <div class="childhood-top">
+
+      <h3 class="childhood-heading">
+        A Little Surprise
+      </h3>
+
+
+    </div>
+
+
+    <div class="childhood-hints">
+
+      <div class="childhood-hint">
+
+        <div class="hint-icon">
+          ❤️
+        </div>
+
+        <div class="hint-content">
+          <strong>Hint 1</strong>
+
+          <p>
+            This was taken when you were small..
+          </p>
+        </div>
+
+      </div>
+
+      <div class="childhood-hint">
+
+        <div class="hint-icon">
+          ✨
+        </div>
+
+        <div class="hint-content">
+          <strong>Hint 2</strong>
+
+          <p>
+            Someone here is still the same
+            little mischievous one..
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+<br>
+    <div class="childhood-gift-area">
+
+      <div class="childhood-gift">
+
+        <div class="gift-ribbon-horizontal"></div>
+
+        <div class="gift-ribbon-vertical"></div>
+
+        <div class="gift-bow">
+
+          <span class="bow-left"></span>
+
+          <span class="bow-right"></span>
+
+          <span class="bow-center"></span>
+
+        </div>
+
+        <div class="gift-box">
+
+          <div class="gift-lid"></div>
+
+          <div class="gift-body"></div>
+
+        </div>
+
+        <div class="gift-tag">
+          A Little Piece<br>
+          Of Your<br>
+          Childhood
+        </div>
+
+      </div>
+
+      <button
+        type="button"
+        class="childhood-open-button"
+        id="childhoodOpen"
+      >
+        Unlock It !!
+      </button>
+
+      <div class="childhood-open-hint">
+        ↓
+        <span>
+          Click To Reveal<br>
+          This Special Memory !!
+        </span>
+      </div>
+
+    </div>
+
+
+    <div
+      class="childhood-reveal"
+      id="childhoodReveal"
+    >
+
+		<div class="childhood-photo-section">
+			<div class="childhood-photo-wrap">
+				<img
+					src="${item.image}"
+					alt="A childhood memory"
+					class="childhood-photo"
+				/>
+			</div>
+		</div>
+		<div class="childhood-main-message">
+
+		  <p>
+			<br>From that small little girl to the incredible person you are today.. You’ve came a long way, Haseeeenaaaa.. From knowing so little about life to facing so many struggles, challenges and moments that tested you.. You’ve grown through all of it and come out stronger.. There’s still so much more beautiful moments waiting for you. The good days are coming up and I truly believe they’ll be worth everything you’ve been gone through.. So stay strong, keep believing in yourself and no matter what life throws at you..
+		  </p>
+		  <p class="childhood-special-line">
+			<strong>Epovum Sirichitae Iru, Haseena🫶🏻❤️</strong>
+		  </p>
+		</div>	
+    </div>
+
+  `;
+
+  $("memoryCard").appendChild(experience);
+
+
+  /* ============================================
+     OPEN THE MEMORY
+  ============================================ */
+
+  const openButton =
+    experience.querySelector("#childhoodOpen");
+
+  const reveal =
+    experience.querySelector("#childhoodReveal");
+
+  openButton.addEventListener("click", () => {
+
+    openButton.disabled = true;
+
+    openButton.classList.add(
+      "childhood-opened"
+    );
+
+    experience.classList.add(
+      "childhood-start-reveal"
+    );
+
+    setTimeout(() => {
+
+      reveal.classList.add(
+        "childhood-reveal-visible"
+      );
+
+      reveal.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+    }, 650);
+
+  });
+}
+		else if (type === "placeMemory") {
+
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
+
+  const experience = document.createElement("div");
+
+  experience.className =
+    "memory-experience place-memory-experience";
+
+  experience.innerHTML = `
+    <div class="place-photo-area">
+
+      <div class="place-photo-frame">
+
+        <div class="place-photo-tape tape-left"></div>
+        <div class="place-photo-tape tape-right"></div>
+
+        <img
+          src="${item.image}"
+          alt="At Pondicherry IV Memory !!"
+          class="place-memory-photo"
+        />
+
+        <div class="place-photo-caption">
+          At Pondicherry IV Memory !!
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="place-memory-story">
+
+      <p>
+        Now, Whenever I think about it, I remember this moment, this view and also us.. It's funny how an ordinary place can become something completely different once it gets attached to a good memory.. The first pic of us together !!
+      </p>
+
+    </div>
+
+    <div class="place-memory-footer">
+
+      <span>
+        ONE PHOTO
+      </span>
+
+      <span>
+        ONE MEMORY
+      </span>
+    </div>
+
+  `;
+
+  $("memoryCard").appendChild(experience);
+
+
+  /* ============================================
+     PHOTO REVEAL
+  ============================================ */
+
+  const photo =
+    experience.querySelector(".place-memory-photo");
+
+  setTimeout(() => {
+
+    photo.classList.add(
+      "place-photo-visible"
+    );
+
+  }, 150);
+
+}
+
 		else if (type === "jigsaw") {
 
 		  image.style.display = "none";
