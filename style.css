@@ -5594,16 +5594,16 @@ body.day13-modal-open {
 .childhood-main-message .childhood-special-line {
   font-size: 17px;
   font-weight: 700;
-
   text-align: center !important;
 }
 
 .childhood-main-message .childhood-special-line strong {
   color: #f6b7c2 !important;
+  text-align: center !important;
 }
 
 /* Last paragraph also justified */
-.childhood-main-message p:last-child {
+.childhood-main-message {
   margin-bottom: 0;
   text-align: justify !important;
 }
@@ -5622,7 +5622,7 @@ body.day13-modal-open {
   }
 
   .childhood-main-message .childhood-special-line {
-    text-align: justify !important;
+    text-align: center !important;
     font-size: 15px;
   }
 
@@ -6036,6 +6036,523 @@ body.day13-modal-open {
     gap: 7px;
 
     font-size: 8px;
+  }
+
+}
+
+/* =====================================================
+   DAY 18 — CATCH THE LITTLE THINGS
+   ===================================================== */
+
+.memory-card {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.hearts-experience {
+  width: 100%;
+  max-width: 760px;
+
+  margin: 35px auto 50px;
+  padding: 10px 20px 50px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  position: relative;
+
+  overflow: visible !important;
+}
+
+
+/* =====================================================
+   INTRO
+   ===================================================== */
+
+.hearts-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hearts-icon {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  font-size: 30px;
+
+  animation:
+    heartPulse 2s ease-in-out infinite;
+}
+
+.hearts-small-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.hearts-intro h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(
+    28px,
+    5vw,
+    40px
+  );
+
+  font-weight: 600;
+}
+
+.hearts-intro > p {
+  margin: 12px auto 0;
+
+  max-width: 500px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   COUNTER
+   ===================================================== */
+
+.heart-counter {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-top: 20px;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.heart-hint {
+  font-size: 12px !important;
+
+  opacity: 0.5;
+
+  margin-top: 6px !important;
+}
+
+
+/* =====================================================
+   GAME AREA
+   ===================================================== */
+
+.heart-game-area {
+  position: relative;
+
+  width: 100%;
+  max-width: 650px;
+
+  height: 280px;
+
+  margin: 30px auto 25px;
+
+  box-sizing: border-box;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
+    );
+}
+
+
+/* =====================================================
+   HEARTS
+   ===================================================== */
+
+.floating-heart {
+  position: absolute;
+
+  width: 60px;
+  height: 60px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.06
+  );
+
+  font-size: 26px;
+
+  cursor: pointer;
+
+  z-index: 5;
+
+  -webkit-tap-highlight-color:
+    transparent;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+
+  animation:
+    floatingHeart
+    2.5s
+    ease-in-out
+    infinite;
+}
+
+.floating-heart:hover {
+  transform: scale(1.15);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.1
+    );
+
+  box-shadow:
+    0 0 25px
+    rgba(
+      255,
+      100,
+      130,
+      0.25
+    );
+}
+
+.floating-heart:active {
+  transform: scale(0.85);
+}
+
+.floating-heart.caught {
+  animation:
+    heartCaught
+    0.35s
+    ease
+    forwards;
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   MESSAGES
+   ===================================================== */
+
+.heart-message-area {
+  width: min(
+    560px,
+    100%
+  );
+
+  margin: 20px auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.caught-message {
+  padding: 14px 20px;
+
+  border-radius: 14px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.07);
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  color:
+    rgba(255, 255, 255, 0.78);
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  opacity: 0;
+
+  transform:
+    translateY(10px);
+
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease;
+}
+
+.caught-message.show {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* =====================================================
+   FINAL MESSAGE
+   ===================================================== */
+
+.heart-final {
+  width: min(
+    620px,
+    100%
+  );
+
+  margin: 40px auto 0;
+
+  padding: 35px 30px;
+
+  box-sizing: border-box;
+
+  border-radius: 24px;
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  opacity: 0;
+
+  transform:
+    translateY(20px);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.heart-final.show {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+
+  pointer-events: auto;
+}
+
+.final-heart {
+  font-size: 36px;
+
+  margin-bottom: 15px;
+
+  animation:
+    heartPulse
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+.heart-final h3 {
+  margin: 5px 0 22px;
+
+  color: #ffffff;
+
+  font-size: 26px;
+
+  font-weight: 500;
+}
+
+.heart-final-text {
+  max-width: 520px;
+
+  margin: 0 auto;
+}
+
+.heart-final-text p {
+  margin: 0 0 16px;
+
+  color:
+    rgba(255, 255, 255, 0.7);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  text-align: justify;
+
+  text-justify: inter-word;
+}
+
+.heart-final-note {
+  margin-top: 25px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  color:
+    rgba(255, 255, 255, 0.48);
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+@keyframes floatingHeart {
+
+  0% {
+    transform:
+      translateY(0)
+      rotate(-4deg);
+  }
+
+  50% {
+    transform:
+      translateY(-12px)
+      rotate(4deg);
+  }
+
+  100% {
+    transform:
+      translateY(0)
+      rotate(-4deg);
+  }
+
+}
+
+@keyframes heartCaught {
+
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.45);
+    opacity: 0.65;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+}
+
+@keyframes heartPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+  .hearts-experience {
+    width: 100%;
+
+    padding:
+      10px
+      12px
+      40px;
+  }
+
+  .hearts-icon {
+    width: 60px;
+    height: 60px;
+
+    font-size: 26px;
+  }
+
+  .hearts-intro h2 {
+    font-size: 28px;
+  }
+
+  .heart-game-area {
+    height: 250px;
+
+    margin-top: 25px;
+
+    border-radius: 20px;
+  }
+
+  .floating-heart {
+    width: 54px;
+    height: 54px;
+
+    font-size: 23px;
+  }
+
+  .heart-final {
+    padding:
+      28px
+      20px;
+  }
+
+  .heart-final h3 {
+    font-size: 23px;
+  }
+
+  .heart-final-text p {
+    font-size: 13px;
   }
 
 }
