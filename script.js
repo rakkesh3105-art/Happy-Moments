@@ -27,7 +27,7 @@ const memories = [
     day: 1,
     date: "SEPTEMBER 01",
 	type: "photo",
-    tag: "The Beginning",
+    tag: "THE BEGINNING",
     title: "28 Days. 28 Little Moments.",
     text: "This is Only The Beginning.. Every Day, One Small Piece of a Bigger Story Will be Waiting Here.. Come Back Everyday.. There is Lot To Explore..",
     image: " ",
@@ -36,7 +36,7 @@ const memories = [
   {
     day: 2,
     date: "SEPTEMBER 02",
-    tag: "A Little Memory",
+    tag: "A LITTLE MEMORY",
 	type: "photo",
     title: "Okkay... You Came Back Jerry !!",
     text: "I Wanted The First Real Surprise To Be Simple.. Just One Moment, One Picture and One Memory That Deserves To Stay..",
@@ -46,7 +46,7 @@ const memories = [
   {
     day: 3,
     date: "SEPTEMBER 03",
-    tag: "That Moment",
+    tag: "THAT MOMENT",
 	type: "photo",
     title: "Kinder Surprises !!",
     text: "There are Some Pictures, Where the Person Itself Is Not The Special Part.. But Accessories Play a Major Role :) ",
@@ -57,7 +57,7 @@ const memories = [
 	  day: 4,
 	  date: "SEPTEMBER 04",
 	  type: "puzzle",
-	  tag: "A Little Challenge",
+	  tag: "A LITTLE CHALLENGE",
 	  title: "Can You Remember This ??",
 	  text: "Before Today's Memory Reveals Itself, There's a Tiny Challenge Waiting For You..",
 	  image: "assets/day04.jpg",
@@ -67,7 +67,7 @@ const memories = [
 	  day: 5,
 	  date: "SEPTEMBER 05",
 	  type: "letter",
-	  tag: "A Little Letter",
+	  tag: "A LITTLE LETTER",
 	  title: "Something I Used To Tell You",
 	  text: "Not Everything Needs a Photo..",
 	  quote: "Stay Happy Forever also Stay Strong !!"
@@ -76,7 +76,7 @@ const memories = [
 	  day: 6,
 	  date: "SEPTEMBER 06",
 	  type: "jigsaw",
-	  tag: "Put The Pieces Together",
+	  tag: "PUT THE PIECES TOGETHER",
 	  title: "Can You Put This Memory Back Together ??",
 	  text: "Today's Memory isn't Going to Reveal Itself That Easily.. A Few Pieces are Missing from the Picture.. Maybe You Can Put Them Back..",
 	  image: "assets/day06.jpg",
@@ -86,7 +86,7 @@ const memories = [
 	  day: 7,
 	  date: "SEPTEMBER 07",
 	  type: "chat",
-	  tag: "A Little Chat Replay",
+	  tag: "A LITTLE CHAT REPLY",
 	  title: "Remember This One ??",
 	  text: "No Context.. Just Us..",
 	  quote: "Some Conversations Are Completely Random.. Somehow, Those Are The Ones We Remember..",
@@ -197,7 +197,7 @@ const memories = [
 	  day: 8,
 	  date: "SEPTEMBER 08",
 	  type: "pin",
-	  tag: "A Little Secret",
+	  tag: "A LITTLE SECRET",
 	  title: "Four Little Numbers",
 	  text: "See What Is Waiting For You ??",
 	  image: "assets/day08.png",
@@ -208,7 +208,7 @@ const memories = [
 	  day: 9,
 	  date: "SEPTEMBER 09",
 	  type: "audio",
-	  tag: "A Little Audio Memory",
+	  tag: "A LITTLE AUDIO MEMORY",
 	  title: "Just Press Play",
 	  text: "No Photo Today.. Just Listen For A Little While..",
 	  quote: "Voices and Polambals of Hasee All Over Theses Days !!",
@@ -218,21 +218,21 @@ const memories = [
 	  day: 10,
 	  date: "SEPTEMBER 10",
 	  type: "letter",
-	  tag: "A Few Things",
+	  tag: "A FEW THINGS",
 	  title: "I Don't Say These Often..",
 	  text: "Some Things Are Easier To Write Than To Say.",
 	  quote: "Some Words Take Longer To Say, But They Stay Longer as Memories Forever !!",
 
 	  letter: `
 	Heyyy Haseee,
-	Today 10/09/26, New House.. New Beginning.. For the past 15yrs you are living in the same area, same house.. Years maybe gone but the memories stay forever.. Hope Everything going well in this new home.. Soon you will be adapted to this area and neighbours around you.. Enna puthusa solla nu terilae because Unkitta Ethunalum all of the sudden solliralam ethuvum yosikama so already ellamae sollitaen.. Epovum solrathu thaan ethunaalum paathukalam daa, Ethukum romba stress panni overthink pannikatha, Epovum sirichitae iru, Avlo prblm unnaku irukku ellam overcome panni nee ivlo thooram vanthirukka innum 18 days to complete your 21 and to start your 22.. So enjoy every moment and make memories.. Aprm unkitta sonna maari Intha September 2026 kandipa memorable aa Iruka vaipaen and these 10days and upcoming days are just a part of it.. Aprm one big Thanks for coming into my life actually started with an attitude mindset but ipo like ur somewhat became very close and the only one person I can trust and share anything, whatever stuff or tea, without any second taught.. Thanks for Everything you done to me.. No other words to say.. Stay Happy Forever..
+	Today 10/09/26, New House.. New Beginning.. For the past 15yrs you are living in the same area, same house.. Years maybe gone but the memories stay forever.. Hope Everything going well in this new home.. Soon you will be adapted to this area and neighbours around you.. Enna puthusa solla nu terilae because Unkitta Ethunalum all of the sudden solliralam ethuvum yosikama so already ellamae sollitaen.. Epovum solrathu thaan ethunaalum paathukalam daa, Ethukum romba stress panni overthink pannikatha, Epovum sirichitae iru, Avlo prblm unnaku irukku ellam overcome panni nee ivlo thooram vanthirukka innum 18 days to complete your 21 and to start your 22.. So enjoy every moment and make memories.. Aprm unkitta sonna maari Intha September 2026 kandipa memorable aa Iruka vaipaen and these 10days and upcoming days are just a part of it.. Aprm one big Thanks for coming into my life actually started with an attitude mindset but ipo like ur somewhat became very close and the only one person I can trust and share anything, whatever stuff or tea, without any second taught.. Thanks for Everything you done to me.. No other words to say.. Just, stay with me and also epovum sirichitae iru haseena..
 	`
 	},
   {
 	  day: 11,
 	  date: "SEPTEMBER 11",
 	  type: "quiz",
-	  tag: "A Little Test",
+	  tag: "A LITTLE TEST",
 	  title: "How Well Do You Remember?",
 	  text: "We Are Frds, Since 2025.. Now Let's See How Much You Actually Remember..",
 	  quote: "Maybe The Little Things Really Did Stay With You..",
@@ -288,7 +288,7 @@ const memories = [
 	  day: 12,
 	  date: "SEPTEMBER 12",
 	  type: "reveal",
-	  tag: "You Remember This One",
+	  tag: "YOU REMEMBER THIS ONE",
 	  title: "Hope, You Remember This !!",
 	  text: "I Didn't.. So Naturally, It Had To Make An Appearance Here..",
 	  image: "assets/day12.jpg",
@@ -302,7 +302,7 @@ const memories = [
   day: 13,
   date: "SEPTEMBER 13",
   type: "mystery",
-  tag: "A Little Mystery",
+  tag: "A LITTLE MYSTERY",
   title: "There's A Message For You..",
   text: "Five Little Clues.. One Hidden Message.. Take Your Time And See If You Can Figure It Out..",
   quote: "Sometimes The Simplest Things Are The Ones Worth Figuring Out..",
@@ -360,7 +360,7 @@ const memories = [
   day: 14,
   date: "SEPTEMBER 14",
   type: "halfway",
-  tag: "HalfWay There",
+  tag: "HALFWAY THERE",
   title: "14 Days Down.. 14 To Go..",
   text: "You've Made It Exactly HalfWay Through The Little Journey !!",
   quote: "Half The Journey Is Over, Half is Waiting For You.. "
@@ -369,7 +369,7 @@ const memories = [
   day: 15,
   date: "SEPTEMBER 15",
   type: "choice",
-  tag: "A Little Memory Lane",
+  tag: "A LITTLE MEMORY LANE",
   title: "A Few Things From Our College Days",
   text: "Three Little Pieces From The Days, People and Moments That Made College Days A Little More Memorable..",
   quote: "Some Memories Are Pictures.. Some Are Stories.. Some Just Stay With Us..",
@@ -405,9 +405,9 @@ const memories = [
   day: 16,
   date: "SEPTEMBER 16",
   type: "childhoodReveal",
-  tag: "A Little Surprise",
-  title: "Memories Forever !!",
-  text: "Some Memories Are Too Special To Just Show Directly.. Let's Unwrap This One Together..",
+  tag: "A LITTLE SURPRISE",
+  title: "Another Surprise To Explore",
+  text: "Some Pictures Are Too Special To Just Show Directly.. Let's Unwrap This One Together..",
   quote: "Some Things Never Change Forever, You Were Always Special And You Always Will Be..",
   image: "assets/day16.png"
 },
@@ -415,21 +415,21 @@ const memories = [
     day: 17,
     date: "SEPTEMBER 17",
 	type: "placeMemory",
-    tag: "A Place We Remember",
+    tag: "A PLACE WE REMEMBER",
     title: "Some Places Become Memories..",
     text: "Sometimes A Location Becomes Special Simply Because Of What Happened There..",
     image: "assets/day17.jpg",
     quote: "Some Places Become Special Because Of The People With Whom We Shared It !!"
   },
   {
-    day: 18,
-    date: "SEPTEMBER 18",
-    tag: "A LITTLE SECRET",
-    title: "You probably don't know this...",
-    text: "Here is a tiny thing I have wanted to tell you. [Replace this with your own personal message.]",
-    image: "assets/day18.jpg",
-    quote: "Not every thought gets said out loud."
-  },
+  day: 18,
+  date: "SEPTEMBER 18",
+  type: "catchHearts",
+  tag: "A LITTLE SOMETHING",
+  title: "Catch The Little Things",
+  text: "There Are A Few Little Things I Wanted To Tell You..",
+  quote: "Sometimes The Smallest Things Become The Biggest Memories.."
+},
   {
     day: 19,
     date: "SEPTEMBER 19",
@@ -549,7 +549,7 @@ function getUnlockedDay(date = new Date()) {
   // 🧪 TEST MODE
   // Simulate September 4 at 11:25 PM
   if (TEST_MODE) {
-    return 17;
+    return 18;
   }
 
   // Day 1 is available from September 1
@@ -1323,7 +1323,7 @@ else if (type === "childhoodReveal") {
 		<div class="childhood-main-message">
 
 		  <p>
-			<br>From that small little girl to the incredible person you are today.. You’ve came a long way, Haseeeenaaaa.. From knowing so little about life to facing so many struggles, challenges and moments that tested you.. You’ve grown through all of it and come out stronger.. There’s still so much more beautiful moments waiting for you. The good days are coming up and I truly believe they’ll be worth everything you’ve been gone through.. So stay strong, keep believing in yourself and no matter what life throws at you..
+			<br>From that small little girl to the incredible person you are today.. You’ve came a long way, Haseeeenaaaa.. From knowing so little about life to facing so many struggles, challenges and moments that tested you.. You’ve grown through all of it and came out stronger.. There’s still so much more beautiful moments waiting for you.. The good days are coming up and I truly believe they’ll be worth everything you’ve been gone through.. So stay strong, keep believing in yourself and no matter what life throws at you..
 		  </p>
 		  <p class="childhood-special-line">
 			<strong>Epovum Sirichitae Iru, Haseena🫶🏻❤️</strong>
@@ -1410,7 +1410,7 @@ else if (type === "childhoodReveal") {
     <div class="place-memory-story">
 
       <p>
-        Now, Whenever I think about it, I remember this moment, this view and also us.. It's funny how an ordinary place can become something completely different once it gets attached to a good memory.. The first pic of us together !!
+        Now, Whenever I think about it, I remember this moment, this view and also us.. It's funny how an ordinary place can become something completely different once it gets attached to a good memory.. The first pic of us together.. Memories Forever !!
       </p>
 
     </div>
@@ -1445,6 +1445,320 @@ else if (type === "childhoodReveal") {
     );
 
   }, 150);
+
+}
+
+else if (type === "catchHearts") {
+
+  /* =========================================
+     DAY 18 - CATCH THE LITTLE THINGS
+  ========================================= */
+
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
+
+  const experience = document.createElement("div");
+
+  experience.className =
+    "memory-experience hearts-experience";
+
+  experience.innerHTML = `
+    <div class="hearts-intro">
+      <p>
+        Catch All The Hearts ❤️
+      </p>
+
+      <div class="heart-counter">
+        <span id="heartCaught">0</span>
+        <span>/</span>
+        <span id="heartTotal">6</span>
+      </div>
+    </div>
+
+
+    <!-- HEART GAME -->
+
+    <div
+      class="heart-game-area"
+      id="heartGameArea"
+    ></div>
+
+
+    <!-- MESSAGES -->
+
+    <div
+      class="heart-message-area"
+      id="heartMessageArea"
+    ></div>
+
+
+    <!-- FINAL -->
+
+    <div
+      class="heart-final"
+      id="heartFinal"
+    >
+
+      <div class="final-heart">
+        ❤️
+      </div>
+
+      <span class="hearts-small-label">
+        YOU CAUGHT THEM ALL
+      </span>
+
+      <h3>
+        A Few Little Things...
+      </h3>
+
+      <div class="heart-final-text">
+
+        <p>
+          Maybe these are just tiny little things to you.. But when you put them all together, they become a pretty big part of my memories with you.. And honestly, that's what makes all these little moments worth remembering.. And, Here we are in the final phase.. Only just 10 days to go for the big day.. Advance Happy Birthday Haseeeenaaaa.. Thanks for being a part in my life.. Stay Forever !! 
+        </p>
+
+      </div>
+
+      <div class="heart-final-note">
+        There Are Still More Little Moments Waiting For You.. Explore It !!
+      </div>
+
+    </div>
+  `;
+
+
+  /* =========================================
+     ADD EXPERIENCE
+  ========================================= */
+
+  $("memoryCard").appendChild(experience);
+
+
+  /* =========================================
+     ELEMENTS
+  ========================================= */
+
+  const gameArea =
+    experience.querySelector("#heartGameArea");
+
+  const counter =
+    experience.querySelector("#heartCaught");
+
+  const messageArea =
+    experience.querySelector("#heartMessageArea");
+
+  const finalSection =
+    experience.querySelector("#heartFinal");
+
+
+  /* =========================================
+     MESSAGES
+  ========================================= */
+
+  const messages = [
+
+    "For Every Time You Stand With Me..",
+
+    "For Every Random Funny Conversation..",
+
+    "For All Tom and Jerry Fights..",
+
+    "For Every Stupid Things We Done..",
+
+    "For This Bond That Never Planned At All..",
+
+    "Epovum Sirichitae Iru Haseeeenaaaa !!"
+
+  ];
+
+
+  /* =========================================
+     STATE
+  ========================================= */
+
+  let caught = 0;
+
+  counter.textContent = "0";
+
+  experience.querySelector(
+    "#heartTotal"
+  ).textContent = messages.length;
+
+
+  /* =========================================
+     CREATE HEART
+  ========================================= */
+
+  function createHeart(index) {
+
+    const heart =
+      document.createElement("button");
+
+    heart.type = "button";
+
+    heart.className =
+      "floating-heart";
+
+    heart.innerHTML = "❤️";
+
+
+    /* -----------------------------------------
+       POSITION
+    ----------------------------------------- */
+
+    const heartSize = 60;
+
+    const padding = 20;
+
+    const maxX =
+      gameArea.clientWidth -
+      heartSize -
+      padding;
+
+    const maxY =
+      gameArea.clientHeight -
+      heartSize -
+      padding;
+
+
+    const x =
+      padding +
+      Math.random() *
+      Math.max(maxX - padding, 10);
+
+    const y =
+      padding +
+      Math.random() *
+      Math.max(maxY - padding, 10);
+
+
+    heart.style.left = `${x}px`;
+
+    heart.style.top = `${y}px`;
+
+
+    /* -----------------------------------------
+       SLIGHTLY DIFFERENT ANIMATION
+    ----------------------------------------- */
+
+    heart.style.animationDelay =
+      `${Math.random() * 0.8}s`;
+
+
+    /* -----------------------------------------
+       CLICK
+    ----------------------------------------- */
+
+    heart.addEventListener(
+      "click",
+      () => {
+
+        if (
+          heart.classList.contains("caught")
+        ) {
+          return;
+        }
+
+
+        heart.classList.add("caught");
+
+
+        caught++;
+
+
+        counter.textContent =
+          caught;
+
+
+        /* -------------------------------------
+           MESSAGE
+        ------------------------------------- */
+
+        const message =
+          document.createElement("div");
+
+        message.className =
+          "caught-message";
+
+        message.textContent =
+          messages[index];
+
+
+        messageArea.appendChild(
+          message
+        );
+
+
+        requestAnimationFrame(() => {
+
+          message.classList.add(
+            "show"
+          );
+
+        });
+
+
+        /* -------------------------------------
+           REMOVE HEART
+        ------------------------------------- */
+
+        setTimeout(() => {
+
+          heart.remove();
+
+        }, 350);
+
+
+        /* -------------------------------------
+           ALL CAUGHT
+        ------------------------------------- */
+
+        if (
+          caught === messages.length
+        ) {
+
+          setTimeout(() => {
+
+            finalSection.classList.add(
+              "show"
+            );
+
+            setTimeout(() => {
+
+              finalSection.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+              });
+
+            }, 100);
+
+          }, 500);
+
+        }
+
+      }
+    );
+
+
+    gameArea.appendChild(
+      heart
+    );
+
+  }
+
+
+  /* =========================================
+     CREATE ALL 6 HEARTS
+  ========================================= */
+
+  messages.forEach(
+    (_, index) => {
+
+      createHeart(index);
+
+    }
+  );
 
 }
 
@@ -1971,7 +2285,7 @@ else if (type === "childhoodReveal") {
         </div>
 
         <p class="letter-small">
-          A Little Something For You !!
+          A LITTLE SOMETHING FOR YOU !!
         </p>
 
         <h3>
@@ -1995,7 +2309,7 @@ else if (type === "childhoodReveal") {
 
         <p>
           Just Wanna Say Thannkkk Youuu For Being With Me
-          For All These Days In My Both Good As Well As My Bad, To My Favourite Person In The Opposite Gender..
+          For All These Days In My Both Good As Well As My Bad Times, To My Favourite Person In The Opposite Gender..
           Also Don't Change Yourself For Anyone..
           Epovum Sirichitae Iru Haseeenaaaa !!
         </p>
@@ -3663,8 +3977,8 @@ else if (item.type === "pin") {
   } else {
     document.body.classList.remove("birthday-mode");
     $("finalLetter").classList.add("hidden");
-    $("footerText").textContent = "Another surprise coming soon... 👀";
-    $("lockState").textContent = "● LIVE";
+    $("footerText").textContent = "Another surprise coming soon..";
+    $("lockState").textContent = "● MEMORIES";
   }
 }
 
