@@ -1515,7 +1515,7 @@ else if (type === "catchHearts") {
       <div class="heart-final-text">
 
         <p>
-          Maybe these are just tiny little things to you.. But when you put them all together, they become a pretty big part of my memories with you.. And honestly, that's what makes all these little moments worth remembering.. And, Here we are in the final phase.. Only just 10 days to go for the big day.. Advance Happy Birthday Haseeeenaaaa.. Thanks for being a part in my life.. Stay Forever !! 
+          Maybe these are just tiny little things to you.. But when you put them all together, they became a pretty big memories of my life with you.. And honestly, that's what makes all these little moments worth remembering.. Here we are in the final phase.. Only just 10 days to go for the very big day.. Advance Happy Birthday Haseeeenaaaa.. Thanks for being a part in my life.. Stay Forever !! 
         </p>
 
       </div>
@@ -1568,7 +1568,7 @@ else if (type === "catchHearts") {
 
     "For This Bond That Never Planned At All..",
 
-    "Epovum Sirichitae Iru Haseeeenaaaa !!"
+    "For Being My Personal Diary.."
 
   ];
 
