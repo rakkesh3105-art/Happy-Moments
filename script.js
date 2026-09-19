@@ -430,15 +430,15 @@ const memories = [
   text: "There Are A Few Little Things I Wanted To Tell You..",
   quote: "Sometimes The Smallest Things Become The Biggest Memories.."
 },
-  {
-    day: 19,
-    date: "SEPTEMBER 19",
-    tag: "CANDID",
-    title: "The unplanned one.",
-    text: "Honestly, candid photos sometimes beat the perfectly posed ones. They feel more like the actual moment.",
-    image: "assets/day19.jpg",
-    quote: "Unplanned. Unfiltered. Unforgettable."
-  },
+{
+  day: 19,
+  date: "SEPTEMBER 19",
+  type: "birthdayCode",
+  tag: "A LITTLE CODE",
+  title: "Some Things Are Easier To Say When They're Hidden",
+  text: "Three Little Numbers.. Can You Figure Out What They Mean ??",
+  quote: "Sometimes The Smallest Numbers Can Hold The Biggest Memories.."
+},
   {
     day: 20,
     date: "SEPTEMBER 20",
@@ -549,7 +549,7 @@ function getUnlockedDay(date = new Date()) {
   // 🧪 TEST MODE
   // Simulate September 4 at 11:25 PM
   if (TEST_MODE) {
-    return 18;
+    return 19;
   }
 
   // Day 1 is available from September 1
@@ -1430,22 +1430,6 @@ else if (type === "childhoodReveal") {
 
   $("memoryCard").appendChild(experience);
 
-
-  /* ============================================
-     PHOTO REVEAL
-  ============================================ */
-
-  const photo =
-    experience.querySelector(".place-memory-photo");
-
-  setTimeout(() => {
-
-    photo.classList.add(
-      "place-photo-visible"
-    );
-
-  }, 150);
-
 }
 
 else if (type === "catchHearts") {
@@ -1761,6 +1745,166 @@ else if (type === "catchHearts") {
   );
 
 }
+
+else if (type === "birthdayCode") {
+
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
+
+  const experience = document.createElement("div");
+
+  experience.className =
+    "memory-experience birthday-code-experience";
+
+  experience.innerHTML = `
+
+    <div class="code-header">
+
+      <div class="code-lock">🔐</div>
+
+      <div class="code-label">
+        A LITTLE CODE
+      </div>
+    </div>
+
+
+    <div class="code-clues">
+
+      <div class="code-clue">
+        <span class="clue-number">CLUE 01</span>
+
+        <div class="clue-value">
+          28
+        </div>
+
+        <p>
+          The Number of Little Memories..
+        </p>
+      </div>
+
+
+      <div class="code-clue locked-clue">
+        <span class="clue-number">CLUE 02</span>
+
+        <div class="clue-value">
+          09
+        </div>
+
+        <p>
+          The Month When Everything Comes Together..
+        </p>
+      </div>
+
+
+      <div class="code-clue locked-clue">
+        <span class="clue-number">CLUE 03</span>
+
+        <div class="clue-value">
+          11:25
+        </div>
+
+        <p>
+          The Little Time That Became Part Of This Whole Journey..
+        </p>
+      </div>
+
+    </div>
+
+
+    <button class="code-next-btn">
+      FIND THE NEXT CLUE
+    </button>
+
+
+    <div class="code-final hidden">
+
+      <div class="decoded-label">
+        ✨ DECODED ✨
+      </div>
+
+      <div class="decoded-code">
+        28 <span>•</span> 09 <span>•</span> 11:25
+      </div>
+
+      <div class="code-message">
+
+        <p>
+          Three little numbers.. But plays a major role and somehow, these numbers became the reason that I started making all this for you.. 19 days down.. And I still have a lot more memories for you.. Don't overthink for anything.. Stay Strong Forever Hasee.. As a well wisher and a supporter I'm always there for you ethukum bayapudatha ethunaalum paathukalam daa onnum aagathu.. Paathuko and also safe aa Iru daa !! Insha Allah everything good will happen..
+        </p>
+
+        <p class="code-special-line">
+          <strong>
+            See You Tomorrow, Haseeeenaaaa..
+          </strong>
+        </p>
+
+      </div>
+
+    </div>
+
+  `;
+
+  $("memoryCard").appendChild(experience);
+
+
+  /* =========================================
+     CLUE REVEAL
+  ========================================= */
+
+  const clues =
+    experience.querySelectorAll(".code-clue");
+
+  const button =
+    experience.querySelector(".code-next-btn");
+
+  const finalReveal =
+    experience.querySelector(".code-final");
+
+
+  let currentClue = 0;
+
+
+  button.addEventListener("click", () => {
+
+    if (currentClue < clues.length - 1) {
+
+      currentClue++;
+
+      clues[currentClue]
+        .classList.remove("locked-clue");
+
+      if (currentClue === clues.length - 1) {
+
+        button.textContent = "DECODE IT 🔓";
+
+      }
+
+      return;
+
+    }
+
+
+    /* =========================================
+       FINAL REVEAL
+    ========================================= */
+
+    button.style.display = "none";
+
+    finalReveal.classList.remove("hidden");
+
+    setTimeout(() => {
+
+      finalReveal.classList.add(
+        "decoded-visible"
+      );
+
+    }, 100);
+
+  });
+
+}
+
 
 		else if (type === "jigsaw") {
 
