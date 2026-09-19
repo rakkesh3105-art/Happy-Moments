@@ -5719,8 +5719,10 @@ body.day13-modal-open {
 }
 
 .place-photo-frame {
+  position: relative;
   width: min(430px, 88%);
   padding: 13px;
+  box-sizing: border-box;
 }
 
 .place-photo-frame:hover {
@@ -5736,30 +5738,32 @@ body.day13-modal-open {
   display: block;
   width: 100%;
   height: auto;
-
   aspect-ratio: 4 / 5;
-
   object-fit: contain;
 
-  opacity: 0;
-
-  filter: blur(8px);
-
-  transform: scale(1.025);
-
-  transition:
-    opacity 1.1s ease,
-    filter 1.1s ease,
-    transform 1.1s ease;
+  animation: placePhotoReveal 2s ease forwards;
 }
 
-.place-photo-visible {
-  opacity: 1;
+@keyframes placePhotoReveal {
 
-  filter: blur(0);
+  0% {
+    opacity: 0;
+    filter: blur(14px);
+    transform: scale(1.04);
+  }
 
-  transform:
-    scale(1);
+  45% {
+    opacity: 0.55;
+    filter: blur(7px);
+    transform: scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+
 }
 
 
@@ -6553,6 +6557,291 @@ body.day13-modal-open {
 
   .heart-final-text p {
     font-size: 13px;
+  }
+
+}
+
+/* =========================================================
+   DAY 19 — A LITTLE CODE
+========================================================= */
+
+.birthday-code-experience {
+  width: 100%;
+  max-width: 850px;
+  margin: 25px auto 15px;
+  padding: 20px 18px 40px;
+  box-sizing: border-box;
+  color: #f8fafc;
+}
+
+
+/* HEADER */
+
+.code-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.code-lock {
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+.code-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: #9ca3af;
+  margin-bottom: 15px;
+}
+
+.code-header h2 {
+  margin: 0;
+  color: #f8fafc !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.code-header p {
+  max-width: 500px;
+  margin: 15px auto 0;
+  color: #9ca3af !important;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* CLUES */
+
+.code-clues {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  max-width: 720px;
+  margin: 0 auto 30px;
+}
+
+.code-clue {
+  min-height: 190px;
+  padding: 24px 18px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  text-align: justify;
+
+  background: rgba(17, 24, 39, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    border-color 0.5s ease;
+}
+
+.clue-number {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #9ca3af;
+  margin-bottom: 15px;
+}
+
+.clue-value {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  color: #f3d4d8;
+  margin-bottom: 12px;
+}
+
+.code-clue p {
+  margin: 0;
+  color: #cbd5e1 !important;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* LOCKED CLUES */
+
+.locked-clue {
+  opacity: 0.22;
+  filter: blur(3px);
+  transform: scale(0.97);
+  pointer-events: none;
+}
+
+
+/* BUTTON */
+
+.code-next-btn {
+  display: block;
+
+  margin: 0 auto;
+
+  padding: 13px 28px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  color: #f8fafc;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.code-next-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* FINAL */
+
+.code-final {
+  max-width: 650px;
+  margin: 35px auto 0;
+
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(15px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+
+.code-final.hidden {
+  display: none;
+}
+
+.code-final.decoded-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.decoded-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #9ca3af;
+  margin-bottom: 15px;
+}
+
+.decoded-code {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  letter-spacing: 3px;
+  color: #f3d4d8;
+  margin-bottom: 30px;
+}
+
+.decoded-code span {
+  color: #9ca3af;
+  margin: 0 5px;
+}
+
+.code-message {
+  padding: 25px 28px;
+
+  background: rgba(17, 24, 39, 0.6);
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 17px;
+
+  box-sizing: border-box;
+}
+
+.code-message p {
+  margin: 0 0 17px;
+
+  color: #d1d5db !important;
+
+  font-size: 14px;
+  line-height: 1.85;
+
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.code-message p:first-child {
+  text-align: justify;
+}
+
+.code-message p:last-child {
+  margin-bottom: 0;
+}
+
+.code-message .code-special-line {
+  text-align: center !important;
+  color: #f3d4d8 !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .birthday-code-experience {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .code-header h2 {
+    font-size: 26px;
+  }
+
+  .code-header p {
+    font-size: 13px;
+  }
+
+  .code-clues {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .code-clue {
+    min-height: 155px;
+  }
+
+  .clue-value {
+    font-size: 30px;
+  }
+
+  .code-message {
+    padding: 21px 18px;
+  }
+
+  .code-message p {
+    font-size: 13px;
+    line-height: 1.8;
+    text-align: justify !important;
+  }
+
+  .code-message p:first-child,
+  .code-message .code-special-line {
+    text-align: justify !important;
+  }
+
+  .decoded-code {
+    font-size: 25px;
   }
 
 }
