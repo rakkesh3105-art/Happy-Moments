@@ -5719,7 +5719,7 @@ body.day13-modal-open {
 }
 
 .place-photo-frame {
-  position: relative;
+  position: relative	;
   width: min(430px, 88%);
   padding: 13px;
   box-sizing: border-box;
@@ -6836,12 +6836,1345 @@ body.day13-modal-open {
   }
 
   .code-message p:first-child,
-  .code-message .code-special-line {
+  .code-message {
     text-align: justify !important;
+  }
+  
+  .code-special-line {
+    text-align: center !important;
   }
 
   .decoded-code {
     font-size: 25px;
+  }
+
+}
+
+/* =========================================================
+   DAY 20 — EYES MEMORY
+========================================================= */
+
+.eyes-memory-experience {
+  width: 100%;
+  max-width: 850px;
+
+  margin: 20px auto 10px;
+
+  padding: 15px 15px 35px;
+
+  box-sizing: border-box;
+
+  color: #f8fafc;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.eyes-memory-header {
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.eyes-small-label {
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 5px;
+
+  color: #9ca3af;
+
+  margin-bottom: 10px;
+}
+
+.eyes-icon {
+  font-size: 30px;
+
+  margin-bottom: 8px;
+}
+
+.eyes-memory-header h2 {
+  margin: 0;
+
+  color: #f8fafc !important;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 31px;
+
+  font-weight: 500;
+
+  line-height: 1.35;
+}
+
+.eyes-memory-header p {
+  max-width: 500px;
+
+  margin: 13px auto 0;
+
+  color: #9ca3af !important;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PHOTO
+========================================================= */
+
+.eyes-photo-area {
+  display: flex;
+
+  justify-content: center;
+
+  width: 100%;
+
+  margin: 5px auto 35px;
+}
+
+.eyes-photo-frame {
+  width: min(650px, 90vw);
+
+  padding: 5px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 3px;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.eyes-memory-photo {
+  display: block;
+
+  width: 100%;
+
+  height: auto;
+
+  object-fit: contain;
+
+  opacity: 0;
+
+  filter: blur(3000px);
+
+  transform: scale(1.02);
+
+  transition:
+    opacity 2s ease,
+    filter 2s ease,
+    transform 2s ease;
+}
+
+.eyes-photo-visible {
+  opacity: 1;
+
+  filter: blur(0);
+
+  transform: scale(1);
+}
+
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.eyes-memory-story {
+  max-width: 700px;
+
+  margin: 0 auto 28px;
+
+  padding: 25px 28px;
+
+  box-sizing: border-box;
+
+  background:
+    rgba(17, 24, 39, 0.6);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 17px;
+}
+
+.eyes-memory-story p {
+  margin: 0 0 17px;
+
+  color: #d1d5db !important;
+
+  font-size: 14px;
+
+  line-height: 1.85;
+
+  text-align: justify;
+
+  text-justify: inter-word;
+}
+
+.eyes-memory-story p:last-child {
+  margin-bottom: 0;
+}
+
+.eyes-memory-story
+.eyes-special-line {
+
+  text-align: center !important;
+
+  color: #f3d4d8 !important;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.eyes-memory-footer {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 20px;
+
+  color: #6b7280;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.eyes-memory-footer
+span:not(:last-child)::after {
+
+  content: "•";
+
+  margin-left: 10px;
+
+  color: #9ca3af;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .eyes-memory-experience {
+    padding-left: 8px;
+
+    padding-right: 8px;
+  }
+
+  .eyes-memory-header h2 {
+    font-size: 27px;
+  }
+
+  .eyes-memory-header p {
+    font-size: 13px;
+  }
+
+  .eyes-photo-frame {
+    width: 92vw;
+
+    padding: 4px;
+  }
+
+  .eyes-memory-story {
+    padding: 21px 18px;
+  }
+
+  .eyes-memory-story p {
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    text-align: justify !important;
+  }
+
+  .eyes-memory-story
+  .eyes-special-line {
+
+    text-align: center !important;
+  }
+
+  .eyes-memory-footer {
+    font-size: 8px;
+
+    gap: 7px;
+  }
+
+}
+
+/* =========================================================
+   DAY 21 — SSN CAMERA MEMORY
+========================================================= */
+
+.ssn-memory-experience {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 20px auto 10px;
+
+  padding: 15px 15px 35px;
+
+  box-sizing: border-box;
+
+  color: #f8fafc;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.ssn-memory-header {
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.ssn-small-label {
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 5px;
+
+  color: #9ca3af;
+
+  margin-bottom: 10px;
+}
+
+.ssn-icon {
+  font-size: 30px;
+
+  margin-bottom: 8px;
+}
+
+.ssn-memory-header h2 {
+  margin: 0;
+
+  color: #f8fafc !important;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 31px;
+
+  font-weight: 500;
+
+  line-height: 1.35;
+}
+
+.ssn-memory-header p {
+  max-width: 560px;
+
+  margin: 13px auto 0;
+
+  color: #9ca3af !important;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   PHOTO FRAME
+========================================================= */
+
+.ssn-photo-area {
+  display: flex;
+
+  justify-content: center;
+
+  width: 100%;
+
+  margin: 5px auto 10px;
+}
+
+.ssn-photo-frame {
+  position: relative;
+
+  width: min(760px, 92vw);
+
+  min-height: 360px;
+
+  padding: 5px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 4px;
+
+  background:
+    rgba(255, 255, 255, 0.02);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.ssn-photo-placeholder {
+  position: absolute;
+
+  inset: 5px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  background:
+    rgba(17, 24, 39, 0.9);
+
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease;
+}
+
+.camera-icon {
+  font-size: 42px;
+
+  margin-bottom: 18px;
+}
+
+.camera-title {
+  color: #f8fafc;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.camera-subtitle {
+  margin-top: 10px;
+
+  color: #9ca3af;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   REVEAL BUTTON
+========================================================= */
+
+.ssn-reveal-btn {
+  margin-top: 25px;
+
+  padding: 12px 25px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.18);
+
+  border-radius: 30px;
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  color: #f8fafc;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.ssn-reveal-btn:hover {
+  transform: translateY(-2px);
+
+  background:
+    rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================================
+   PLACEHOLDER EXIT
+========================================================= */
+
+.ssn-placeholder-hide {
+  opacity: 0;
+
+  transform: scale(1.03);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   PHOTO
+========================================================= */
+
+.ssn-photo-reveal {
+  position: relative;
+
+  width: 100%;
+
+  opacity: 0;
+
+  transform: scale(0.94);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.ssn-photo-show {
+  opacity: 1;
+
+  transform: scale(1);
+}
+
+.ssn-memory-photo {
+  display: block;
+
+  width: 100%;
+
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   CAMERA FLASH
+========================================================= */
+
+.camera-flash {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 5;
+
+  background: white;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+.camera-flash-active {
+  animation:
+    cameraFlash 0.55s ease-out;
+}
+
+@keyframes cameraFlash {
+
+  0% {
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.95;
+  }
+
+  100% {
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================================
+   CAPTION
+========================================================= */
+
+.ssn-photo-caption {
+  margin: 10px auto 30px;
+
+  text-align: center;
+
+  color: #6b7280;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  opacity: 0;
+
+  transform: translateY(8px);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.ssn-caption-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.ssn-memory-story {
+  max-width: 700px;
+
+  margin: 0 auto 28px;
+
+  padding: 25px 28px;
+
+  box-sizing: border-box;
+
+  background:
+    rgba(17, 24, 39, 0.6);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 17px;
+
+  opacity: 0;
+
+  transform: translateY(15px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.ssn-story-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.ssn-memory-story p {
+  margin: 0 0 17px;
+
+  color: #d1d5db !important;
+
+  font-size: 14px;
+
+  line-height: 1.85;
+
+  text-align: justify;
+
+  text-justify: inter-word;
+}
+
+.ssn-memory-story p:last-child {
+  margin-bottom: 0;
+}
+
+.ssn-memory-story
+.ssn-special-line {
+
+  text-align: center !important;
+
+  color: #f3d4d8 !important;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.ssn-memory-footer {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 20px;
+
+  color: #6b7280;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.7s ease;
+}
+
+.ssn-footer-visible {
+  opacity: 1;
+}
+
+.ssn-memory-footer
+span:not(:last-child)::after {
+
+  content: "•";
+
+  margin-left: 10px;
+
+  color: #9ca3af;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .ssn-memory-experience {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .ssn-memory-header h2 {
+    font-size: 27px;
+  }
+
+  .ssn-memory-header p {
+    font-size: 13px;
+  }
+
+  .ssn-photo-frame {
+    width: 94vw;
+
+    min-height: 300px;
+
+    padding: 4px;
+  }
+
+  .ssn-photo-placeholder {
+    inset: 4px;
+  }
+  
+  .camera-title {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+  }
+
+  .camera-subtitle {
+    font-size: 12px;
+  }
+
+  .ssn-memory-story {
+    padding: 21px 18px;
+  }
+
+  .ssn-memory-story p {
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    text-align: justify !important;
+  }
+
+  .ssn-memory-story
+  .ssn-special-line {
+
+    text-align: center !important;
+  }
+
+  .ssn-memory-footer {
+    font-size: 8px;
+
+    gap: 7px;
+  }
+
+}
+
+/* =========================================================
+   DAY 21 — FIX REVEAL BUTTON CLICK
+========================================================= */
+
+.ssn-memory-experience {
+  position: relative;
+}
+
+.ssn-reveal-btn {
+  position: relative;
+  z-index: 20;
+  pointer-events: auto !important;
+  cursor: pointer;
+}
+
+.ssn-photo-placeholder,
+.camera-flash,
+.ssn-photo-reveal {
+  pointer-events: none;
+}
+
+/* =========================================================
+   DAY 22 — SECRET KEY
+========================================================= */
+
+.secret-key-experience {
+  width: 100%;
+  max-width: 760px;
+  margin: 25px auto 15px;
+  padding: 20px 18px 35px;
+  box-sizing: border-box;
+  color: #f8fafc;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.secret-key-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.secret-lock {
+  font-size: 42px;
+  margin-bottom: 12px;
+  animation: secretLockFloat 3s ease-in-out infinite;
+}
+
+@keyframes secretLockFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.secret-key-label {
+  display: block;
+  margin-bottom: 10px;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.secret-key-header h3 {
+  margin: 0;
+
+  color: #f8fafc !important;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.secret-key-header p {
+  max-width: 500px;
+  margin: 13px auto 0;
+
+  color: #9ca3af !important;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   CLUES
+========================================= */
+
+.secret-clues {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.secret-clue {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+
+  padding: 20px 22px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+
+  background: rgba(17, 24, 39, 0.62);
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.secret-clue:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(241, 154, 170, 0.35);
+}
+
+.secret-clue-number {
+  flex-shrink: 0;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(241, 154, 170, 0.12);
+
+  color: #f19aaa;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.secret-clue-content h4 {
+  margin: 1px 0 6px;
+
+  color: #f3d4d8 !important;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.secret-clue-content p {
+  margin: 0;
+
+  color: #cbd5e1 !important;
+
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.secret-key-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 35px auto;
+}
+
+.secret-key-divider::before,
+.secret-key-divider::after {
+  content: "";
+
+  width: 100px;
+  height: 1px;
+
+  background:
+    rgba(255, 255, 255, 0.1);
+}
+
+.secret-key-divider span {
+  margin: 0 15px;
+
+  color: #f19aaa;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   KEY ENTRY
+========================================= */
+
+.secret-key-entry {
+  max-width: 560px;
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.entry-label {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.secret-input-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  width: 100%;
+}
+
+.secret-input-wrap input {
+  width: 220px;
+  height: 48px;
+
+  padding: 0 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+
+  outline: none;
+
+  background: rgba(17, 24, 39, 0.8);
+
+  color: #f8fafc;
+
+  font-size: 16px;
+  letter-spacing: 3px;
+  text-align: center;
+
+  box-sizing: border-box;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.secret-input-wrap input:focus {
+  border-color: #f19aaa;
+
+  box-shadow:
+    0 0 0 3px rgba(241, 154, 170, 0.1);
+}
+
+.secret-input-wrap input::placeholder {
+  color: #6b7280;
+}
+
+.secret-input-wrap button {
+  height: 48px;
+
+  padding: 0 22px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #f19aaa;
+
+  color: #111827;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.secret-input-wrap button:hover {
+  transform: translateY(-2px);
+}
+
+.secret-input-wrap button:disabled {
+  opacity: 0.65;
+  cursor: default;
+  transform: none;
+}
+
+.secret-key-feedback {
+  min-height: 20px;
+
+  margin: 12px 0 0;
+
+  color: #9ca3af;
+
+  font-size: 12px;
+}
+
+.secret-key-error {
+  color: #f19aaa !important;
+
+  animation:
+    secretShake 0.35s ease;
+}
+
+@keyframes secretShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+
+/* =========================================
+   UNLOCKED MESSAGE
+========================================= */
+
+.secret-unlocked {
+  max-width: 650px;
+
+  margin: 30px auto 0;
+  padding: 30px 28px;
+
+  border: 1px solid
+    rgba(241, 154, 170, 0.22);
+
+  border-radius: 18px;
+
+  background:
+    rgba(241, 154, 170, 0.06);
+
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(15px);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+
+  box-sizing: border-box;
+}
+
+.secret-unlocked-visible {
+  opacity: 1;
+  transform: translateY(0);
+
+  pointer-events: auto;
+}
+
+.secret-unlocked-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.secret-unlocked-label {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: #f19aaa;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.secret-message {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.secret-message p {
+  margin: 0 0 16px;
+
+  color: #d1d5db !important;
+
+  font-size: 14px;
+  line-height: 1.9;
+
+  text-align: justify !important;
+  text-justify: inter-word;
+}
+
+.secret-message p:last-child {
+  margin-bottom: 0;
+
+  color: #f3d4d8 !important;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 18px;
+
+  text-align: justify !important;
+  text-justify: inter-word;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.secret-key-footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: 28px;
+
+  color: #6b7280;
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.secret-key-footer span:not(:last-child)::after {
+  content: "•";
+
+  margin-left: 10px;
+
+  color: #9ca3af;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .secret-key-experience {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .secret-key-header h3 {
+    font-size: 27px;
+  }
+
+  .secret-key-header p {
+    font-size: 13px;
+  }
+
+  .secret-clue {
+    gap: 12px;
+    padding: 17px;
+  }
+
+  .secret-clue-content h4 {
+    font-size: 16px;
+  }
+
+  .secret-clue-content p {
+    font-size: 12px;
+  }
+
+  .secret-input-wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .secret-input-wrap input {
+    width: min(260px, 85vw);
+  }
+
+  .secret-input-wrap button {
+    width: min(260px, 85vw);
+  }
+
+  .secret-unlocked {
+    padding: 25px 18px;
+  }
+
+  .secret-message p {
+    font-size: 13px;
+    line-height: 1.85;
+
+    text-align: justify !important;
+    text-justify: inter-word;
+  }
+
+ .secret-message p:last-child {
+	font-size: 16px;
+	text-align: justify !important;
+	text-justify: inter-word;
   }
 
 }
