@@ -77,7 +77,7 @@ const memories = [
 	  date: "SEPTEMBER 06",
 	  type: "jigsaw",
 	  tag: "PUT THE PIECES TOGETHER",
-	  title: "Can You Put This Memory Back Together ??",
+	  title: "Can You Put This Back Together ??",
 	  text: "Today's Memory isn't Going to Reveal Itself That Easily.. A Few Pieces are Missing from the Picture.. Maybe You Can Put Them Back..",
 	  image: "assets/day06.jpg",
 	  quote: "Some Memories Are Worth Putting Back Together !!"
@@ -247,7 +247,7 @@ const memories = [
 		  answer: 2
 		},
 		{
-		  question: "Who Usually Says 'Paathukalam' First When Something Happens ??",
+		  question: "Who Usually Says The Word 'Paathukalam' First When Something Happens ??",
 		  options: [
 			"Haseena",
 			"Rakkesh",
@@ -439,33 +439,54 @@ const memories = [
   text: "Three Little Numbers.. Can You Figure Out What They Mean ??",
   quote: "Sometimes The Smallest Numbers Can Hold The Biggest Memories.."
 },
-  {
-    day: 20,
-    date: "SEPTEMBER 20",
-    tag: "OUR TIMELINE",
-    title: "A little timeline of us.",
-    text: "From the first few memories to all the random moments after that — this is only a tiny snapshot of the journey.",
-    image: "assets/day20.jpg",
-    quote: "One moment became another, and somehow we ended up here."
-  },
-  {
-    day: 21,
-    date: "SEPTEMBER 21",
-    tag: "21 MOMENTS",
-    title: "21 days. So many memories.",
-    text: "Three weeks into September. If these days have proved anything, it is that there are way too many moments to fit into one website.",
-    image: "assets/day21.jpg",
-    quote: "Twenty-one days down. The countdown is getting real."
-  },
-  {
-    day: 22,
-    date: "SEPTEMBER 22",
-    tag: "A SONG",
-    title: "A song that reminds me of you. 🎵",
-    text: "Every person has that one song, sound or lyric that somehow becomes attached to a memory. This is yours.",
-    image: "assets/day22.jpg",
-    quote: "Some memories have a soundtrack."
-  },
+{
+  day: 20,
+  date: "SEPTEMBER 20",
+  type: "eyesMemory",
+  tag: "A LITTLE DETAIL",
+  title: "There's Something About This Photo..",
+  text: "Some Pictures Don't Really Need An Explanation..",
+  quote: "Maybe It's The Eyes.. Maybe It's The Person Behind Them.."
+},
+{
+  day: 21,
+  date: "SEPTEMBER 21",
+  type: "ssnMemory",
+  tag: "ONE MORE MEMORY",
+  title: "A Day We Didn't Plan To Remember",
+  text: "Some Days Are Just Another Day When You're Living Them.. Later, You Realize They Became A Memory..",
+  quote: "Another Place.. Another Day.. Another Memory To Keep.."
+},
+{
+  day: 22,
+  date: "SEPTEMBER 22",
+  type: "secretKey",
+  tag: "A HIDDEN SECRET",
+  title: "There's Something Hidden Here..",
+  text: "Some Things Are Not Meant To Be Given Away.. You Have To Find Them Yourself..",
+  quote: "If You Know Where To Look, You'll Find The Key..",
+  clues: [
+    {
+      number: "01",
+      title: "Something You've Seen Before",
+      text: "There Is A Number That Has Quietly Followed You Through This Journey.."
+    },
+    {
+      number: "02",
+      title: "The Ending",
+      text: "Find The Number Written On The Day This One Comes To An End.."
+    },
+    {
+      number: "03",
+      title: "One Last Detail",
+      text: "Look At The Month This Journey Belongs To.."
+    }
+  ],
+  secretKey: "11252809",
+  secretMessage: `
+You actually found it.. Maybe the key wasn't really that secret after all.. Two little numbers that have been hiding in this journey from the beginning.. All this entire journey connects to a single person named Haseeena my Jerry !! I don't know how to start this and how to end this journey just I all remember is all about the promise I made to you that I will make this september as a memorable birthday in your life.. To keep that promise alive I started this journey like reminding you all the memories, moments also the special incidents what ever happened in your life through images, letters, audios, puzzles, messages and simple quiz.. Just started in a unplanned way to make it, now it's became my daily routine to create a new and different one also make it ready by discussing the plan with gpt and get the source code then testing locally and then deploying it globally atlast sending it to the person for whom it has been made at 11:25 exactly the birth time of the dad's little princess.. Hope I made this 22 days more memorable and also I will make the upcoming days also unforgettable.. Don't want to create the hype but just want to say something big is waiting for you.. Some things are worth finding.. Some memories are worth keeping..
+  `
+},
   {
     day: 23,
     date: "SEPTEMBER 23",
@@ -549,7 +570,7 @@ function getUnlockedDay(date = new Date()) {
   // 🧪 TEST MODE
   // Simulate September 4 at 11:25 PM
   if (TEST_MODE) {
-    return 19;
+    return 22;
   }
 
   // Day 1 is available from September 1
@@ -1830,7 +1851,7 @@ else if (type === "birthdayCode") {
       <div class="code-message">
 
         <p>
-          Three little numbers.. But plays a major role and somehow, these numbers became the reason that I started making all this for you.. 19 days down.. And I still have a lot more memories for you.. Don't overthink for anything.. Stay Strong Forever Hasee.. As a well wisher and a supporter I'm always there for you ethukum bayapudatha ethunaalum paathukalam daa onnum aagathu.. Paathuko and also safe aa Iru daa !! Insha Allah everything good will happen..
+          Three little numbers.. But plays a major role and somehow, these numbers became the reason that I started making all this for you.. 19 days down, And I still have a lot more memories for you in the upcoming days.. Don't overthink for anything, Stay Strong Forever Hasee.. As a well wisher and a supporter I'm always there for you !! Ethukum bayapudatha ethunaalum paathukalam onnum aagathu.. Unnoda health paathuko and also safe aa Iru !! Insha Allah everything good will happen..
         </p>
 
         <p class="code-special-line">
@@ -1905,6 +1926,431 @@ else if (type === "birthdayCode") {
 
 }
 
+else if (type === "eyesMemory") {
+
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
+
+  const experience = document.createElement("div");
+
+  experience.className =
+    "memory-experience eyes-memory-experience";
+
+  experience.innerHTML = `
+
+    <div class="eyes-photo-area">
+
+      <div class="eyes-photo-frame">
+
+        <img
+          src="assets/day20.png"
+          alt="A special memory"
+          class="eyes-memory-photo"
+        />
+
+      </div>
+
+    </div>
+
+
+    <div class="eyes-memory-story">
+
+  <p>
+    There are some things about a person that you just can't explain with words.. Sometimes, you can see so much just by looking into their eyes.. The person can say lies but those eyes can't.. That's always a true fact I had noticed a lot that you are not feeling good only through those eyes but if I come and ask, you just say I'm normal everything is good but only those eyes say the truth that you are not feeling good and having some issues.. And somehow, this picture felt perfect for you.. Your eyes in the middle, with your name written in 28 different ways around them.. Hope, You know the reason beside that 28.. Different languages, different letters, but somehow they all still say the same name <strong>Haseena</strong>.. Maybe that's what makes this little picture special..
+  </p>
+  
+</div>
+  `;
+
+  $("memoryCard").appendChild(experience);
+
+
+  /* =========================================
+     PHOTO REVEAL
+  ========================================= */
+
+  const photo =
+    experience.querySelector(".eyes-memory-photo");
+
+  setTimeout(() => {
+
+    photo.classList.add(
+      "eyes-photo-visible"
+    );
+
+  }, 250);
+
+}
+
+else if (type === "ssnMemory") {
+
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
+
+  const experience = document.createElement("div");
+
+  experience.className =
+    "memory-experience ssn-memory-experience";
+
+  experience.innerHTML = `
+
+    <div class="ssn-photo-area">
+
+      <div class="ssn-photo-frame">
+
+        <div class="ssn-photo-placeholder">
+
+          <div class="camera-icon">
+            📸
+          </div>
+
+          <div class="camera-title">
+            ONE PHOTO FROM THAT DAY
+          </div>
+
+          <div class="camera-subtitle">
+            Let's Bring This One Back..
+          </div>
+
+          <button class="ssn-reveal-btn">
+            REVEAL MEMORY
+          </button>
+
+        </div>
+
+
+        <div class="ssn-photo-reveal">
+
+          <div class="camera-flash"></div>
+
+          <img
+            src="assets/day21.png"
+            alt="SSN College hackathon memory"
+            class="ssn-memory-photo"
+          />
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="ssn-photo-caption">
+      SSN COLLEGE · HACKATHON DAY
+    </div>
+
+
+    <div class="ssn-memory-story">
+
+      <p>
+        We went to your one of the dream college SSN for the Hackathon.. It was just a day we spent there but it stays a longer memory to us.. Probably thinking more about the event than the memory we'd take back from it.. You don't always know which ordinary day is going to stay with you.. Among all the things that happened that day, funnier moments like teasing each other late night talks, midnight killer laughs everything was memorable also the awkward moment that you felt down infront of everyone and though it's bleeding in that moment also the killer laugh didn't stopped.. There's now this one picture — proof that we were there and making one last little hackaton memory together :)
+      </p>
+
+    </div>
+
+  `;
+
+  $("memoryCard").appendChild(experience);
+
+
+  /* =========================================
+     REVEAL MEMORY
+  ========================================= */
+
+  const revealButton =
+    experience.querySelector(".ssn-reveal-btn");
+
+  const ssnPlaceholder =
+	experience.querySelector(".ssn-photo-placeholder");
+
+  const photoReveal =
+    experience.querySelector(".ssn-photo-reveal");
+
+  const photo =
+    experience.querySelector(".ssn-memory-photo");
+
+  const flash =
+    experience.querySelector(".camera-flash");
+
+
+  revealButton.addEventListener("click", () => {
+
+    /* Hide placeholder */
+
+    ssnPlaceholder.classList.add(
+	  "ssn-placeholder-hide"
+	);
+
+
+    /* Show photo area */
+
+    setTimeout(() => {
+
+      photoReveal.classList.add(
+        "ssn-photo-show"
+      );
+
+
+      /* Camera flash */
+
+      flash.classList.add(
+        "camera-flash-active"
+      );
+
+
+      /* Reveal story after photo */
+
+      setTimeout(() => {
+
+        experience
+          .querySelector(".ssn-memory-story")
+          .classList.add(
+            "ssn-story-visible"
+          );
+
+        experience
+          .querySelector(".ssn-photo-caption")
+          .classList.add(
+            "ssn-caption-visible"
+          );
+
+        experience
+          .querySelector(".ssn-memory-footer")
+          .classList.add(
+            "ssn-footer-visible"
+          );
+
+      }, 800);
+
+    }, 450);
+
+  });
+
+}
+
+else if (type === "secretKey") {
+
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
+
+  const experience = document.createElement("div");
+
+  experience.className =
+    "memory-experience secret-key-experience";
+
+  experience.innerHTML = `
+
+    <div class="secret-key-header">
+
+      <div class="secret-lock">
+        🔐
+      </div>
+
+      <span class="secret-key-label">
+        A HIDDEN SECRET
+      </span>
+
+    </div>
+
+    <div class="secret-clues">
+
+      ${item.clues.map(clue => `
+
+        <div class="secret-clue">
+
+          <div class="secret-clue-number">
+            ${clue.number}
+          </div>
+
+          <div class="secret-clue-content">
+
+            <h4>
+              ${clue.title}
+            </h4>
+
+            <p>
+              ${clue.text}
+            </p>
+
+          </div>
+
+        </div>
+
+      `).join("")}
+
+    </div>
+
+
+    <div class="secret-key-divider">
+      <span>✦</span>
+    </div>
+
+
+    <div class="secret-key-entry">
+
+      <span class="entry-label">
+        ENTER THE SECRET KEY
+      </span>
+
+      <div class="secret-input-wrap">
+
+        <input
+          type="text"
+          id="secretKeyInput"
+          maxlength="8"
+          autocomplete="off"
+          placeholder="________"
+        />
+
+        <button
+          type="button"
+          id="secretKeyButton"
+        >
+          UNLOCK
+        </button>
+
+      </div>
+
+      <p
+        class="secret-key-feedback"
+        id="secretKeyFeedback"
+      ></p>
+
+    </div>
+
+
+    <div
+      class="secret-unlocked"
+      id="secretUnlocked"
+    >
+
+      <div class="secret-unlocked-icon">
+        🔓
+      </div>
+
+      <span class="secret-unlocked-label">
+        SECRET UNLOCKED
+      </span>
+
+      <div
+        class="secret-message"
+        id="secretMessage"
+      ></div>
+
+    </div>
+
+  `;
+
+  $("memoryCard").appendChild(experience);
+
+
+  /* =========================================
+     ELEMENTS
+  ========================================= */
+
+  const secretInput =
+    experience.querySelector("#secretKeyInput");
+
+  const secretButton =
+    experience.querySelector("#secretKeyButton");
+
+  const feedback =
+    experience.querySelector("#secretKeyFeedback");
+
+  const unlocked =
+    experience.querySelector("#secretUnlocked");
+
+  const secretMessage =
+    experience.querySelector("#secretMessage");
+
+
+  /* =========================================
+     UNLOCK SECRET
+  ========================================= */
+
+  function unlockSecret() {
+
+    const enteredKey =
+      secretInput.value
+        .trim()
+        .replace(/\s/g, "");
+
+    if (enteredKey === item.secretKey) {
+
+      feedback.textContent =
+        "You Found It..";
+
+      feedback.classList.remove(
+        "secret-key-error"
+      );
+
+      secretInput.disabled = true;
+      secretButton.disabled = true;
+
+      secretButton.textContent =
+        "UNLOCKED ✓";
+
+      unlocked.classList.add(
+        "secret-unlocked-visible"
+      );
+
+      secretMessage.innerHTML =
+        item.secretMessage
+          .trim()
+          .split("\n")
+          .map(line => {
+
+            if (line.trim() === "") {
+              return "<br>";
+            }
+
+            return `<p>${line}</p>`;
+
+          })
+          .join("");
+
+    } else {
+
+      feedback.textContent =
+        "Hmm.. That's Not It.. Look At The Clues Again..";
+
+      feedback.classList.remove(
+        "secret-key-error"
+      );
+
+      void feedback.offsetWidth;
+
+      feedback.classList.add(
+        "secret-key-error"
+      );
+
+    }
+
+  }
+
+
+  secretButton.addEventListener(
+    "click",
+    unlockSecret
+  );
+
+
+  secretInput.addEventListener(
+    "keydown",
+    (event) => {
+
+      if (event.key === "Enter") {
+        unlockSecret();
+      }
+
+    }
+  );
+
+}
 
 		else if (type === "jigsaw") {
 
