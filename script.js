@@ -38,7 +38,7 @@ const memories = [
     date: "SEPTEMBER 02",
     tag: "A LITTLE MEMORY",
 	type: "photo",
-    title: "Okkay... You Came Back Jerry !!",
+    title: "Okkay.. You Came Back Jerry !!",
     text: "I Wanted The First Real Surprise To Be Simple.. Just One Moment, One Picture and One Memory That Deserves To Stay..",
     image: "assets/day02.png",
     quote: "I Know You Remember This Moment, The Very First Surprise From My Side.."
@@ -233,7 +233,7 @@ const memories = [
 	  date: "SEPTEMBER 11",
 	  type: "quiz",
 	  tag: "A LITTLE TEST",
-	  title: "How Well Do You Remember?",
+	  title: "How Well Do You Remember ??",
 	  text: "We Are Frds, Since 2025.. Now Let's See How Much You Actually Remember..",
 	  quote: "Maybe The Little Things Really Did Stay With You..",
 	  quiz: [
@@ -487,60 +487,64 @@ const memories = [
 You actually found it.. Maybe the key wasn't really that secret after all.. Two little numbers that have been hiding in this journey from the beginning.. All this entire journey connects to a single person named Haseena my Jerry !! I don't know how to start this and how to end this journey just I all remember is all about the promise I made to you that I will make this september as a memorable birthday in your life.. To keep that promise alive I started this journey like reminding you all the memories, moments also the special incidents what ever happened in your life through images, letters, audios, puzzles, messages and simple quiz.. Just started in a unplanned way to make it, now it's became my daily routine to create a new and different one by discussing the plan with gpt and get the source code then testing locally and then deploying it globally atlast sending it to the person for whom it has been made at 11:25 exactly the birth time of the dad's little princess.. Hope I made this 22 days more memorable to you and also I will make the upcoming days also unforgettable.. Don't want to create the hype but just want to say, "Something big is waiting for you".. Some things are worth finding.. Some memories are worth keeping.. See you Tomorrow :)
   `
 },
-  {
-    day: 23,
-    date: "SEPTEMBER 23",
-    tag: "THINGS UNSAID",
-    title: "Things I never really said.",
-    text: "This is where you can put the things you genuinely want her to know. Keep it honest, simple and completely yours.",
-    image: "assets/day23.jpg",
-    quote: "Some words take time to find their way out."
-  },
-  {
-    day: 24,
-    date: "SEPTEMBER 24",
-    tag: "INSIDE JOKES",
-    title: "Nobody else would understand. 😂",
-    text: "A collection of the weird little jokes, phrases and references that make absolutely no sense to anyone else.",
-    image: "assets/day24.jpg",
-    quote: "If nobody else gets it, that probably makes it better."
-  },
-  {
-    day: 25,
-    date: "SEPTEMBER 25",
-    tag: "FROM THE HEART",
-    title: "Three days left.",
-    text: "The countdown is almost over. So today's surprise is a little more personal.",
-    image: "assets/day25.jpg",
-    quote: "Three days. One birthday. A whole lot of memories."
-  },
-  {
-    day: 26,
-    date: "SEPTEMBER 26",
-    tag: "THE PHOTO DUMP",
-    title: "A few more favourites.",
-    text: "No long story today. Just some photos that deserved to be here.",
-    image: "assets/day26.jpg",
-    quote: "Because one favourite photo was never going to be enough."
-  },
-  {
-    day: 27,
-    date: "SEPTEMBER 27",
-    tag: "ONE DAY TO GO",
-    title: "Tomorrow. ❤️",
-    text: "Tomorrow is the day. The countdown that started on September 1 is almost at the end. There is only one more sleep before everything unlocks.",
-    image: "assets/day27.jpg",
-    quote: "One more day. Then the final surprise."
-  },
-  {
-    day: 28,
-    date: "SEPTEMBER 28",
-    tag: "THE BIG REVEAL",
-    title: "Happy Birthday, Jeryy! 🎂❤️",
-    text: "Today is not just another day. It is your day. And this little website was my way of collecting some of the moments, laughs and memories that make you special to me.",
-    image: "assets/day28.jpg",
-    quote: "Some people deserve more than one birthday wish."
-  }
+{
+  day: 23,
+  date: "SEPTEMBER 23",
+  type: "jigsaw4x4",
+  tag: "PIECE BY PIECE",
+  title: "Rearrange To Reveal The Memory",
+  text: "Some Pictures Just Feel Right When They're Whole..",
+  image: "assets/day23.png",
+  quote: "The Best Moments Make Sense When All The Pieces Come Together.."
+},
+{
+  day: 24,
+  date: "SEPTEMBER 24",
+  type: "childhoodFocus",
+  tag: "BEFORE I KNEW YOU",
+  title: "The Initial Beginning Stage",
+  text: "Long Before I Ever Knew The Person..",
+  image: "assets/day24.png",
+  quote: "Every Big Story Begins With A Very Small Beginning.."
+},
+{
+  day: 25,
+  date: "SEPTEMBER 25",
+  type: "yearbookReveal",
+  tag: "SOMEWHERE ALONG THE WAY",
+  title: "Somewhere You Belongs To",
+  text: "So Many Versions Of You Existed Before I Ever Got To Know You..",
+  image: "assets/day25.png",
+  quote: "You Were Becoming You Long Before I Ever Became Part Of The Story.."
+},
+{
+  day: 26,
+  date: "SEPTEMBER 26",
+  type: "cameraFocus",
+  tag: "THERE WAS US",
+  title: "One Of The Recent Clicks",
+  text: "Out Of All The People We Could Have Met.. Somehow, Our Paths Crossed..",
+  image: "assets/day26.png",
+  quote: "Somewhere Between All The Years And All The People.. There Was Us.."
+},
+{
+  day: 27,
+  date: "SEPTEMBER 27",
+  type: "oneDayLeft",
+  tag: "ONE DAY LEFT",
+  title: "Tomorrow, The Final Countdown",
+  text: "Tomorrow, This Little Journey Becomes A Birthday Memory..",
+  quote: "One More Night.. Then The Countdown Ends.."
+},
+{
+  day: 28,
+  date: "SEPTEMBER 28",
+  type: "birthdayFinale",
+  tag: "THE COUNTDOWN IS OVER",
+  title: "The End Of This Little Journey️",
+  text: "September 28, 2026 · 11:25 PM",
+  quote: "28 Days. 28 Moments. One Person Who Made Every One Of Them Worth Keeping.."
+},
 ];
 
 const $ = (id) => document.getElementById(id);
@@ -570,7 +574,7 @@ function getUnlockedDay(date = new Date()) {
   // 🧪 TEST MODE
   // Simulate September 4 at 11:25 PM
   if (TEST_MODE) {
-    return 22;
+    return 28;
   }
 
   // Day 1 is available from September 1
@@ -2845,6 +2849,789 @@ else if (type === "secretKey") {
 		  renderBoard();
 
 		}
+		
+		else if (type === "jigsaw4x4") {
+
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
+
+  const experience = document.createElement("div");
+
+  experience.className =
+    "memory-experience jigsaw4x4-experience";
+
+  experience.innerHTML = `
+    <!-- =========================================
+         INSTRUCTIONS
+    ========================================== -->
+
+    <div class="jigsaw4x4-instructions">
+
+      <p>
+        Rearrange The Pieces To Reveal The Picture..
+      </p>
+
+      <span>
+        4 × 4&nbsp;&nbsp; • &nbsp;&nbsp;16 PIECES&nbsp;&nbsp; • &nbsp;&nbsp;DRAG, DROP OR TAP TO SWAP
+      </span>
+
+    </div>
+
+
+    <!-- =========================================
+         PUZZLE BOARD
+    ========================================== -->
+
+    <div class="jigsaw4x4-board-wrap">
+
+      <div
+        class="jigsaw4x4-board"
+        id="jigsaw4x4Board"
+        aria-label="4 by 4 jigsaw puzzle"
+      ></div>
+
+    </div>
+
+
+    <!-- =========================================
+         STATUS
+    ========================================== -->
+
+    <div class="jigsaw4x4-status">
+
+      <div class="jigsaw4x4-stat">
+
+        <span class="jigsaw4x4-stat-icon">
+          ◷
+        </span>
+
+        <div>
+          <strong id="jigsaw4x4Time">
+            00:00
+          </strong>
+
+          <small>
+            TIME
+          </small>
+        </div>
+
+      </div>
+
+
+      <div class="jigsaw4x4-status-divider"></div>
+
+
+      <div class="jigsaw4x4-stat">
+
+        <span class="jigsaw4x4-stat-icon">
+          ⇄
+        </span>
+
+        <div>
+          <strong id="jigsaw4x4Moves">
+            0
+          </strong>
+
+          <small>
+            MOVES
+          </small>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================================
+         CONTROLS
+    ========================================== -->
+
+    <div class="jigsaw4x4-controls">
+
+      <button
+        type="button"
+        class="jigsaw4x4-control secondary"
+        id="jigsaw4x4Shuffle"
+      >
+        <span>⤨</span>
+        SHUFFLE
+      </button>
+
+
+      <button
+        type="button"
+        class="jigsaw4x4-control primary"
+        id="jigsaw4x4Check"
+      >
+        <span>🧩</span>
+        CHECK IMAGE
+      </button>
+
+
+      <button
+        type="button"
+        class="jigsaw4x4-control secondary"
+        id="jigsaw4x4Reset"
+      >
+        <span>↻</span>
+        RESET
+      </button>
+
+    </div>
+
+
+    <!-- =========================================
+         MESSAGE
+    ========================================== -->
+
+    <div
+      class="jigsaw4x4-message"
+      id="jigsaw4x4Message"
+    ></div>
+
+
+    <!-- =========================================
+         COMPLETE
+    ========================================== -->
+
+    <div
+      class="jigsaw4x4-complete"
+      id="jigsaw4x4Complete"
+    >
+	
+      <span class="jigsaw4x4-complete-label">
+        MEMORY COMPLETE
+      </span>
+
+      <h3>
+        You Put It All Back Together..
+      </h3>
+
+      <div class="jigsaw4x4-final-photo">
+
+        <img
+          src="${item.image}"
+          alt="${item.title}"
+        />
+
+      </div>
+
+    </div>
+
+  `;
+
+  $("memoryCard").appendChild(experience);
+
+
+  /* =========================================
+     ELEMENTS
+  ========================================== */
+
+  const board =
+    experience.querySelector("#jigsaw4x4Board");
+
+  const timeText =
+    experience.querySelector("#jigsaw4x4Time");
+
+  const movesText =
+    experience.querySelector("#jigsaw4x4Moves");
+
+  const message =
+    experience.querySelector("#jigsaw4x4Message");
+
+  const complete =
+    experience.querySelector("#jigsaw4x4Complete");
+
+  const shuffleButton =
+    experience.querySelector("#jigsaw4x4Shuffle");
+
+  const checkButton =
+    experience.querySelector("#jigsaw4x4Check");
+
+  const resetButton =
+    experience.querySelector("#jigsaw4x4Reset");
+
+
+  /* =========================================
+     PUZZLE SETTINGS
+  ========================================== */
+
+  const GRID_SIZE = 4;
+
+  const TOTAL_PIECES =
+    GRID_SIZE * GRID_SIZE;
+
+
+  let pieces = Array.from(
+    { length: TOTAL_PIECES },
+    (_, index) => index
+  );
+
+  let moves = 0;
+
+  let selectedIndex = null;
+
+  let draggedIndex = null;
+
+  let timerStarted = false;
+
+  let timerSeconds = 0;
+
+  let timerInterval = null;
+
+  let solved = false;
+
+
+  /* =========================================
+     TIMER
+  ========================================== */
+
+  function startTimer() {
+
+    if (timerStarted) return;
+
+    timerStarted = true;
+
+    timerInterval = setInterval(() => {
+
+      timerSeconds++;
+
+      const minutes =
+        Math.floor(timerSeconds / 60);
+
+      const seconds =
+        timerSeconds % 60;
+
+      timeText.textContent =
+        `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+
+    }, 1000);
+
+  }
+
+
+  function stopTimer() {
+
+    if (timerInterval) {
+
+      clearInterval(timerInterval);
+
+      timerInterval = null;
+
+    }
+
+  }
+
+
+  /* =========================================
+     SHUFFLE
+  ========================================== */
+
+  function shufflePieces() {
+
+    do {
+
+      for (
+        let i = pieces.length - 1;
+        i > 0;
+        i--
+      ) {
+
+        const randomIndex =
+          Math.floor(
+            Math.random() * (i + 1)
+          );
+
+        [
+          pieces[i],
+          pieces[randomIndex]
+        ] = [
+          pieces[randomIndex],
+          pieces[i]
+        ];
+
+      }
+
+    } while (
+      pieces.every(
+        (piece, index) =>
+          piece === index
+      )
+    );
+
+  }
+
+
+  /* =========================================
+     CREATE BOARD
+  ========================================== */
+
+  function renderBoard() {
+
+    board.innerHTML = "";
+
+    pieces.forEach(
+      (piece, position) => {
+
+        const tile =
+          document.createElement("button");
+
+        tile.type = "button";
+
+        tile.className =
+          "jigsaw4x4-piece";
+
+        tile.dataset.position =
+          position;
+
+        tile.dataset.piece =
+          piece;
+
+        tile.setAttribute(
+          "aria-label",
+          `Puzzle piece ${piece + 1}`
+        );
+
+
+        const row =
+          Math.floor(
+            piece / GRID_SIZE
+          );
+
+        const column =
+          piece % GRID_SIZE;
+
+
+        /*
+          4 × 4 image positioning.
+
+          Each piece gets the same image,
+          but only its correct section.
+        */
+
+        tile.style.backgroundImage =
+          `url("${item.image}")`;
+
+        tile.style.backgroundPosition =
+          `${column * 100 / (GRID_SIZE - 1)}% ${row * 100 / (GRID_SIZE - 1)}%`;
+
+        tile.style.backgroundSize =
+          `${GRID_SIZE * 100}% ${GRID_SIZE * 100}%`;
+
+
+        /* =====================================
+           DRAG & DROP
+        ===================================== */
+
+        tile.draggable = true;
+
+
+        tile.addEventListener(
+          "dragstart",
+          (event) => {
+
+            startTimer();
+
+            draggedIndex =
+              Number(
+                tile.dataset.position
+              );
+
+            tile.classList.add(
+              "is-dragging"
+            );
+
+            event.dataTransfer.effectAllowed =
+              "move";
+
+          }
+        );
+
+
+        tile.addEventListener(
+          "dragend",
+          () => {
+
+            tile.classList.remove(
+              "is-dragging"
+            );
+
+            draggedIndex = null;
+
+          }
+        );
+
+
+        tile.addEventListener(
+          "dragover",
+          (event) => {
+
+            event.preventDefault();
+
+            tile.classList.add(
+              "is-drop-target"
+            );
+
+          }
+        );
+
+
+        tile.addEventListener(
+          "dragleave",
+          () => {
+
+            tile.classList.remove(
+              "is-drop-target"
+            );
+
+          }
+        );
+
+
+        tile.addEventListener(
+          "drop",
+          (event) => {
+
+            event.preventDefault();
+
+            tile.classList.remove(
+              "is-drop-target"
+            );
+
+            const targetIndex =
+              Number(
+                tile.dataset.position
+              );
+
+            if (
+              draggedIndex === null ||
+              draggedIndex === targetIndex
+            ) {
+              return;
+            }
+
+            swapPieces(
+              draggedIndex,
+              targetIndex
+            );
+
+          }
+        );
+
+
+        /* =====================================
+           TAP TO SWAP
+        ===================================== */
+
+        tile.addEventListener(
+          "click",
+          () => {
+
+            startTimer();
+
+            const position =
+              Number(
+                tile.dataset.position
+              );
+
+
+            /*
+              First tap
+            */
+
+            if (
+              selectedIndex === null
+            ) {
+
+              selectedIndex =
+                position;
+
+              tile.classList.add(
+                "is-selected"
+              );
+
+              message.textContent =
+                "Now tap another piece to swap.";
+
+              return;
+
+            }
+
+
+            /*
+              Same tile tapped again
+            */
+
+            if (
+              selectedIndex === position
+            ) {
+
+              tile.classList.remove(
+                "is-selected"
+              );
+
+              selectedIndex = null;
+
+              message.textContent =
+                "Choose a piece to move.";
+
+              return;
+
+            }
+
+
+            /*
+              Second tile
+            */
+
+            swapPieces(
+              selectedIndex,
+              position
+            );
+
+            selectedIndex = null;
+
+          }
+        );
+
+
+        board.appendChild(tile);
+
+      }
+    );
+
+  }
+
+
+  /* =========================================
+     SWAP
+  ========================================== */
+
+  function swapPieces(
+    first,
+    second
+  ) {
+
+    if (
+      first === second ||
+      solved
+    ) {
+      return;
+    }
+
+
+    [
+      pieces[first],
+      pieces[second]
+    ] = [
+      pieces[second],
+      pieces[first]
+    ];
+
+
+    moves++;
+
+    movesText.textContent =
+      moves;
+
+
+    message.textContent =
+      "Keep Going.. You're Getting There..";
+
+
+    selectedIndex = null;
+
+
+    renderBoard();
+
+
+    checkSolved();
+
+  }
+
+
+  /* =========================================
+     CHECK SOLVED
+  ========================================== */
+
+  function checkSolved() {
+
+    const isSolved =
+      pieces.every(
+        (piece, index) =>
+          piece === index
+      );
+
+
+    if (!isSolved) {
+      return;
+    }
+
+
+    solved = true;
+
+    stopTimer();
+
+
+    board.classList.add(
+      "jigsaw4x4-solved"
+    );
+
+
+    message.textContent =
+      "Everything Fits Perfectly..";
+
+
+    setTimeout(() => {
+
+      complete.classList.add(
+        "is-visible"
+      );
+
+      complete.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+    }, 700);
+
+  }
+
+
+  /* =========================================
+     CHECK BUTTON
+  ========================================== */
+
+  checkButton.addEventListener(
+    "click",
+    () => {
+
+      if (solved) return;
+
+
+      if (
+        pieces.every(
+          (piece, index) =>
+            piece === index
+        )
+      ) {
+
+        checkSolved();
+
+      } else {
+
+        message.textContent =
+          "Not Quite Yet.. A Few Pieces Are Still Hiding In The Wrong Place..";
+
+        board.classList.add(
+          "jigsaw4x4-shake"
+        );
+
+        setTimeout(() => {
+
+          board.classList.remove(
+            "jigsaw4x4-shake"
+          );
+
+        }, 450);
+
+      }
+
+    }
+  );
+
+
+  /* =========================================
+     SHUFFLE BUTTON
+  ========================================== */
+
+  shuffleButton.addEventListener(
+    "click",
+    () => {
+
+      if (solved) return;
+
+      startTimer();
+
+      shufflePieces();
+
+      moves = 0;
+
+      movesText.textContent =
+        "0";
+
+      selectedIndex = null;
+
+      message.textContent =
+        "Shuffled.. Let's See If You Can Beat It..";
+
+      renderBoard();
+
+    }
+  );
+
+
+  /* =========================================
+     RESET BUTTON
+  ========================================== */
+
+  resetButton.addEventListener(
+    "click",
+    () => {
+
+      stopTimer();
+
+      timerStarted = false;
+
+      timerSeconds = 0;
+
+      timeText.textContent =
+        "00:00";
+
+      moves = 0;
+
+      movesText.textContent =
+        "0";
+
+      selectedIndex = null;
+
+      solved = false;
+
+      complete.classList.remove(
+        "is-visible"
+      );
+
+      board.classList.remove(
+        "jigsaw4x4-solved"
+      );
+
+      message.textContent =
+        "Starting over...";
+
+      pieces =
+        Array.from(
+          { length: TOTAL_PIECES },
+          (_, index) => index
+        );
+
+      shufflePieces();
+
+      renderBoard();
+
+    }
+  );
+
+
+  /* =========================================
+     INITIALIZE
+  ========================================== */
+
+  shufflePieces();
+
+  renderBoard();
+
+}
 
 	else if (type === "letter") {
 
@@ -3065,6 +3852,646 @@ else if (type === "secretKey") {
     );
 
   }
+
+}
+
+else if (type === "yearbookReveal") {
+
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
+
+  const experience = document.createElement("div");
+
+  experience.className =
+    "memory-experience yearbook-experience";
+
+  experience.innerHTML = `
+
+    <div class="yearbook-book">
+
+      <div
+        class="yearbook-page yearbook-page-back"
+      >
+
+        <div class="yearbook-page-content">
+
+          <span class="yearbook-caption">
+            CLASS OF MEMORIES
+          </span>
+
+          <div class="yearbook-photo-frame">
+
+            <img
+              src="${item.image}"
+              alt="School memory"
+            />
+
+          </div>
+
+          <span class="yearbook-caption">
+            Somewhere Along The Way !!
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="yearbook-page yearbook-page-front"
+        id="yearbookFront"
+      >
+
+        <div class="yearbook-cover-inner">
+
+          <strong>
+            A Little Piece Of Your Story
+          </strong>
+          <span>
+            TURN THE PAGE
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <button
+      type="button"
+      class="yearbook-open-button"
+      id="yearbookOpen"
+    >
+      TURN THE PAGE →
+    </button>
+
+
+    <div
+      class="yearbook-message"
+      id="yearbookMessage"
+    >
+
+      <p>
+        Somewhere along the way.. That little girl grew up with lots of happiness also few struggles and pain.. School uniforms changed.. Years passed.. So many different versions of you came and went.. So many versions of you existed before I ever got to know you.. And I'm glad to meet the version of you that I know today !!
+      </p>
+        
+    </div>
+  `;
+
+  $("memoryCard").appendChild(experience);
+
+
+  const openButton =
+    experience.querySelector(
+      "#yearbookOpen"
+    );
+
+  const frontPage =
+    experience.querySelector(
+      "#yearbookFront"
+    );
+
+  const message =
+    experience.querySelector(
+      "#yearbookMessage"
+    );
+
+
+  openButton.addEventListener(
+    "click",
+    () => {
+
+      openButton.disabled = true;
+
+      frontPage.classList.add(
+        "yearbook-page-turn"
+      );
+
+      openButton.classList.add(
+        "yearbook-button-hidden"
+      );
+
+
+      setTimeout(() => {
+
+        message.classList.add(
+          "yearbook-message-visible"
+        );
+
+        message.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+      }, 1000);
+
+    }
+  );
+
+}
+
+else if (type === "childhoodFocus") {
+
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
+
+  const experience = document.createElement("div");
+
+  experience.className =
+    "memory-experience childhood-focus-experience";
+
+  experience.innerHTML = `
+
+    <div class="childhood-focus-header">
+      <h2>
+        Before I Knew You..
+      </h2>
+
+      <p>
+        Some Memories Belong To A Time Before We Ever Knew Each Other..
+      </p>
+
+    </div>
+
+
+    <div class="childhood-focus-stage">
+
+      <div class="childhood-focus-photo-wrap">
+
+        <img
+          src="${item.image}"
+          alt="A childhood memory"
+          class="childhood-focus-photo"
+          id="childhoodFocusPhoto"
+        />
+
+        <div
+          class="childhood-focus-overlay"
+          id="childhoodFocusOverlay"
+        >
+
+          <small>
+            A Little One..
+          </small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <button
+      type="button"
+      class="childhood-focus-button"
+      id="childhoodFocusButton"
+    >
+      Reveal This Memory !!
+    </button>
+
+
+    <div
+      class="childhood-focus-message"
+      id="childhoodFocusMessage"
+    >
+
+      <p>
+        Before I ever knew your name.. Before I knew the person you would become.. You were already living a whole little life with no pressures and struggles.. So Cute, So Innocent with an Adorable Smile.. And completely unaware of all the beautiful things that were still waiting for you.. Insha Allah good days are upcoming to you !!
+      </p>
+
+      <div class="childhood-focus-special">
+        And Somehow, That Little Girl Became The Haseeeenaaaa I Know Today..
+      </div>
+
+    </div>
+  `;
+
+  $("memoryCard").appendChild(experience);
+
+
+  const revealButton =
+    experience.querySelector(
+      "#childhoodFocusButton"
+    );
+
+  const photo =
+    experience.querySelector(
+      "#childhoodFocusPhoto"
+    );
+
+  const overlay =
+    experience.querySelector(
+      "#childhoodFocusOverlay"
+    );
+
+  const message =
+    experience.querySelector(
+      "#childhoodFocusMessage"
+    );
+
+
+  revealButton.addEventListener(
+    "click",
+    () => {
+
+      revealButton.disabled = true;
+
+      revealButton.classList.add(
+        "childhood-focus-button-hidden"
+      );
+
+      overlay.classList.add(
+        "childhood-focus-overlay-hide"
+      );
+
+      photo.classList.add(
+        "childhood-focus-photo-clear"
+      );
+
+      setTimeout(() => {
+
+        message.classList.add(
+          "childhood-focus-message-visible"
+        );
+
+        message.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+      }, 1100);
+
+    }
+  );
+
+}
+
+else if (type === "childhoodFocus") {
+
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
+
+  const experience = document.createElement("div");
+
+  experience.className =
+    "memory-experience childhood-focus-experience";
+
+  experience.innerHTML = `
+
+    <div class="childhood-focus-header">
+
+      <span class="childhood-focus-label">
+        ${item.tag}
+      </span>
+
+      <h2>
+        Before I Knew You..
+      </h2>
+
+      <p>
+        Some memories belong to a time
+        before we ever knew each other.
+      </p>
+
+    </div>
+
+
+    <div class="childhood-focus-stage">
+
+      <div class="childhood-focus-photo-wrap">
+
+        <img
+          src="${item.image}"
+          alt="A childhood memory"
+          class="childhood-focus-photo"
+          id="childhoodFocusPhoto"
+        />
+
+        <div
+          class="childhood-focus-overlay"
+          id="childhoodFocusOverlay"
+        >
+
+          <span>
+            A LITTLE GIRL..
+          </span>
+
+          <small>
+            BEFORE I KNEW YOU
+          </small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <button
+      type="button"
+      class="childhood-focus-button"
+      id="childhoodFocusButton"
+    >
+      ✦ REVEAL THIS MEMORY
+    </button>
+
+
+    <div
+      class="childhood-focus-message"
+      id="childhoodFocusMessage"
+    >
+
+      <p>
+        Before I ever knew your name..
+        before I knew the person you would become..
+        you were already living a whole little life.
+      </p>
+
+      <p>
+        Three months old.
+        So tiny.
+        So innocent.
+        And completely unaware of all the beautiful things
+        that were still waiting for you.
+      </p>
+
+      <div class="childhood-focus-special">
+        And somehow.. that little girl became
+        the Haseeeenaaaa I know today. ❤️
+      </div>
+
+    </div>
+
+
+    <div class="childhood-focus-footer">
+
+      <span>
+        24 / 28
+      </span>
+
+      <span>
+        A memory from before the memories ❤️
+      </span>
+
+    </div>
+
+  `;
+
+  $("memoryCard").appendChild(experience);
+
+
+  const revealButton =
+    experience.querySelector(
+      "#childhoodFocusButton"
+    );
+
+  const photo =
+    experience.querySelector(
+      "#childhoodFocusPhoto"
+    );
+
+  const overlay =
+    experience.querySelector(
+      "#childhoodFocusOverlay"
+    );
+
+  const message =
+    experience.querySelector(
+      "#childhoodFocusMessage"
+    );
+
+
+  revealButton.addEventListener(
+    "click",
+    () => {
+
+      revealButton.disabled = true;
+
+      revealButton.classList.add(
+        "childhood-focus-button-hidden"
+      );
+
+      overlay.classList.add(
+        "childhood-focus-overlay-hide"
+      );
+
+      photo.classList.add(
+        "childhood-focus-photo-clear"
+      );
+
+      setTimeout(() => {
+
+        message.classList.add(
+          "childhood-focus-message-visible"
+        );
+
+        message.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+      }, 1100);
+
+    }
+  );
+
+}
+
+else if (type === "cameraFocus") {
+
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
+
+  const experience = document.createElement("div");
+
+  experience.className =
+    "memory-experience camera-focus-experience";
+
+  experience.innerHTML = `
+
+    <div class="camera-focus-header">
+	
+      <h2>
+        And Then.. There Was Us..
+      </h2>
+
+    </div>
+
+
+    <div class="camera-focus-frame">
+
+      <div
+        class="camera-focus-blur"
+        id="cameraFocusBlur"
+      ></div>
+
+      <img
+        src="${item.image}"
+        alt="A recent memory together"
+        class="camera-focus-photo"
+        id="cameraFocusPhoto"
+      />
+
+      <div
+        class="camera-focus-overlay"
+        id="cameraFocusOverlay"
+      >
+
+        <div class="camera-focus-crosshair">
+          +
+        </div>
+
+        <span>
+          FOCUSING..
+        </span>
+
+      </div>
+
+
+      <div class="camera-focus-corners">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </div>
+
+    </div>
+
+
+    <button
+      type="button"
+      class="camera-focus-button"
+      id="cameraFocusButton"
+    >
+      📸 FOCUS THE MEMORY
+    </button>
+
+
+    <div
+      class="camera-focus-message"
+      id="cameraFocusMessage"
+    >
+
+      <p>
+        Out of all those years.. Out of all the people we could have met.. Somehow, our paths crossed.. We met each other on 2024, we started our little chit-chats around 2025 mid and then there comes out the turning point SVCE exactly 1yr ago 26th Sept 2025 where all my taughts about you has been vanished in that one night because we spent the whole night with lots of funnier talks, gossips, tea, your past story, Sneha & Mohan the entire ruling funnier chat of that night.. From that night we started to talk a lot, make calls everyday evening from minutes of talks to hours of talks, day & night chats most memorable time period of the college days and unforgettable :)
+      </p>
+
+      <div class="camera-focus-special">
+        And Here We Are..
+      </div>
+
+      <div class="camera-focus-small">
+        One Recent Picture.. Two People.. One More Memory To Keep..
+      </div>
+
+    </div>
+
+  `;
+
+  $("memoryCard").appendChild(experience);
+
+
+  const button =
+    experience.querySelector(
+      "#cameraFocusButton"
+    );
+
+  const photo =
+    experience.querySelector(
+      "#cameraFocusPhoto"
+    );
+
+  const blur =
+    experience.querySelector(
+      "#cameraFocusBlur"
+    );
+
+  const overlay =
+    experience.querySelector(
+      "#cameraFocusOverlay"
+    );
+
+  const message =
+    experience.querySelector(
+      "#cameraFocusMessage"
+    );
+
+
+  button.addEventListener(
+    "click",
+    () => {
+
+      button.disabled = true;
+
+      button.classList.add(
+        "camera-focus-button-hidden"
+      );
+
+      overlay.classList.add(
+        "camera-focus-overlay-hide"
+      );
+
+      blur.classList.add(
+        "camera-focus-blur-clear"
+      );
+
+      photo.classList.add(
+        "camera-focus-photo-clear"
+      );
+
+
+      setTimeout(() => {
+
+        message.classList.add(
+          "camera-focus-message-visible"
+        );
+
+        message.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+      }, 1000);
+
+    }
+  );
+
+}
+
+else if (type === "oneDayLeft") {
+
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
+
+  const experience = document.createElement("div");
+
+  experience.className =
+    "memory-experience one-day-left-experience";
+
+  experience.innerHTML = `
+    <div class="one-day-left-content">  
+      <h2>
+        ONE DAY LEFT
+      </h2>
+
+      <div class="one-day-left-line"></div>
+
+      <p>
+        Whenever we start a journey it should have an end destination point.. Here, comes the end destination point of this 28 days little journey of the jerry with some happy moments.. One Last Night Travel for the end of this journey and everything turns into the good memories.. Just 35mins more to end 21yrs of Haseena but actually 24hrs to go for the real end of 21yrs.. Here, The Final Countdown begins to end this journey :)
+      </p>
+
+    </div>
+  `;
+
+  $("memoryCard").appendChild(experience);
 
 }
 
@@ -4399,6 +5826,160 @@ else if (type === "audio") {
 
 }
 
+else if (type === "birthdayFinale") {
+
+  image.style.display = "none";
+  placeholder.style.display = "none";
+  imageWrap.style.display = "none";
+
+  const experience = document.createElement("div");
+
+  experience.className =
+    "memory-experience birthday-finale-experience";
+
+  experience.innerHTML = `
+
+    <!-- =====================================
+         BIRTHDAY HERO
+    ====================================== -->
+
+    <div class="birthday-finale-hero">
+
+      <div class="birthday-finale-confetti">
+        ✦ &nbsp; ✧ &nbsp; ✦ &nbsp; ✧ &nbsp; ✦
+      </div>
+
+      <div class="birthday-finale-cake">
+        🎂
+      </div>
+
+      <h1>
+        HAPPY BIRTHDAY
+      </h1>
+
+      <h2>
+        HASEEEENAAAAA
+      </h2>
+
+      <div class="birthday-finale-heart">
+        ❤️
+      </div>
+	  
+    </div>
+
+    <!-- =====================================
+         FINAL LETTER
+    ====================================== -->
+
+    <div class="birthday-final-letter">
+
+      <div class="birthday-letter-top">
+
+        <span>
+          ONE LAST THING
+        </span>
+
+        <div>
+          ♥
+        </div>
+
+      </div>
+
+
+      <h2>
+        For You, Haseeeenaaaa..
+      </h2>
+
+
+      <div class="birthday-letter-body">
+
+        <p>
+          I honestly don't know how to properly
+          start this letter because somehow,
+          this entire thing started without a
+          proper plan.
+        </p>
+
+        <p>
+          I only had one thought in my mind —
+          I wanted to make this September
+          memorable for you.
+        </p>
+
+        <p>
+          So I started with one little idea,
+          then another one came,
+          and somehow twenty-eight days
+          later we ended up here.
+        </p>
+
+        <p>
+          Every day I tried to create something
+          different. Sometimes it was a memory,
+          sometimes a photo, sometimes a puzzle,
+          sometimes something completely random.
+          But all of them had one thing in common —
+          they were made for you.
+        </p>
+
+        <p>
+          I hope somewhere between all those
+          little surprises, you smiled,
+          remembered something,
+          laughed at something,
+          or simply felt a little special.
+        </p>
+
+        <p>
+          Because that's what I wanted this whole
+          thing to be.
+        </p>
+
+        <p class="birthday-letter-special">
+          Not something huge.
+          <br>
+          Just something you would remember.
+        </p>
+
+        <p>
+          Thank you for being a part of so many
+          moments that became memories without us
+          even realising it at the time.
+        </p>
+
+        <p>
+          And whatever happens next,
+          I hope life gives you plenty of reasons
+          to smile, plenty of beautiful moments
+          to remember, and a lot of happiness
+          that stays.
+        </p>
+
+        <p>
+          Keep smiling.
+          Keep being yourself.
+          Keep going.
+        </p>
+
+        <p class="birthday-letter-final-line">
+          Epovum Sirichitae Iru,
+          Haseeeenaaaa. ❤️
+        </p>
+
+        <p class="birthday-letter-sign">
+          — Raki
+        </p>
+
+      </div>
+
+    </div>
+
+  `;
+
+  $("memoryCard").appendChild(experience);
+  
+}
+
 
 else if (item.type === "pin") {
   const experience = document.createElement("div");
@@ -4552,24 +6133,44 @@ else if (item.type === "pin") {
     btn.classList.toggle("active", Number(btn.dataset.day) === item.day);
   });
 
-  if (item.day === 28) {
-    document.body.classList.add("birthday-mode");
-    $("finalLetter").classList.remove("hidden");
-    $("finalText").textContent =
-      "Happy Birthday ❤️\n\n" +
-      "I hope this little journey made your September a little more memorable. " +
-      "There are probably hundreds of things I could say, but I wanted to let the memories do most of the talking.\n\n" +
-      "Thank you for all the laughs, random conversations, silly moments and happy memories. " +
-      "I hope this new year of your life gives you many more reasons to smile.\n\n" +
-      "Have the happiest birthday, Jeryy. You deserve a beautiful day. ❤️";
-    $("footerText").textContent = "The countdown is over. The memories stay. ❤️";
-    $("lockState").textContent = "● BIRTHDAY UNLOCKED";
-  } else {
-    document.body.classList.remove("birthday-mode");
-    $("finalLetter").classList.add("hidden");
-    $("footerText").textContent = "Another surprise coming soon..";
-    $("lockState").textContent = "● MEMORIES";
-  }
+ if (item.day === 28) {
+
+  document.body.classList.add(
+    "birthday-mode"
+  );
+
+  /*
+    Day 28 now has its own
+    finale + final letter.
+    Keep the old external letter hidden.
+  */
+
+  $("finalLetter").classList.add(
+    "hidden"
+  );
+
+  $("footerText").textContent =
+    "The Countdown Is Over.. But, The Memories Stay Forever..";
+
+  $("lockState").textContent =
+    "● BIRTHDAY UNLOCKED";
+
+} else {
+
+  document.body.classList.remove(
+    "birthday-mode"
+  );
+
+  $("finalLetter").classList.add(
+    "hidden"
+  );
+
+  $("footerText").textContent =
+    "Another surprise coming soon..";
+
+  $("lockState").textContent =
+    "● MEMORIES";
+}
 }
 
 function buildCalendar() {
