@@ -10488,7 +10488,7 @@ span:not(:last-child)::after {
 
   font-style: italic;
 
-  line-height: 1.48;
+  line-height: 1.68;
 
   letter-spacing: 0.1px;
 
@@ -10604,14 +10604,6 @@ span:not(:last-child)::after {
 
 }
 
-
-.one-day-left-content {
-
-  margin-top: 50px;
-
-}
-
-
 .one-day-left-label {
 
   display: block;
@@ -10691,7 +10683,7 @@ span:not(:last-child)::after {
     "Times New Roman",
     serif;
 
-  font-size: 17px;
+  font-size: 18px;
 
   line-height: 1.8;
 
