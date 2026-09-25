@@ -1,19 +1,3 @@
-/*
-  28 DAYS OF JERYY
-  -----------------
-  IMPORTANT:
-  1. Change BIRTHDAY_YEAR if needed.
-  2. Replace image paths in the memories array.
-  3. Replace the text with your real memories.
-  4. Keep the folder structure:
-       index.html
-       style.css
-       script.js
-       assets/
-         day02.jpg
-         day03.jpg
-         ...
-*/
 const TEST_MODE = false;
 const BIRTHDAY_YEAR = 2026;
 const BIRTHDAY_MONTH = 8; // September
@@ -87,7 +71,7 @@ const memories = [
 	  date: "SEPTEMBER 07",
 	  type: "chat",
 	  tag: "A LITTLE CHAT REPLY",
-	  title: "Remember This One ??",
+	  title: "Remember This One",
 	  text: "No Context.. Just Us..",
 	  quote: "Some Conversations Are Completely Random.. Somehow, Those Are The Ones We Remember..",
 	  chat: [
@@ -220,7 +204,7 @@ const memories = [
 	  type: "letter",
 	  tag: "A FEW THINGS",
 	  title: "I Don't Say These Often..",
-	  text: "Some Things Are Easier To Write Than To Say.",
+	  text: "Some Things Are Easier To Write Than To Say..",
 	  quote: "Some Words Take Longer To Say, But They Stay Longer as Memories Forever !!",
 
 	  letter: `
@@ -303,7 +287,7 @@ const memories = [
   date: "SEPTEMBER 13",
   type: "mystery",
   tag: "A LITTLE MYSTERY",
-  title: "There's A Message For You..",
+  title: "There's A Message..",
   text: "Five Little Clues.. One Hidden Message.. Take Your Time And See If You Can Figure It Out..",
   quote: "Sometimes The Simplest Things Are The Ones Worth Figuring Out..",
   
@@ -361,7 +345,7 @@ const memories = [
   date: "SEPTEMBER 14",
   type: "halfway",
   tag: "HALFWAY THERE",
-  title: "14 Days Down.. 14 To Go..",
+  title: "14 Days To Go..",
   text: "You've Made It Exactly HalfWay Through The Little Journey !!",
   quote: "Half The Journey Is Over, Half is Waiting For You.. "
 },
@@ -426,8 +410,8 @@ const memories = [
   date: "SEPTEMBER 18",
   type: "catchHearts",
   tag: "A LITTLE SOMETHING",
-  title: "Catch The Little Things",
-  text: "There Are A Few Little Things I Wanted To Tell You..",
+  title: "Catch The Hearts",
+  text: "There Are A Few Little Things Waiting For You..",
   quote: "Sometimes The Smallest Things Become The Biggest Memories.."
 },
 {
@@ -502,7 +486,7 @@ You actually found it.. Maybe the key wasn't really that secret after all.. Two 
   date: "SEPTEMBER 24",
   type: "childhoodFocus",
   tag: "BEFORE I KNEW YOU",
-  title: "The Initial Beginning Stage",
+  title: "The Initial Stage",
   text: "Long Before I Ever Knew The Person..",
   image: "assets/day24.png",
   quote: "Every Big Story Begins With A Very Small Beginning.."
@@ -512,7 +496,7 @@ You actually found it.. Maybe the key wasn't really that secret after all.. Two 
   date: "SEPTEMBER 25",
   type: "yearbookReveal",
   tag: "SOMEWHERE ALONG THE WAY",
-  title: "Somewhere You Belongs To",
+  title: "Mini Version Of You",
   text: "So Many Versions Of You Existed Before I Ever Got To Know You..",
   image: "assets/day25.png",
   quote: "You Were Becoming You Long Before I Ever Became Part Of The Story.."
@@ -522,8 +506,8 @@ You actually found it.. Maybe the key wasn't really that secret after all.. Two 
   date: "SEPTEMBER 26",
   type: "cameraFocus",
   tag: "THERE WAS US",
-  title: "One Of The Recent Clicks",
-  text: "Out Of All The People We Could Have Met.. Somehow, Our Paths Crossed..",
+  title: "The Recent Clicks",
+  text: "Out Of All The Peoples We Could Have Met.. Somehow, Our Paths Crossed..",
   image: "assets/day26.png",
   quote: "Somewhere Between All The Years And All The People.. There Was Us.."
 },
@@ -541,9 +525,9 @@ You actually found it.. Maybe the key wasn't really that secret after all.. Two 
   date: "SEPTEMBER 28",
   type: "birthdayFinale",
   tag: "THE COUNTDOWN IS OVER",
-  title: "The End Of This Little Journey️",
+  title: "The End Of The Beautiful Journey️",
   text: "September 28, 2026 · 11:25 PM",
-  quote: "28 Days. 28 Moments. One Person Who Made Every One Of Them Worth Keeping.."
+  quote: "28 Days.. 28 Moments.. One Person Who Made Every One Of Them Worth Keeping.."
 },
 ];
 
@@ -1795,44 +1779,43 @@ else if (type === "birthdayCode") {
 
 
     <div class="code-clues">
+	
+		<div class="code-clue">
+			<span class="clue-number">CLUE 01</span>
 
-      <div class="code-clue">
-        <span class="clue-number">CLUE 01</span>
+			<div class="clue-value">
+			  11:25
+			</div>
 
-        <div class="clue-value">
-          28
-        </div>
+			<p>
+			  The Little Time That Became Part Of This Whole Journey..
+			</p>
+		</div>
 
-        <p>
-          The Number of Little Memories..
-        </p>
-      </div>
+		<div class="code-clue locked-clue">
+			<span class="clue-number">CLUE 02</span>
 
+			<div class="clue-value">
+			  28
+			</div>
 
-      <div class="code-clue locked-clue">
-        <span class="clue-number">CLUE 02</span>
-
-        <div class="clue-value">
-          09
-        </div>
-
-        <p>
-          The Month When Everything Comes Together..
-        </p>
-      </div>
+			<p>
+			  The Number of Little Memories..
+			</p>
+		</div>
 
 
-      <div class="code-clue locked-clue">
-        <span class="clue-number">CLUE 03</span>
+		<div class="code-clue locked-clue">
+			<span class="clue-number">CLUE 03</span>
 
-        <div class="clue-value">
-          11:25
-        </div>
+			<div class="clue-value">
+			  09
+			</div>
 
-        <p>
-          The Little Time That Became Part Of This Whole Journey..
-        </p>
-      </div>
+			<p>
+			  The Month When Everything Comes Together..
+			</p>
+		</div>
 
     </div>
 
@@ -1849,7 +1832,7 @@ else if (type === "birthdayCode") {
       </div>
 
       <div class="decoded-code">
-        28 <span>•</span> 09 <span>•</span> 11:25
+        11:25 <span>•</span> 28 <span>•</span> 09
       </div>
 
       <div class="code-message">
@@ -2379,7 +2362,7 @@ else if (type === "secretKey") {
 			  </h3>
 
 			  <p>
-				Drag The Pieces Around and See If You Can Rebuild The Picture..
+				Drag The Pieces Around and See If You Can Rebuild It..
 			  </p>
 
 			</div>
@@ -3877,7 +3860,7 @@ else if (type === "yearbookReveal") {
         <div class="yearbook-page-content">
 
           <span class="yearbook-caption">
-            CLASS OF MEMORIES
+            BOOK OF MEMORIES
           </span>
 
           <div class="yearbook-photo-frame">
@@ -3934,7 +3917,7 @@ else if (type === "yearbookReveal") {
     >
 
       <p>
-        Somewhere along the way.. That little girl grew up with lots of happiness also few struggles and pain.. School uniforms changed.. Years passed.. So many different versions of you came and went.. So many versions of you existed before I ever got to know you.. And I'm glad to meet the version of you that I know today !!
+        That little girl grew up with lots of happiness also few struggles and pain.. Three different schools.. Three different set of friends.. School uniforms changed into color dresses.. New college.. New set of friends.. Years passed.. Also, We are in the final phase.. Ending of this college journey in next few months.. Hope, everythings will goes well.. Let's wait and see what is going to happen also whatever happens just stay on with paathukalam vibes.. So many different versions of you came and went.. So many versions of you existed before I ever got to know you.. And I'm glad to meet the version of you that I know today !! 
       </p>
         
     </div>
@@ -4006,12 +3989,9 @@ else if (type === "childhoodFocus") {
   experience.innerHTML = `
 
     <div class="childhood-focus-header">
-      <h2>
-        Before I Knew You..
-      </h2>
-
+  
       <p>
-        Some Memories Belong To A Time Before We Ever Knew Each Other..
+        Some Memories Belongs To A Particular Time..
       </p>
 
     </div>
@@ -4067,178 +4047,6 @@ else if (type === "childhoodFocus") {
       </div>
 
     </div>
-  `;
-
-  $("memoryCard").appendChild(experience);
-
-
-  const revealButton =
-    experience.querySelector(
-      "#childhoodFocusButton"
-    );
-
-  const photo =
-    experience.querySelector(
-      "#childhoodFocusPhoto"
-    );
-
-  const overlay =
-    experience.querySelector(
-      "#childhoodFocusOverlay"
-    );
-
-  const message =
-    experience.querySelector(
-      "#childhoodFocusMessage"
-    );
-
-
-  revealButton.addEventListener(
-    "click",
-    () => {
-
-      revealButton.disabled = true;
-
-      revealButton.classList.add(
-        "childhood-focus-button-hidden"
-      );
-
-      overlay.classList.add(
-        "childhood-focus-overlay-hide"
-      );
-
-      photo.classList.add(
-        "childhood-focus-photo-clear"
-      );
-
-      setTimeout(() => {
-
-        message.classList.add(
-          "childhood-focus-message-visible"
-        );
-
-        message.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
-
-      }, 1100);
-
-    }
-  );
-
-}
-
-else if (type === "childhoodFocus") {
-
-  image.style.display = "none";
-  placeholder.style.display = "none";
-  imageWrap.style.display = "none";
-
-  const experience = document.createElement("div");
-
-  experience.className =
-    "memory-experience childhood-focus-experience";
-
-  experience.innerHTML = `
-
-    <div class="childhood-focus-header">
-
-      <span class="childhood-focus-label">
-        ${item.tag}
-      </span>
-
-      <h2>
-        Before I Knew You..
-      </h2>
-
-      <p>
-        Some memories belong to a time
-        before we ever knew each other.
-      </p>
-
-    </div>
-
-
-    <div class="childhood-focus-stage">
-
-      <div class="childhood-focus-photo-wrap">
-
-        <img
-          src="${item.image}"
-          alt="A childhood memory"
-          class="childhood-focus-photo"
-          id="childhoodFocusPhoto"
-        />
-
-        <div
-          class="childhood-focus-overlay"
-          id="childhoodFocusOverlay"
-        >
-
-          <span>
-            A LITTLE GIRL..
-          </span>
-
-          <small>
-            BEFORE I KNEW YOU
-          </small>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <button
-      type="button"
-      class="childhood-focus-button"
-      id="childhoodFocusButton"
-    >
-      ✦ REVEAL THIS MEMORY
-    </button>
-
-
-    <div
-      class="childhood-focus-message"
-      id="childhoodFocusMessage"
-    >
-
-      <p>
-        Before I ever knew your name..
-        before I knew the person you would become..
-        you were already living a whole little life.
-      </p>
-
-      <p>
-        Three months old.
-        So tiny.
-        So innocent.
-        And completely unaware of all the beautiful things
-        that were still waiting for you.
-      </p>
-
-      <div class="childhood-focus-special">
-        And somehow.. that little girl became
-        the Haseeeenaaaa I know today. ❤️
-      </div>
-
-    </div>
-
-
-    <div class="childhood-focus-footer">
-
-      <span>
-        24 / 28
-      </span>
-
-      <span>
-        A memory from before the memories ❤️
-      </span>
-
-    </div>
-
   `;
 
   $("memoryCard").appendChild(experience);
@@ -4380,11 +4188,11 @@ else if (type === "cameraFocus") {
     >
 
       <p>
-        Out of all those years.. Out of all the people we could have met.. Somehow, our paths crossed.. We met each other on 2024, we started our little chit-chats around 2025 mid and then there comes out the turning point SVCE exactly 1yr ago 26th Sept 2025 where all my taughts about you has been vanished in that one night because we spent the whole night with lots of funnier talks, gossips, tea, your past story, Sneha & Mohan the entire ruling funnier chat of that night.. From that night we started to talk a lot, make calls everyday evening from minutes of talks to hours of talks, day & night chats most memorable time period of the college days and unforgettable :)
+        Out of all those years.. Out of all the people we could have met.. Somehow, our paths crossed.. We met each other on 2024, we started our little chit-chats around 2025 mid and then there comes out the turning point SVCE exactly 1yr ago 26th Sept 2025 where all my taughts about you has been vanished in that one night because we spent the whole night with lots of funnier talks, gossips, tea, your past story, Sneha & Mohan the entire ruling funnier chat of that night.. From that night we started to talk a lot, make calls everyday evening from minutes of talks to hours of talks, day & night chats most memorable time period of the college days and unforgettable moments.. Thanks for everything hasseenaaaa.. Hope, This bond stays forever..
       </p>
 
       <div class="camera-focus-special">
-        And Here We Are..
+        Epovum Sirichitae Iru Haseeeenaaaa 🫶🏻❤️
       </div>
 
       <div class="camera-focus-small">
@@ -4485,7 +4293,7 @@ else if (type === "oneDayLeft") {
       <div class="one-day-left-line"></div>
 
       <p>
-        Whenever we start a journey it should have an end destination point.. Here, comes the end destination point of this 28 days little journey of the jerry with some happy moments.. One Last Night Travel for the end of this journey and everything turns into the good memories.. Just 35mins more to end 21yrs of Haseena but actually 24hrs to go for the real end of 21yrs.. Here, The Final Countdown begins to end this journey :)
+        Whenever we start a journey it should have an end destination point.. Here, comes the end of this 28 days little journey of the jerry with some happy moments and memories.. One Last Night Travel for the end of this journey and everything turns into the good memories.. Just 35mins more to end 21yrs of Haseena but actually 24hrs to go for the real end of 21yrs.. Here, The Final Countdown begins to end this journey :)
       </p>
 
     </div>
@@ -5894,80 +5702,25 @@ else if (type === "birthdayFinale") {
       <div class="birthday-letter-body">
 
         <p>
-          I honestly don't know how to properly
-          start this letter because somehow,
-          this entire thing started without a
-          proper plan.
-        </p>
-
-        <p>
-          I only had one thought in my mind —
-          I wanted to make this September
-          memorable for you.
-        </p>
-
-        <p>
-          So I started with one little idea,
-          then another one came,
-          and somehow twenty-eight days
-          later we ended up here.
-        </p>
-
-        <p>
-          Every day I tried to create something
-          different. Sometimes it was a memory,
-          sometimes a photo, sometimes a puzzle,
-          sometimes something completely random.
-          But all of them had one thing in common —
-          they were made for you.
-        </p>
-
-        <p>
-          I hope somewhere between all those
-          little surprises, you smiled,
-          remembered something,
-          laughed at something,
-          or simply felt a little special.
-        </p>
-
-        <p>
-          Because that's what I wanted this whole
-          thing to be.
+          Happy 21st B'Day Hasee.. I honestly don't know how to properly start this letter because somehow, this entire thing started without a proper plan.. I only had one thought in my mind I wanted to make this September 2026 completely memorable and unforgettable for you.. So I started with one little idea, then another one came and somehow twenty eight days passed, later we ended up here.. Every day I tried to create something different.. Sometimes it was a memory, sometimes a photo, sometimes a puzzle, sometimes a little gifts, sometimes something completely random.. But all of them had one thing in common they were made for only my jerry, that's you.. I hope somewhere between all those little surprises, you smiled, remembered something, laughed at something or simply felt a little special.. Because that's what I wanted this whole thing to be..
         </p>
 
         <p class="birthday-letter-special">
-          Not something huge.
+          Not something huge..
           <br>
-          Just something you would remember.
+          Just something you would remember..
         </p>
 
         <p>
-          Thank you for being a part of so many
-          moments that became memories without us
-          even realising it at the time.
-        </p>
-
-        <p>
-          And whatever happens next,
-          I hope life gives you plenty of reasons
-          to smile, plenty of beautiful moments
-          to remember, and a lot of happiness
-          that stays.
-        </p>
-
-        <p>
-          Keep smiling.
-          Keep being yourself.
-          Keep going.
+          Thank you for being a part of so many moments that became memories without us even realising it at the time.. And whatever happens next, I hope life gives you plenty of reasons to smile, plenty of beautiful moments to remember and a lot of happiness that stays.. Keep smiling.. Keep being yourself.. Keep going.. One last final wish always stay with me forever and..
         </p>
 
         <p class="birthday-letter-final-line">
-          Epovum Sirichitae Iru,
-          Haseeeenaaaa. ❤️
+          Epovum Sirichitae Iru, Haseeeenaaa️a 🫶🏻❤️
         </p>
 
         <p class="birthday-letter-sign">
-          — Raki
+          — Tom
         </p>
 
       </div>
@@ -6166,7 +5919,7 @@ else if (item.type === "pin") {
   );
 
   $("footerText").textContent =
-    "Another surprise coming soon..";
+    "Another Surprise Coming Soon..";
 
   $("lockState").textContent =
     "● MEMORIES";
@@ -6219,35 +5972,65 @@ function showToast(message) {
 }
 
 function updateCountdown() {
+
   const now = new Date();
   const target = getBirthdayDate();
+
   let diff = target - now;
 
+  /* =========================================
+     BIRTHDAY HAS ARRIVED
+  ========================================= */
+
   if (diff <= 0) {
+
     $("days").textContent = "00";
     $("hours").textContent = "00";
     $("minutes").textContent = "00";
     $("seconds").textContent = "00";
+
+    $("sectionLabel").textContent =
+      "THE COUNTDOWN IS OVER.. THE MEMORY BEGINS..";
+
     return;
   }
+
+
+  /* =========================================
+     COUNTDOWN STILL RUNNING
+  ========================================= */
+
+  $("sectionLabel").textContent =
+    "SOMETHING SPECIAL IS WAITING..";
+
 
   const second = 1000;
   const minute = second * 60;
   const hour = minute * 60;
   const day = hour * 24;
 
+
   const days = Math.floor(diff / day);
+
   diff %= day;
+
   const hours = Math.floor(diff / hour);
+
   diff %= hour;
+
   const minutes = Math.floor(diff / minute);
+
   diff %= minute;
-  const seconds = Math.floor((diff % minute) / second);
+
+  const seconds =
+    Math.floor((diff % minute) / second);
+
 
   $("days").textContent = pad(days);
   $("hours").textContent = pad(hours);
   $("minutes").textContent = pad(minutes);
   $("seconds").textContent = pad(seconds);
+
 }
 
 $("prevBtn").addEventListener("click", () => {
@@ -6265,7 +6048,7 @@ $("nextBtn").addEventListener("click", () => {
     renderDay(currentDay);
     window.scrollTo({ top: 0, behavior: "smooth" });
   } else {
-    showToast("That surprise isn't unlocked yet... come back on the right day. 👀");
+    showToast("That Surprise Isn't Unlocked Yet.. Come Back On The Right Day..");
   }
 });
 
